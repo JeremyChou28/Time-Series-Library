@@ -2,10 +2,10 @@ export CUDA_VISIBLE_DEVICES=4
 
 model_name=Transformer
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/exchange_rate/ \
+  --root_path ../iTransformer_datasets/exchange_rate/ \
   --data_path exchange_rate.csv \
   --model_id Exchange_96_96 \
   --model $model_name \
@@ -23,10 +23,10 @@ python -u run.py \
   --des 'Exp' \
   --itr 1
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/exchange_rate/ \
+  --root_path ../iTransformer_datasets/exchange_rate/ \
   --data_path exchange_rate.csv \
   --model_id Exchange_96_192 \
   --model $model_name \
@@ -44,10 +44,10 @@ python -u run.py \
   --des 'Exp' \
   --itr 1
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/exchange_rate/ \
+  --root_path ../iTransformer_datasets/exchange_rate/ \
   --data_path exchange_rate.csv \
   --model_id Exchange_96_336 \
   --model $model_name \
@@ -66,10 +66,10 @@ python -u run.py \
   --itr 1 \
   --train_epochs 1
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/exchange_rate/ \
+  --root_path ../iTransformer_datasets/exchange_rate/ \
   --data_path exchange_rate.csv \
   --model_id Exchange_96_720 \
   --model $model_name \

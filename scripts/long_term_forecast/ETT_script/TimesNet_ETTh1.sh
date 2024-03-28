@@ -2,10 +2,10 @@ export CUDA_VISIBLE_DEVICES=2
 
 model_name=TimesNet
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTh1.csv \
   --model_id ETTh1_96_96 \
   --model $model_name \
@@ -27,10 +27,10 @@ python -u run.py \
   --top_k 5 
 
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTh1.csv \
   --model_id ETTh1_96_192 \
   --model $model_name \
@@ -52,10 +52,10 @@ python -u run.py \
   --top_k 5
 
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTh1.csv \
   --model_id ETTh1_96_336 \
   --model $model_name \
@@ -77,10 +77,10 @@ python -u run.py \
   --top_k 5
 
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTh1.csv \
   --model_id ETTh1_96_720 \
   --model $model_name \

@@ -2,10 +2,10 @@ export CUDA_VISIBLE_DEVICES=0
 
 model_name=PatchTST
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/weather/ \
+  --root_path ../iTransformer_datasets/weather/ \
   --data_path weather.csv \
   --model_id weather_96_96 \
   --model $model_name \
@@ -25,10 +25,10 @@ python -u run.py \
   --n_heads 4 \
   --train_epochs 3
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/weather/ \
+  --root_path ../iTransformer_datasets/weather/ \
   --data_path weather.csv \
   --model_id weather_96_192 \
   --model $model_name \
@@ -48,10 +48,10 @@ python -u run.py \
   --n_heads 16 \
   --train_epochs 3
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/weather/ \
+  --root_path ../iTransformer_datasets/weather/ \
   --data_path weather.csv \
   --model_id weather_96_336 \
   --model $model_name \
@@ -72,10 +72,10 @@ python -u run.py \
   --batch_size 128 \
   --train_epochs 3
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/weather/ \
+  --root_path ../iTransformer_datasets/weather/ \
   --data_path weather.csv \
   --model_id weather_96_720 \
   --model $model_name \

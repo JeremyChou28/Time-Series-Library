@@ -2,10 +2,10 @@ export CUDA_VISIBLE_DEVICES=1
 
 model_name=Autoformer
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTm1.csv \
   --model_id ETTm1_96_96 \
   --model $model_name \
@@ -23,10 +23,10 @@ python -u run.py \
   --des 'Exp' \
   --itr 1
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTm1.csv \
   --model_id ETTm1_96_192 \
   --model $model_name \
@@ -44,10 +44,10 @@ python -u run.py \
   --des 'Exp' \
   --itr 1
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTm1.csv \
   --model_id ETTm1_96_336 \
   --model $model_name \
@@ -65,10 +65,10 @@ python -u run.py \
   --des 'Exp' \
   --itr 1
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTm1.csv \
   --model_id ETTm1_96_720 \
   --model $model_name \

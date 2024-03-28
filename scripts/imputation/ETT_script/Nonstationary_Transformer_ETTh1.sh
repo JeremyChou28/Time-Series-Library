@@ -1,11 +1,11 @@
-export CUDA_VISIBLE_DEVICES=0
+export CUDA_VISIBLE_DEVICES=1
 
 model_name=Nonstationary_Transformer
 
-python -u run.py \
+nohup python -u run.py \
   --task_name imputation \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTh1.csv \
   --model_id ETTh1_mask_0.125 \
   --mask_rate 0.125 \
@@ -29,12 +29,12 @@ python -u run.py \
   --top_k 5 \
   --learning_rate 0.001 \
   --p_hidden_dims 256 256 \
-  --p_hidden_layers 2
+  --p_hidden_layers 2 > ./logs/imputation/ETT-small/${model_name}_ETTh1_mask_0.125.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name imputation \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTh1.csv \
   --model_id ETTh1_mask_0.25 \
   --mask_rate 0.25 \
@@ -58,12 +58,12 @@ python -u run.py \
   --top_k 5 \
   --learning_rate 0.001 \
   --p_hidden_dims 256 256 \
-  --p_hidden_layers 2
+  --p_hidden_layers 2 > ./logs/imputation/ETT-small/${model_name}_ETTh1_mask_0.25.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name imputation \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTh1.csv \
   --model_id ETTh1_mask_0.375 \
   --mask_rate 0.375 \
@@ -87,12 +87,12 @@ python -u run.py \
   --top_k 5 \
   --learning_rate 0.001 \
   --p_hidden_dims 256 256 \
-  --p_hidden_layers 2
+  --p_hidden_layers 2 > ./logs/imputation/ETT-small/${model_name}_ETTh1_mask_0.375.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name imputation \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTh1.csv \
   --model_id ETTh1_mask_0.5 \
   --mask_rate 0.5 \
@@ -116,4 +116,4 @@ python -u run.py \
   --top_k 5 \
   --learning_rate 0.001 \
   --p_hidden_dims 256 256 \
-  --p_hidden_layers 2
+  --p_hidden_layers 2 > ./logs/imputation/ETT-small/${model_name}_ETTh1_mask_0.5.log 2>&1 &

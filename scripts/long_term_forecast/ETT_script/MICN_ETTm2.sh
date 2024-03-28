@@ -2,10 +2,10 @@ export CUDA_VISIBLE_DEVICES=2
 
 model_name=MICN
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTm2.csv \
   --model_id ETTm2_96_96 \
   --model $model_name \
@@ -24,10 +24,10 @@ python -u run.py \
   --top_k 5 \
   --itr 1
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTm2.csv \
   --model_id ETTm2_96_192 \
   --model $model_name \
@@ -46,10 +46,10 @@ python -u run.py \
   --top_k 5 \
   --itr 1
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTm2.csv \
   --model_id ETTm2_96_336 \
   --model $model_name \
@@ -68,10 +68,10 @@ python -u run.py \
   --top_k 5 \
   --itr 1
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTm2.csv \
   --model_id ETTm2_96_720 \
   --model $model_name \

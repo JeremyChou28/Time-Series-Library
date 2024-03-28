@@ -1,50 +1,50 @@
-export CUDA_VISIBLE_DEVICES=6
+export CUDA_VISIBLE_DEVICES=1
 
 model_name=PatchTST
 
-nohup python -u run.py \
-  --task_name long_term_forecast \
-  --is_training 1 \
-  --root_path ../iTransformer_datasets/electricity/ \
-  --data_path electricity.csv \
-  --model_id ECL_96_96 \
-  --model $model_name \
-  --data custom \
-  --features M \
-  --seq_len 96 \
-  --label_len 48 \
-  --pred_len 96 \
-  --e_layers 2 \
-  --d_layers 1 \
-  --factor 3 \
-  --enc_in 321 \
-  --dec_in 321 \
-  --c_out 321 \
-  --des 'Exp' \
-  --batch_size 16 \
-  --itr 1
+# nohup python -u run.py \
+#   --task_name long_term_forecast \
+#   --is_training 1 \
+#   --root_path ../iTransformer_datasets/electricity/ \
+#   --data_path electricity.csv \
+#   --model_id ECL_96_96 \
+#   --model $model_name \
+#   --data custom \
+#   --features M \
+#   --seq_len 96 \
+#   --label_len 48 \
+#   --pred_len 96 \
+#   --e_layers 2 \
+#   --d_layers 1 \
+#   --factor 3 \
+#   --enc_in 321 \
+#   --dec_in 321 \
+#   --c_out 321 \
+#   --des 'Exp' \
+#   --batch_size 16 \
+#   --itr 1 > ./logs/long_term_forecast/electricity/${model_name}_ECL_96_96.log 2>&1 &
 
-nohup python -u run.py \
-  --task_name long_term_forecast \
-  --is_training 1 \
-  --root_path ../iTransformer_datasets/electricity/ \
-  --data_path electricity.csv \
-  --model_id ECL_96_192 \
-  --model $model_name \
-  --data custom \
-  --features M \
-  --seq_len 96 \
-  --label_len 48 \
-  --pred_len 192 \
-  --e_layers 2 \
-  --d_layers 1 \
-  --factor 3 \
-  --enc_in 321 \
-  --dec_in 321 \
-  --c_out 321 \
-  --des 'Exp' \
-  --batch_size 16 \
-  --itr 1
+# nohup python -u run.py \
+#   --task_name long_term_forecast \
+#   --is_training 1 \
+#   --root_path ../iTransformer_datasets/electricity/ \
+#   --data_path electricity.csv \
+#   --model_id ECL_96_192 \
+#   --model $model_name \
+#   --data custom \
+#   --features M \
+#   --seq_len 96 \
+#   --label_len 48 \
+#   --pred_len 192 \
+#   --e_layers 2 \
+#   --d_layers 1 \
+#   --factor 3 \
+#   --enc_in 321 \
+#   --dec_in 321 \
+#   --c_out 321 \
+#   --des 'Exp' \
+#   --batch_size 16 \
+#   --itr 1 > ./logs/long_term_forecast/electricity/${model_name}_ECL_96_192.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -66,26 +66,26 @@ nohup python -u run.py \
   --c_out 321 \
   --des 'Exp' \
   --batch_size 16 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/electricity/${model_name}_ECL_96_336.log 2>&1 &
 
-nohup python -u run.py \
-  --task_name long_term_forecast \
-  --is_training 1 \
-  --root_path ../iTransformer_datasets/electricity/ \
-  --data_path electricity.csv \
-  --model_id ECL_96_720 \
-  --model $model_name \
-  --data custom \
-  --features M \
-  --seq_len 96 \
-  --label_len 48 \
-  --pred_len 720 \
-  --e_layers 2 \
-  --d_layers 1 \
-  --factor 3 \
-  --enc_in 321 \
-  --dec_in 321 \
-  --c_out 321 \
-  --des 'Exp' \
-  --batch_size 16 \
-  --itr 1
+# nohup python -u run.py \
+#   --task_name long_term_forecast \
+#   --is_training 1 \
+#   --root_path ../iTransformer_datasets/electricity/ \
+#   --data_path electricity.csv \
+#   --model_id ECL_96_720 \
+#   --model $model_name \
+#   --data custom \
+#   --features M \
+#   --seq_len 96 \
+#   --label_len 48 \
+#   --pred_len 720 \
+#   --e_layers 2 \
+#   --d_layers 1 \
+#   --factor 3 \
+#   --enc_in 321 \
+#   --dec_in 321 \
+#   --c_out 321 \
+#   --des 'Exp' \
+#   --batch_size 16 \
+#   --itr 1 > ./logs/long_term_forecast/electricity/${model_name}_ECL_96_720.log 2>&1 &

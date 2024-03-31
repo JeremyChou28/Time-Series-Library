@@ -1,0 +1,157 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           SelfRegulationSCP2  Model:              Pyraformer          
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/SelfRegulationSCP2/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       100                 Batch Size:         4                   
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+200
+180
+>>>>>>>start training : classification_SelfRegulationSCP2_Pyraformer_UEA_ftM_sl1152_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+200
+180
+180
+Epoch: 1 cost time: 8.245754718780518
+Epoch: 1, Steps: 50 | Train Loss: 39.240 Vali Loss: 28.845 Vali Acc: 0.500 Test Loss: 28.845 Test Acc: 0.500
+Validation loss decreased (inf --> -0.500000).  Saving model ...
+Epoch: 2 cost time: 4.061943054199219
+Epoch: 2, Steps: 50 | Train Loss: 10.384 Vali Loss: 10.630 Vali Acc: 0.528 Test Loss: 10.630 Test Acc: 0.528
+Validation loss decreased (-0.500000 --> -0.527778).  Saving model ...
+Epoch: 3 cost time: 5.022360801696777
+Epoch: 3, Steps: 50 | Train Loss: 11.955 Vali Loss: 9.412 Vali Acc: 0.561 Test Loss: 9.412 Test Acc: 0.561
+Validation loss decreased (-0.527778 --> -0.561111).  Saving model ...
+Epoch: 4 cost time: 4.450402498245239
+Epoch: 4, Steps: 50 | Train Loss: 12.275 Vali Loss: 28.584 Vali Acc: 0.489 Test Loss: 28.584 Test Acc: 0.489
+EarlyStopping counter: 1 out of 10
+Epoch: 5 cost time: 4.683336973190308
+Epoch: 5, Steps: 50 | Train Loss: 12.401 Vali Loss: 5.390 Vali Acc: 0.511 Test Loss: 5.390 Test Acc: 0.511
+EarlyStopping counter: 2 out of 10
+Updating learning rate to 6.25e-05
+Epoch: 6 cost time: 4.634433746337891
+Epoch: 6, Steps: 50 | Train Loss: 3.051 Vali Loss: 2.117 Vali Acc: 0.539 Test Loss: 2.117 Test Acc: 0.539
+EarlyStopping counter: 3 out of 10
+Epoch: 7 cost time: 4.448057651519775
+Epoch: 7, Steps: 50 | Train Loss: 1.798 Vali Loss: 1.534 Vali Acc: 0.506 Test Loss: 1.534 Test Acc: 0.506
+EarlyStopping counter: 4 out of 10
+Epoch: 8 cost time: 4.711363315582275
+Epoch: 8, Steps: 50 | Train Loss: 1.405 Vali Loss: 1.376 Vali Acc: 0.472 Test Loss: 1.376 Test Acc: 0.472
+EarlyStopping counter: 5 out of 10
+Epoch: 9 cost time: 4.809051752090454
+Epoch: 9, Steps: 50 | Train Loss: 1.284 Vali Loss: 1.090 Vali Acc: 0.506 Test Loss: 1.090 Test Acc: 0.506
+EarlyStopping counter: 6 out of 10
+Epoch: 10 cost time: 4.949740886688232
+Epoch: 10, Steps: 50 | Train Loss: 1.761 Vali Loss: 1.281 Vali Acc: 0.556 Test Loss: 1.281 Test Acc: 0.556
+EarlyStopping counter: 7 out of 10
+Updating learning rate to 1.953125e-06
+Epoch: 11 cost time: 4.9127068519592285
+Epoch: 11, Steps: 50 | Train Loss: 1.318 Vali Loss: 1.138 Vali Acc: 0.561 Test Loss: 1.138 Test Acc: 0.561
+Validation loss decreased (-0.561111 --> -0.561111).  Saving model ...
+Epoch: 12 cost time: 4.918292284011841
+Epoch: 12, Steps: 50 | Train Loss: 1.032 Vali Loss: 1.077 Vali Acc: 0.572 Test Loss: 1.077 Test Acc: 0.572
+Validation loss decreased (-0.561111 --> -0.572222).  Saving model ...
+Epoch: 13 cost time: 4.909034729003906
+Epoch: 13, Steps: 50 | Train Loss: 1.123 Vali Loss: 1.055 Vali Acc: 0.578 Test Loss: 1.055 Test Acc: 0.578
+Validation loss decreased (-0.572222 --> -0.577778).  Saving model ...
+Epoch: 14 cost time: 4.998272180557251
+Epoch: 14, Steps: 50 | Train Loss: 1.089 Vali Loss: 1.034 Vali Acc: 0.556 Test Loss: 1.034 Test Acc: 0.556
+EarlyStopping counter: 1 out of 10
+Epoch: 15 cost time: 5.131540775299072
+Epoch: 15, Steps: 50 | Train Loss: 1.052 Vali Loss: 1.007 Vali Acc: 0.550 Test Loss: 1.007 Test Acc: 0.550
+EarlyStopping counter: 2 out of 10
+Updating learning rate to 6.103515625e-08
+Epoch: 16 cost time: 5.258281946182251
+Epoch: 16, Steps: 50 | Train Loss: 1.092 Vali Loss: 1.004 Vali Acc: 0.578 Test Loss: 1.004 Test Acc: 0.578
+Validation loss decreased (-0.577778 --> -0.577778).  Saving model ...
+Epoch: 17 cost time: 4.959938049316406
+Epoch: 17, Steps: 50 | Train Loss: 1.029 Vali Loss: 1.022 Vali Acc: 0.561 Test Loss: 1.022 Test Acc: 0.561
+EarlyStopping counter: 1 out of 10
+Epoch: 18 cost time: 4.928880214691162
+Epoch: 18, Steps: 50 | Train Loss: 1.127 Vali Loss: 1.042 Vali Acc: 0.556 Test Loss: 1.042 Test Acc: 0.556
+EarlyStopping counter: 2 out of 10
+Epoch: 19 cost time: 4.957777738571167
+Epoch: 19, Steps: 50 | Train Loss: 1.072 Vali Loss: 1.011 Vali Acc: 0.539 Test Loss: 1.011 Test Acc: 0.539
+EarlyStopping counter: 3 out of 10
+Epoch: 20 cost time: 4.9462432861328125
+Epoch: 20, Steps: 50 | Train Loss: 0.972 Vali Loss: 1.007 Vali Acc: 0.544 Test Loss: 1.007 Test Acc: 0.544
+EarlyStopping counter: 4 out of 10
+Updating learning rate to 1.9073486328125e-09
+Epoch: 21 cost time: 5.118798494338989
+Epoch: 21, Steps: 50 | Train Loss: 0.936 Vali Loss: 1.013 Vali Acc: 0.578 Test Loss: 1.013 Test Acc: 0.578
+Validation loss decreased (-0.577778 --> -0.577778).  Saving model ...
+Epoch: 22 cost time: 4.71361517906189
+Epoch: 22, Steps: 50 | Train Loss: 0.932 Vali Loss: 0.990 Vali Acc: 0.556 Test Loss: 0.990 Test Acc: 0.556
+EarlyStopping counter: 1 out of 10
+Epoch: 23 cost time: 4.858664274215698
+Epoch: 23, Steps: 50 | Train Loss: 1.064 Vali Loss: 1.041 Vali Acc: 0.550 Test Loss: 1.041 Test Acc: 0.550
+EarlyStopping counter: 2 out of 10
+Epoch: 24 cost time: 5.3548595905303955
+Epoch: 24, Steps: 50 | Train Loss: 1.009 Vali Loss: 1.001 Vali Acc: 0.578 Test Loss: 1.001 Test Acc: 0.578
+Validation loss decreased (-0.577778 --> -0.577778).  Saving model ...
+Epoch: 25 cost time: 5.8427956104278564
+Epoch: 25, Steps: 50 | Train Loss: 0.867 Vali Loss: 1.022 Vali Acc: 0.539 Test Loss: 1.022 Test Acc: 0.539
+EarlyStopping counter: 1 out of 10
+Updating learning rate to 5.960464477539063e-11
+Epoch: 26 cost time: 6.677866458892822
+Epoch: 26, Steps: 50 | Train Loss: 0.926 Vali Loss: 1.000 Vali Acc: 0.539 Test Loss: 1.000 Test Acc: 0.539
+EarlyStopping counter: 2 out of 10
+Epoch: 27 cost time: 7.06021785736084
+Epoch: 27, Steps: 50 | Train Loss: 0.989 Vali Loss: 1.022 Vali Acc: 0.550 Test Loss: 1.022 Test Acc: 0.550
+EarlyStopping counter: 3 out of 10
+Epoch: 28 cost time: 7.335947751998901
+Epoch: 28, Steps: 50 | Train Loss: 0.984 Vali Loss: 1.025 Vali Acc: 0.550 Test Loss: 1.025 Test Acc: 0.550
+EarlyStopping counter: 4 out of 10
+Epoch: 29 cost time: 8.984897136688232
+Epoch: 29, Steps: 50 | Train Loss: 1.027 Vali Loss: 1.005 Vali Acc: 0.556 Test Loss: 1.005 Test Acc: 0.556
+EarlyStopping counter: 5 out of 10
+Epoch: 30 cost time: 9.253545045852661
+Epoch: 30, Steps: 50 | Train Loss: 1.126 Vali Loss: 1.008 Vali Acc: 0.572 Test Loss: 1.008 Test Acc: 0.572
+EarlyStopping counter: 6 out of 10
+Updating learning rate to 1.862645149230957e-12
+Epoch: 31 cost time: 8.910288333892822
+Epoch: 31, Steps: 50 | Train Loss: 0.905 Vali Loss: 1.022 Vali Acc: 0.539 Test Loss: 1.022 Test Acc: 0.539
+EarlyStopping counter: 7 out of 10
+Epoch: 32 cost time: 8.807146072387695
+Epoch: 32, Steps: 50 | Train Loss: 1.140 Vali Loss: 1.030 Vali Acc: 0.556 Test Loss: 1.030 Test Acc: 0.556
+EarlyStopping counter: 8 out of 10
+Epoch: 33 cost time: 8.745456218719482
+Epoch: 33, Steps: 50 | Train Loss: 1.034 Vali Loss: 1.046 Vali Acc: 0.544 Test Loss: 1.046 Test Acc: 0.544
+EarlyStopping counter: 9 out of 10
+Epoch: 34 cost time: 8.67925214767456
+Epoch: 34, Steps: 50 | Train Loss: 1.002 Vali Loss: 0.988 Vali Acc: 0.539 Test Loss: 0.988 Test Acc: 0.539
+EarlyStopping counter: 10 out of 10
+Early stopping
+>>>>>>>testing : classification_SelfRegulationSCP2_Pyraformer_UEA_ftM_sl1152_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+180
+test shape: torch.Size([180, 2]) torch.Size([180, 1])
+accuracy:0.5777777777777777
+Spend Time: 378.8266944885254

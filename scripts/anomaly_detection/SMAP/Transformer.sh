@@ -1,9 +1,11 @@
-export CUDA_VISIBLE_DEVICES=7
+export CUDA_VISIBLE_DEVICES=0
 
-python -u run.py \
+model_name=Transformer
+
+nohup python -u run.py \
   --task_name anomaly_detection \
   --is_training 1 \
-  --root_path ./dataset/SMAP \
+  --root_path ../iTransformer_datasets/anomaly_detection/SMAP \
   --model_id SMAP \
   --model Transformer \
   --data SMAP \
@@ -17,4 +19,4 @@ python -u run.py \
   --c_out 25 \
   --anomaly_ratio 1 \
   --batch_size 128 \
-  --train_epochs 3
+  --train_epochs 3 > ./logs/anomaly_detection/SMAP/${model_name}.log 2>&1 &

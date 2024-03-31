@@ -11,10 +11,10 @@ d_model=16
 d_ff=32
 batch_size=16
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path  ./dataset/ETT-small/\
+  --root_path  ../iTransformer_datasets/ETT-small/\
   --data_path ETTh2.csv \
   --model_id ETTh2_$seq_len'_'96 \
   --model $model_name \
@@ -33,13 +33,13 @@ python -u run.py \
   --learning_rate $learning_rate \
   --down_sampling_layers $down_sampling_layers \
   --down_sampling_method avg \
-  --down_sampling_window $down_sampling_window
+  --down_sampling_window $down_sampling_window > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh2_96_96.log 2>&1 &
 
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTh2.csv \
   --model_id ETTh2_$seq_len'_'192 \
   --model $model_name \
@@ -58,13 +58,13 @@ python -u run.py \
   --learning_rate $learning_rate \
   --down_sampling_layers $down_sampling_layers \
   --down_sampling_method avg \
-  --down_sampling_window $down_sampling_window
+  --down_sampling_window $down_sampling_window > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh2_96_192.log 2>&1 &
 
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTh2.csv \
   --model_id ETTh2_$seq_len'_'336 \
   --model $model_name \
@@ -83,13 +83,13 @@ python -u run.py \
   --learning_rate $learning_rate \
   --down_sampling_layers $down_sampling_layers \
   --down_sampling_method avg \
-  --down_sampling_window $down_sampling_window
+  --down_sampling_window $down_sampling_window > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh2_96_336.log 2>&1 &
 
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/ETT-small/ \
+  --root_path ../iTransformer_datasets/ETT-small/ \
   --data_path ETTh2.csv \
   --model_id ETTh2_$seq_len'_'720 \
   --model $model_name \
@@ -108,4 +108,4 @@ python -u run.py \
   --learning_rate $learning_rate \
   --down_sampling_layers $down_sampling_layers \
   --down_sampling_method avg \
-  --down_sampling_window $down_sampling_window
+  --down_sampling_window $down_sampling_window > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh2_96_720.log 2>&1 &

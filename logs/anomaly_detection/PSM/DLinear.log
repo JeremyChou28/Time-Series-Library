@@ -1,0 +1,135 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          anomaly_detection   Is Training:        1                   
+  Model ID:           PSM                 Model:              DLinear             
+
+[1mData Loader[0m
+  Data:               PSM                 Root Path:          ../iTransformer_datasets/anomaly_detection/PSM
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mAnomaly Detection Task[0m
+  Anomaly Ratio:      1.0                 
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             25                  Dec In:             7                   
+  C Out:              25                  d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               128                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       3                   Batch Size:         128                 
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                test                Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : anomaly_detection_PSM_DLinear_PSM_ftM_sl100_ll48_pl100_dm128_nh8_el3_dl1_df128_fc1_ebtimeF_dtTrue_test_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+test: (87841, 25)
+train: (132481, 25)
+train 132382
+test: (87841, 25)
+train: (132481, 25)
+val 26398
+test: (87841, 25)
+train: (132481, 25)
+test 87742
+	iters: 100, epoch: 1 | loss: 0.1109391
+	speed: 0.0314s/iter; left time: 94.2982s
+	iters: 200, epoch: 1 | loss: 0.0661304
+	speed: 0.0149s/iter; left time: 43.4066s
+	iters: 300, epoch: 1 | loss: 0.0581912
+	speed: 0.0166s/iter; left time: 46.5088s
+	iters: 400, epoch: 1 | loss: 0.0814469
+	speed: 0.0177s/iter; left time: 47.9857s
+	iters: 500, epoch: 1 | loss: 0.0588650
+	speed: 0.0134s/iter; left time: 34.8756s
+	iters: 600, epoch: 1 | loss: 0.0601750
+	speed: 0.0147s/iter; left time: 36.9343s
+	iters: 700, epoch: 1 | loss: 0.0438296
+	speed: 0.0145s/iter; left time: 34.8973s
+	iters: 800, epoch: 1 | loss: 0.0531444
+	speed: 0.0134s/iter; left time: 30.9981s
+	iters: 900, epoch: 1 | loss: 0.0400017
+	speed: 0.0150s/iter; left time: 32.9834s
+	iters: 1000, epoch: 1 | loss: 0.0386677
+	speed: 0.0149s/iter; left time: 31.4401s
+Epoch: 1 cost time: 17.117693424224854
+Epoch: 1, Steps: 1035 | Train Loss: 0.0638466 Vali Loss: 0.0508000 Test Loss: 0.0516560
+Validation loss decreased (inf --> 0.050800).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.0408241
+	speed: 0.8119s/iter; left time: 1600.3169s
+	iters: 200, epoch: 2 | loss: 0.0351977
+	speed: 0.0137s/iter; left time: 25.6767s
+	iters: 300, epoch: 2 | loss: 0.0565858
+	speed: 0.0169s/iter; left time: 29.9106s
+	iters: 400, epoch: 2 | loss: 0.0415144
+	speed: 0.0155s/iter; left time: 25.9475s
+	iters: 500, epoch: 2 | loss: 0.0333136
+	speed: 0.0173s/iter; left time: 27.1061s
+	iters: 600, epoch: 2 | loss: 0.0328375
+	speed: 0.0176s/iter; left time: 25.8607s
+	iters: 700, epoch: 2 | loss: 0.0309540
+	speed: 0.0200s/iter; left time: 27.4383s
+	iters: 800, epoch: 2 | loss: 0.0312843
+	speed: 0.0189s/iter; left time: 24.0804s
+	iters: 900, epoch: 2 | loss: 0.0322925
+	speed: 0.0131s/iter; left time: 15.2851s
+	iters: 1000, epoch: 2 | loss: 0.0296687
+	speed: 0.0138s/iter; left time: 14.7667s
+Epoch: 2 cost time: 16.72407579421997
+Epoch: 2, Steps: 1035 | Train Loss: 0.0397946 Vali Loss: 0.0405978 Test Loss: 0.0425022
+Validation loss decreased (0.050800 --> 0.040598).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.0271847
+	speed: 1.3678s/iter; left time: 1280.2508s
+	iters: 200, epoch: 3 | loss: 0.0277987
+	speed: 0.0226s/iter; left time: 18.9125s
+	iters: 300, epoch: 3 | loss: 0.0408790
+	speed: 0.0265s/iter; left time: 19.4710s
+	iters: 400, epoch: 3 | loss: 0.0283544
+	speed: 0.0199s/iter; left time: 12.6445s
+	iters: 500, epoch: 3 | loss: 0.0267697
+	speed: 0.0257s/iter; left time: 13.7640s
+	iters: 600, epoch: 3 | loss: 0.0328998
+	speed: 0.0174s/iter; left time: 7.5862s
+	iters: 700, epoch: 3 | loss: 0.0352220
+	speed: 0.0170s/iter; left time: 5.7196s
+	iters: 800, epoch: 3 | loss: 0.0342599
+	speed: 0.0189s/iter; left time: 4.4625s
+	iters: 900, epoch: 3 | loss: 0.0300006
+	speed: 0.0191s/iter; left time: 2.5991s
+	iters: 1000, epoch: 3 | loss: 0.0395706
+	speed: 0.0158s/iter; left time: 0.5696s
+Epoch: 3 cost time: 20.953582286834717
+Epoch: 3, Steps: 1035 | Train Loss: 0.0342938 Vali Loss: 0.0370995 Test Loss: 0.0391804
+Validation loss decreased (0.040598 --> 0.037099).  Saving model ...
+Updating learning rate to 2.5e-05
+>>>>>>>testing : anomaly_detection_PSM_DLinear_PSM_ftM_sl100_ll48_pl100_dm128_nh8_el3_dl1_df128_fc1_ebtimeF_dtTrue_test_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test: (87841, 25)
+train: (132481, 25)
+test 87742
+test: (87841, 25)
+train: (132481, 25)
+train 132382
+Threshold : 0.18875122413039264
+pred:    (8774200,)
+gt:      (8774200,)
+pred:  (8774200,)
+gt:    (8774200,)
+Accuracy : 0.9817, Precision : 0.9865, Recall : 0.9469, F-score : 0.9663 

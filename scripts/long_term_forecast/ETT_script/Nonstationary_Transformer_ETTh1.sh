@@ -1,4 +1,10 @@
-export CUDA_VISIBLE_DEVICES=2
+export CUDA_VISIBLE_DEVICES=1
+###
+ # @Description: 
+ # @Author: Jianping Zhou
+ # @Email: jianpingzhou0927@gmail.com
+ # @Date: 2024-03-31 04:27:47
+### 
 
 model_name=Nonstationary_Transformer
 
@@ -24,7 +30,7 @@ nohup python -u run.py \
   --itr 1 \
   --p_hidden_dims 256 256 \
   --p_hidden_layers 2 \
-  --d_model 128
+  --d_model 128 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_96_96.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -48,7 +54,7 @@ nohup python -u run.py \
   --itr 1 \
   --p_hidden_dims 256 256 \
   --p_hidden_layers 2 \
-  --d_model 128
+  --d_model 128 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_96_192.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -72,7 +78,7 @@ nohup python -u run.py \
   --itr 1 \
   --p_hidden_dims 256 256 \
   --p_hidden_layers 2 \
-  --d_model 128
+  --d_model 128 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_96_336.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -96,4 +102,4 @@ nohup python -u run.py \
   --itr 1 \
   --p_hidden_dims 256 256 \
   --p_hidden_layers 2 \
-  --d_model 128
+  --d_model 128 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_96_720.log 2>&1 &

@@ -2,7 +2,7 @@ export CUDA_VISIBLE_DEVICES=1
 
 model_name=TimesNet
 
-python -u run.py \
+nohup python -u run.py \
   --task_name short_term_forecast \
   --is_training 1 \
   --root_path ../iTransformer_datasets/m4 \
@@ -24,9 +24,9 @@ python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --learning_rate 0.001 \
-  --loss 'SMAPE'
+  --loss 'SMAPE' > ./logs/short_term_forecast/${model_name}_m4_Monthly.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name short_term_forecast \
   --is_training 1 \
   --root_path ../iTransformer_datasets/m4 \
@@ -48,9 +48,9 @@ python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --learning_rate 0.001 \
-  --loss 'SMAPE'
+  --loss 'SMAPE' > ./logs/short_term_forecast/${model_name}_m4_Yearly.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name short_term_forecast \
   --is_training 1 \
   --root_path ../iTransformer_datasets/m4 \
@@ -72,9 +72,9 @@ python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --learning_rate 0.001 \
-  --loss 'SMAPE'
+  --loss 'SMAPE' > ./logs/short_term_forecast/${model_name}_m4_Quarterly.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name short_term_forecast \
   --is_training 1 \
   --root_path ../iTransformer_datasets/m4 \
@@ -96,9 +96,9 @@ python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --learning_rate 0.001 \
-  --loss 'SMAPE'
+  --loss 'SMAPE' > ./logs/short_term_forecast/${model_name}_m4_Daily.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name short_term_forecast \
   --is_training 1 \
   --root_path ../iTransformer_datasets/m4 \
@@ -120,9 +120,9 @@ python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --learning_rate 0.001 \
-  --loss 'SMAPE'
+  --loss 'SMAPE' > ./logs/short_term_forecast/${model_name}_m4_Weekly.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name short_term_forecast \
   --is_training 1 \
   --root_path ../iTransformer_datasets/m4 \
@@ -144,4 +144,4 @@ python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --learning_rate 0.001 \
-  --loss 'SMAPE'
+  --loss 'SMAPE' > ./logs/short_term_forecast/${model_name}_m4_Hourly.log 2>&1 &

@@ -1,4 +1,4 @@
-export CUDA_VISIBLE_DEVICES=1
+export CUDA_VISIBLE_DEVICES=0
 
 model_name=DLinear
 
@@ -21,7 +21,7 @@ nohup python -u run.py \
   --dec_in 321 \
   --c_out 321 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/electricity/${model_name}_ECL_96_96.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -42,7 +42,7 @@ nohup python -u run.py \
   --dec_in 321 \
   --c_out 321 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/electricity/${model_name}_ECL_96_192.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -63,7 +63,7 @@ nohup python -u run.py \
   --dec_in 321 \
   --c_out 321 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/electricity/${model_name}_ECL_96_336.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -84,4 +84,4 @@ nohup python -u run.py \
   --dec_in 321 \
   --c_out 321 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/electricity/${model_name}_ECL_96_720.log 2>&1 &

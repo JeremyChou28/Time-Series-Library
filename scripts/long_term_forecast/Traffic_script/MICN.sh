@@ -24,7 +24,7 @@ nohup python -u run.py \
   --d_ff 512 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/traffic/${model_name}_traffic_96_96.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -48,7 +48,7 @@ nohup python -u run.py \
   --d_ff 512 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/traffic/${model_name}_traffic_96_192.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -72,7 +72,7 @@ nohup python -u run.py \
   --d_ff 512 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/traffic/${model_name}_traffic_96_336.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -96,4 +96,4 @@ nohup python -u run.py \
   --d_ff 512 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/traffic/${model_name}_traffic_96_720.log 2>&1 &

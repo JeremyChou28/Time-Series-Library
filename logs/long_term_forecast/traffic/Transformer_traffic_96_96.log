@@ -1,0 +1,82 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           traffic_96_96       Model:              Transformer         
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          ../iTransformer_datasets/traffic/
+  Data Path:          traffic.csv         Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           96                  Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             862                 Dec In:             862                 
+  C Out:              862                 d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       3                   Batch Size:         32                  
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_traffic_96_96_Transformer_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 12089
+val 1661
+test 3413
+	iters: 100, epoch: 1 | loss: 0.4977639
+	speed: 3.4675s/iter; left time: 3578.4711s
+	iters: 200, epoch: 1 | loss: 0.3919801
+	speed: 3.7368s/iter; left time: 3482.7369s
+	iters: 300, epoch: 1 | loss: 0.3204496
+	speed: 3.7388s/iter; left time: 3110.6499s
+Epoch: 1 cost time: 1336.789981842041
+Epoch: 1, Steps: 377 | Train Loss: 0.4729014 Vali Loss: 0.5152037 Test Loss: 0.6741176
+Validation loss decreased (inf --> 0.515204).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.2835749
+	speed: 25.2604s/iter; left time: 16545.5372s
+	iters: 200, epoch: 2 | loss: 0.2586067
+	speed: 3.3503s/iter; left time: 1859.4286s
+	iters: 300, epoch: 2 | loss: 0.2498356
+	speed: 3.0545s/iter; left time: 1389.8149s
+Epoch: 2 cost time: 1224.1169929504395
+Epoch: 2, Steps: 377 | Train Loss: 0.2754615 Vali Loss: 0.5032064 Test Loss: 0.6596662
+Validation loss decreased (0.515204 --> 0.503206).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.2443454
+	speed: 23.2295s/iter; left time: 6457.8060s
+	iters: 200, epoch: 3 | loss: 0.2468588
+	speed: 3.3445s/iter; left time: 595.3231s
+	iters: 300, epoch: 3 | loss: 0.2440221
+	speed: 3.3829s/iter; left time: 263.8659s
+Epoch: 3 cost time: 1262.5667853355408
+Epoch: 3, Steps: 377 | Train Loss: 0.2437279 Vali Loss: 0.4814042 Test Loss: 0.6574541
+Validation loss decreased (0.503206 --> 0.481404).  Saving model ...
+Updating learning rate to 2.5e-05
+>>>>>>>testing : long_term_forecast_traffic_96_96_Transformer_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 3413
+test shape: (3413, 1, 96, 862) (3413, 1, 96, 862)
+test shape: (3413, 96, 862) (3413, 96, 862)
+mse:0.6574555039405823, mae:0.362385094165802
+Spend Time: 9940.543378591537

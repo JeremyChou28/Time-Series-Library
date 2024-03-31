@@ -22,7 +22,7 @@ nohup python -u run.py \
   --c_out 862 \
   --des 'Exp' \
   --itr 1 \
-  --batch_size 2
+  --batch_size 2 > ./logs/long_term_forecast/traffic/${model_name}_traffic_96_96.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -44,7 +44,7 @@ nohup python -u run.py \
   --c_out 862 \
   --des 'Exp' \
   --itr 1 \
-  --batch_size 2
+  --batch_size 2 > ./logs/long_term_forecast/traffic/${model_name}_traffic_96_192.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -66,7 +66,7 @@ nohup python -u run.py \
   --c_out 862 \
   --des 'Exp' \
   --itr 1 \
-  --batch_size 2
+  --batch_size 2 > ./logs/long_term_forecast/traffic/${model_name}_traffic_96_336.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -88,4 +88,4 @@ nohup python -u run.py \
   --c_out 862 \
   --des 'Exp' \
   --itr 1 \
-  --batch_size 2
+  --batch_size 2 > ./logs/long_term_forecast/traffic/${model_name}_traffic_96_720.log 2>&1 &

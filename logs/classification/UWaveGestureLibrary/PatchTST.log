@@ -1,0 +1,106 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           UWaveGestureLibrary Model:              PatchTST            
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/UWaveGestureLibrary/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+120
+320
+>>>>>>>start training : classification_UWaveGestureLibrary_PatchTST_UEA_ftM_sl315_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+120
+320
+320
+Epoch: 1 cost time: 3.282177448272705
+Epoch: 1, Steps: 8 | Train Loss: 2.695 Vali Loss: 0.977 Vali Acc: 0.784 Test Loss: 0.977 Test Acc: 0.784
+Validation loss decreased (inf --> -0.784375).  Saving model ...
+Epoch: 2 cost time: 0.14467453956604004
+Epoch: 2, Steps: 8 | Train Loss: 0.811 Vali Loss: 1.360 Vali Acc: 0.794 Test Loss: 1.360 Test Acc: 0.794
+Validation loss decreased (-0.784375 --> -0.793750).  Saving model ...
+Epoch: 3 cost time: 0.16994166374206543
+Epoch: 3, Steps: 8 | Train Loss: 0.488 Vali Loss: 1.638 Vali Acc: 0.728 Test Loss: 1.638 Test Acc: 0.728
+EarlyStopping counter: 1 out of 10
+Epoch: 4 cost time: 0.18562841415405273
+Epoch: 4, Steps: 8 | Train Loss: 0.139 Vali Loss: 1.894 Vali Acc: 0.787 Test Loss: 1.894 Test Acc: 0.787
+EarlyStopping counter: 2 out of 10
+Epoch: 5 cost time: 0.1620166301727295
+Epoch: 5, Steps: 8 | Train Loss: 0.188 Vali Loss: 1.844 Vali Acc: 0.809 Test Loss: 1.844 Test Acc: 0.809
+Validation loss decreased (-0.793750 --> -0.809375).  Saving model ...
+Updating learning rate to 6.25e-05
+Epoch: 6 cost time: 0.18839287757873535
+Epoch: 6, Steps: 8 | Train Loss: 0.087 Vali Loss: 1.766 Vali Acc: 0.806 Test Loss: 1.766 Test Acc: 0.806
+EarlyStopping counter: 1 out of 10
+Epoch: 7 cost time: 0.15511298179626465
+Epoch: 7, Steps: 8 | Train Loss: 0.047 Vali Loss: 1.704 Vali Acc: 0.812 Test Loss: 1.704 Test Acc: 0.812
+Validation loss decreased (-0.809375 --> -0.812500).  Saving model ...
+Epoch: 8 cost time: 0.1548328399658203
+Epoch: 8, Steps: 8 | Train Loss: 0.011 Vali Loss: 1.649 Vali Acc: 0.816 Test Loss: 1.649 Test Acc: 0.816
+Validation loss decreased (-0.812500 --> -0.815625).  Saving model ...
+Epoch: 9 cost time: 0.16927886009216309
+Epoch: 9, Steps: 8 | Train Loss: 0.006 Vali Loss: 1.609 Vali Acc: 0.800 Test Loss: 1.609 Test Acc: 0.800
+EarlyStopping counter: 1 out of 10
+Epoch: 10 cost time: 0.16330289840698242
+Epoch: 10, Steps: 8 | Train Loss: 0.003 Vali Loss: 1.588 Vali Acc: 0.806 Test Loss: 1.588 Test Acc: 0.806
+EarlyStopping counter: 2 out of 10
+Updating learning rate to 1.953125e-06
+Epoch: 11 cost time: 0.16061639785766602
+Epoch: 11, Steps: 8 | Train Loss: 0.003 Vali Loss: 1.588 Vali Acc: 0.806 Test Loss: 1.588 Test Acc: 0.806
+EarlyStopping counter: 3 out of 10
+Epoch: 12 cost time: 0.14025664329528809
+Epoch: 12, Steps: 8 | Train Loss: 0.003 Vali Loss: 1.588 Vali Acc: 0.806 Test Loss: 1.588 Test Acc: 0.806
+EarlyStopping counter: 4 out of 10
+Epoch: 13 cost time: 0.14537429809570312
+Epoch: 13, Steps: 8 | Train Loss: 0.003 Vali Loss: 1.587 Vali Acc: 0.806 Test Loss: 1.587 Test Acc: 0.806
+EarlyStopping counter: 5 out of 10
+Epoch: 14 cost time: 0.19570612907409668
+Epoch: 14, Steps: 8 | Train Loss: 0.003 Vali Loss: 1.587 Vali Acc: 0.806 Test Loss: 1.587 Test Acc: 0.806
+EarlyStopping counter: 6 out of 10
+Epoch: 15 cost time: 0.1412944793701172
+Epoch: 15, Steps: 8 | Train Loss: 0.003 Vali Loss: 1.587 Vali Acc: 0.806 Test Loss: 1.587 Test Acc: 0.806
+EarlyStopping counter: 7 out of 10
+Updating learning rate to 6.103515625e-08
+Epoch: 16 cost time: 0.1404106616973877
+Epoch: 16, Steps: 8 | Train Loss: 0.002 Vali Loss: 1.587 Vali Acc: 0.806 Test Loss: 1.587 Test Acc: 0.806
+EarlyStopping counter: 8 out of 10
+Epoch: 17 cost time: 0.15547990798950195
+Epoch: 17, Steps: 8 | Train Loss: 0.003 Vali Loss: 1.587 Vali Acc: 0.806 Test Loss: 1.587 Test Acc: 0.806
+EarlyStopping counter: 9 out of 10
+Epoch: 18 cost time: 0.1370232105255127
+Epoch: 18, Steps: 8 | Train Loss: 0.003 Vali Loss: 1.587 Vali Acc: 0.806 Test Loss: 1.587 Test Acc: 0.806
+EarlyStopping counter: 10 out of 10
+Early stopping
+>>>>>>>testing : classification_UWaveGestureLibrary_PatchTST_UEA_ftM_sl315_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+320
+test shape: torch.Size([320, 8]) torch.Size([320, 1])
+accuracy:0.815625
+Spend Time: 25.016122579574585

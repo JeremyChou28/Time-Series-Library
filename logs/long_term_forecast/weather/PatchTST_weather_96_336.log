@@ -1,0 +1,76 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           weather_96_336      Model:              PatchTST            
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          ../iTransformer_datasets/weather/
+  Data Path:          weather.csv         Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           336                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             21                  Dec In:             21                  
+  C Out:              21                  d model:            512                 
+  n heads:            4                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       3                   Batch Size:         128                 
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_weather_96_336_PatchTST_custom_ftM_sl96_ll48_pl336_dm512_nh4_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 36456
+val 4935
+test 10204
+	iters: 100, epoch: 1 | loss: 0.6925617
+	speed: 0.9840s/iter; left time: 740.9893s
+	iters: 200, epoch: 1 | loss: 0.7118608
+	speed: 0.8018s/iter; left time: 523.5684s
+Epoch: 1 cost time: 246.24881887435913
+Epoch: 1, Steps: 284 | Train Loss: 0.6555727 Vali Loss: 0.6108281 Test Loss: 0.2848640
+Validation loss decreased (inf --> 0.610828).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.5455404
+	speed: 2.6382s/iter; left time: 1237.3244s
+	iters: 200, epoch: 2 | loss: 0.6476359
+	speed: 0.4997s/iter; left time: 184.3971s
+Epoch: 2 cost time: 154.9801697731018
+Epoch: 2, Steps: 284 | Train Loss: 0.6269329 Vali Loss: 0.6029792 Test Loss: 0.2811798
+Validation loss decreased (0.610828 --> 0.602979).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.6309886
+	speed: 3.2323s/iter; left time: 597.9671s
+	iters: 200, epoch: 3 | loss: 0.6038553
+	speed: 0.5068s/iter; left time: 43.0777s
+Epoch: 3 cost time: 140.53535342216492
+Epoch: 3, Steps: 284 | Train Loss: 0.6158735 Vali Loss: 0.5968767 Test Loss: 0.2791058
+Validation loss decreased (0.602979 --> 0.596877).  Saving model ...
+Updating learning rate to 2.5e-05
+>>>>>>>testing : long_term_forecast_weather_96_336_PatchTST_custom_ftM_sl96_ll48_pl336_dm512_nh4_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 10204
+test shape: (10204, 1, 336, 21) (10204, 1, 336, 21)
+test shape: (10204, 336, 21) (10204, 336, 21)
+mse:0.2791059911251068, mae:0.2969496548175812
+Spend Time: 1388.3582270145416

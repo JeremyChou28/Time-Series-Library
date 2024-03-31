@@ -1,0 +1,81 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           Exchange_96_96      Model:              TimesNet            
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          ../iTransformer_datasets/exchange_rate/
+  Data Path:          exchange_rate.csv   Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           96                  Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             8                   Dec In:             8                   
+  C Out:              8                   d model:            64                  
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               64                  
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         32                  
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_Exchange_96_96_TimesNet_custom_ftM_sl96_ll48_pl96_dm64_nh8_el2_dl1_df64_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5120
+val 665
+test 1422
+	iters: 100, epoch: 1 | loss: 0.1365196
+	speed: 0.7530s/iter; left time: 1130.2629s
+Epoch: 1 cost time: 110.53533577919006
+Epoch: 1, Steps: 160 | Train Loss: 0.1566959 Vali Loss: 0.1597182 Test Loss: 0.1100197
+Validation loss decreased (inf --> 0.159718).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.1194791
+	speed: 2.5117s/iter; left time: 3368.1651s
+Epoch: 2 cost time: 66.50999975204468
+Epoch: 2, Steps: 160 | Train Loss: 0.1170406 Vali Loss: 0.1593365 Test Loss: 0.1009753
+Validation loss decreased (0.159718 --> 0.159336).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.1029751
+	speed: 1.7063s/iter; left time: 2015.0927s
+Epoch: 3 cost time: 44.58498239517212
+Epoch: 3, Steps: 160 | Train Loss: 0.1020969 Vali Loss: 0.1717475 Test Loss: 0.1030721
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.0687281
+	speed: 1.3557s/iter; left time: 1384.2190s
+Epoch: 4 cost time: 42.38637924194336
+Epoch: 4, Steps: 160 | Train Loss: 0.0951721 Vali Loss: 0.1753491 Test Loss: 0.1049188
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.1024965
+	speed: 1.2400s/iter; left time: 1067.6633s
+Epoch: 5 cost time: 38.83935332298279
+Epoch: 5, Steps: 160 | Train Loss: 0.0916494 Vali Loss: 0.1791239 Test Loss: 0.1022469
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_Exchange_96_96_TimesNet_custom_ftM_sl96_ll48_pl96_dm64_nh8_el2_dl1_df64_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1422
+test shape: (1422, 1, 96, 8) (1422, 1, 96, 8)
+test shape: (1422, 96, 8) (1422, 96, 8)
+mse:0.10097530484199524, mae:0.2307174950838089

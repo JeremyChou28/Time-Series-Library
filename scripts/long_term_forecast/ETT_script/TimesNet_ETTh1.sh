@@ -1,4 +1,4 @@
-export CUDA_VISIBLE_DEVICES=2
+export CUDA_VISIBLE_DEVICES=0
 
 model_name=TimesNet
 
@@ -24,7 +24,7 @@ nohup python -u run.py \
   --d_ff 32 \
   --des 'Exp' \
   --itr 1 \
-  --top_k 5 
+  --top_k 5 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_96_96.log 2>&1 &
 
 
 nohup python -u run.py \
@@ -49,7 +49,7 @@ nohup python -u run.py \
   --d_ff 32 \
   --des 'Exp' \
   --itr 1 \
-  --top_k 5
+  --top_k 5 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_96_192.log 2>&1 &
 
 
 nohup python -u run.py \
@@ -74,7 +74,7 @@ nohup python -u run.py \
   --d_ff 32 \
   --des 'Exp' \
   --itr 1 \
-  --top_k 5
+  --top_k 5 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_96_336.log 2>&1 &
 
 
 nohup python -u run.py \
@@ -99,4 +99,4 @@ nohup python -u run.py \
   --d_ff 32 \
   --des 'Exp' \
   --itr 1 \
-  --top_k 5
+  --top_k 5 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_96_720.log 2>&1 &

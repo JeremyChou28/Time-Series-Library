@@ -19,7 +19,7 @@ nohup python -u run.py \
   --dec_in 21 \
   --c_out 21 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/weather/${model_name}_weather_96_96.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -40,7 +40,7 @@ nohup python -u run.py \
   --dec_in 21 \
   --c_out 21 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/weather/${model_name}_weather_96_192.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -61,7 +61,7 @@ nohup python -u run.py \
   --dec_in 21 \
   --c_out 21 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/weather/${model_name}_weather_96_336.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -82,4 +82,4 @@ nohup python -u run.py \
   --dec_in 21 \
   --c_out 21 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/weather/${model_name}_weather_96_720.log 2>&1 &

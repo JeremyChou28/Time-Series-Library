@@ -1,0 +1,71 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           SelfRegulationSCP1  Model:              Transformer         
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/SelfRegulationSCP1/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+268
+293
+>>>>>>>start training : classification_SelfRegulationSCP1_Transformer_UEA_ftM_sl896_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+268
+293
+293
+Traceback (most recent call last):
+  File "run.py", line 272, in <module>
+    exp.train(setting)
+  File "/Jianping/Research/Time-Series-Library/exp/exp_classification.py", line 110, in train
+    outputs = self.model(batch_x, padding_mask, None, None)
+  File "/opt/conda/envs/torch1.8/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/Jianping/Research/Time-Series-Library/models/Transformer.py", line 123, in forward
+    dec_out = self.classification(x_enc, x_mark_enc)
+  File "/Jianping/Research/Time-Series-Library/models/Transformer.py", line 102, in classification
+    enc_out, attns = self.encoder(enc_out, attn_mask=None)
+  File "/opt/conda/envs/torch1.8/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/Jianping/Research/Time-Series-Library/layers/Transformer_EncDec.py", line 74, in forward
+    x, attn = attn_layer(x, attn_mask=attn_mask, tau=tau, delta=delta)
+  File "/opt/conda/envs/torch1.8/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/Jianping/Research/Time-Series-Library/layers/Transformer_EncDec.py", line 40, in forward
+    new_x, attn = self.attention(
+  File "/opt/conda/envs/torch1.8/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/Jianping/Research/Time-Series-Library/layers/SelfAttention_Family.py", line 203, in forward
+    out, attn = self.inner_attention(
+  File "/opt/conda/envs/torch1.8/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/Jianping/Research/Time-Series-Library/layers/SelfAttention_Family.py", line 69, in forward
+    A = self.dropout(torch.softmax(scale * scores, dim=-1))
+RuntimeError: CUDA out of memory. Tried to allocate 392.00 MiB (GPU 0; 23.69 GiB total capacity; 854.31 MiB already allocated; 213.19 MiB free; 888.00 MiB reserved in total by PyTorch)

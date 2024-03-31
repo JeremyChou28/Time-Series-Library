@@ -1,0 +1,135 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          anomaly_detection   Is Training:        1                   
+  Model ID:           SMAP                Model:              Autoformer          
+
+[1mData Loader[0m
+  Data:               SMAP                Root Path:          ../iTransformer_datasets/anomaly_detection/SMAP
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mAnomaly Detection Task[0m
+  Anomaly Ratio:      1.0                 
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             25                  Dec In:             7                   
+  C Out:              25                  d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               128                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       3                   Batch Size:         128                 
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                test                Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : anomaly_detection_SMAP_Autoformer_SMAP_ftM_sl100_ll48_pl0_dm128_nh8_el3_dl1_df128_fc1_ebtimeF_dtTrue_test_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+test: (427617, 25)
+train: (135183, 25)
+train 135084
+test: (427617, 25)
+train: (135183, 25)
+val 26938
+test: (427617, 25)
+train: (135183, 25)
+test 427518
+	iters: 100, epoch: 1 | loss: 0.5798590
+	speed: 0.0772s/iter; left time: 236.9631s
+	iters: 200, epoch: 1 | loss: 0.5980413
+	speed: 0.0749s/iter; left time: 222.2351s
+	iters: 300, epoch: 1 | loss: 0.5617797
+	speed: 0.0760s/iter; left time: 218.1089s
+	iters: 400, epoch: 1 | loss: 0.3683175
+	speed: 0.0735s/iter; left time: 203.5350s
+	iters: 500, epoch: 1 | loss: 0.4451092
+	speed: 0.0746s/iter; left time: 198.9915s
+	iters: 600, epoch: 1 | loss: 0.3640592
+	speed: 0.0724s/iter; left time: 186.1170s
+	iters: 700, epoch: 1 | loss: 0.3715331
+	speed: 0.0658s/iter; left time: 162.3929s
+	iters: 800, epoch: 1 | loss: 0.9643751
+	speed: 0.0687s/iter; left time: 162.8169s
+	iters: 900, epoch: 1 | loss: 0.2367629
+	speed: 0.0717s/iter; left time: 162.7090s
+	iters: 1000, epoch: 1 | loss: 0.4000540
+	speed: 0.0731s/iter; left time: 158.6157s
+Epoch: 1 cost time: 77.00865888595581
+Epoch: 1, Steps: 1056 | Train Loss: 0.6653576 Vali Loss: 0.2115338 Test Loss: 0.6167301
+Validation loss decreased (inf --> 0.211534).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.8130516
+	speed: 10.7069s/iter; left time: 21552.9076s
+	iters: 200, epoch: 2 | loss: 0.4221426
+	speed: 0.1864s/iter; left time: 356.5284s
+	iters: 300, epoch: 2 | loss: 0.2767466
+	speed: 0.1640s/iter; left time: 297.3560s
+	iters: 400, epoch: 2 | loss: 1.6070185
+	speed: 0.1642s/iter; left time: 281.2424s
+	iters: 500, epoch: 2 | loss: 0.3912275
+	speed: 0.1747s/iter; left time: 281.7486s
+	iters: 600, epoch: 2 | loss: 0.2145083
+	speed: 0.1551s/iter; left time: 234.6851s
+	iters: 700, epoch: 2 | loss: 0.1694846
+	speed: 0.1726s/iter; left time: 243.9159s
+	iters: 800, epoch: 2 | loss: 0.3492257
+	speed: 0.1602s/iter; left time: 210.3869s
+	iters: 900, epoch: 2 | loss: 0.2431762
+	speed: 0.1723s/iter; left time: 208.9731s
+	iters: 1000, epoch: 2 | loss: 0.8378033
+	speed: 0.1917s/iter; left time: 213.3787s
+Epoch: 2 cost time: 185.20263814926147
+Epoch: 2, Steps: 1056 | Train Loss: 0.4622700 Vali Loss: 0.1457622 Test Loss: 0.5396815
+Validation loss decreased (0.211534 --> 0.145762).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.2517452
+	speed: 6.9160s/iter; left time: 6618.6286s
+	iters: 200, epoch: 3 | loss: 0.1435999
+	speed: 0.2248s/iter; left time: 192.6343s
+	iters: 300, epoch: 3 | loss: 0.8095449
+	speed: 0.2301s/iter; left time: 174.2039s
+	iters: 400, epoch: 3 | loss: 0.2206003
+	speed: 0.2483s/iter; left time: 163.1114s
+	iters: 500, epoch: 3 | loss: 0.1571769
+	speed: 0.2397s/iter; left time: 133.5406s
+	iters: 600, epoch: 3 | loss: 0.3358977
+	speed: 0.2172s/iter; left time: 99.2802s
+	iters: 700, epoch: 3 | loss: 0.1936272
+	speed: 0.2127s/iter; left time: 75.9226s
+	iters: 800, epoch: 3 | loss: 0.1416142
+	speed: 0.2094s/iter; left time: 53.8101s
+	iters: 900, epoch: 3 | loss: 0.2957831
+	speed: 0.1949s/iter; left time: 30.5975s
+	iters: 1000, epoch: 3 | loss: 0.2419748
+	speed: 0.1706s/iter; left time: 9.7217s
+Epoch: 3 cost time: 227.35100531578064
+Epoch: 3, Steps: 1056 | Train Loss: 0.3807789 Vali Loss: 0.1217646 Test Loss: 0.5065423
+Validation loss decreased (0.145762 --> 0.121765).  Saving model ...
+Updating learning rate to 2.5e-05
+>>>>>>>testing : anomaly_detection_SMAP_Autoformer_SMAP_ftM_sl100_ll48_pl0_dm128_nh8_el3_dl1_df128_fc1_ebtimeF_dtTrue_test_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test: (427617, 25)
+train: (135183, 25)
+test 427518
+test: (427617, 25)
+train: (135183, 25)
+train 135084
+Threshold : 0.7838601517677297
+pred:    (42751800,)
+gt:      (42751800,)
+pred:  (42751800,)
+gt:    (42751800,)
+Accuracy : 0.9497, Precision : 0.9098, Recall : 0.6733, F-score : 0.7739 

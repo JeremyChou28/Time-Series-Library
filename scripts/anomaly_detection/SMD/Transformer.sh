@@ -1,9 +1,11 @@
-export CUDA_VISIBLE_DEVICES=2
+export CUDA_VISIBLE_DEVICES=0
 
-python -u run.py \
+model_name=Transformer
+
+nohup python -u run.py \
   --task_name anomaly_detection \
   --is_training 1 \
-  --root_path ./dataset/SMD \
+  --root_path ../iTransformer_datasets/anomaly_detection/SMD \
   --model_id SMD \
   --model Transformer \
   --data SMD \
@@ -17,4 +19,4 @@ python -u run.py \
   --c_out 38 \
   --anomaly_ratio 0.5 \
   --batch_size 128 \
-  --train_epochs 10
+  --train_epochs 10 > ./logs/anomaly_detection/SMD/${model_name}.log 2>&1 &

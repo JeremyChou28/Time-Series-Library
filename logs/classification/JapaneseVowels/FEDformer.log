@@ -1,0 +1,116 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           JapaneseVowels      Model:              FEDformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/JapaneseVowels/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+270
+370
+fourier enhanced block used!
+modes=32, index=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+fourier enhanced block used!
+modes=32, index=[0, 1, 2, 3, 4, 5, 6]
+ fourier enhanced cross attention used!
+modes_q=7, index_q=[0, 1, 2, 3, 4, 5, 6]
+modes_kv=14, index_kv=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+>>>>>>>start training : classification_JapaneseVowels_FEDformer_UEA_ftM_sl29_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+270
+370
+370
+Epoch: 1 cost time: 7.791846990585327
+Epoch: 1, Steps: 17 | Train Loss: 1.324 Vali Loss: 0.617 Vali Acc: 0.843 Test Loss: 0.584 Test Acc: 0.843
+Validation loss decreased (inf --> -0.843243).  Saving model ...
+Epoch: 2 cost time: 2.350947618484497
+Epoch: 2, Steps: 17 | Train Loss: 0.334 Vali Loss: 0.297 Vali Acc: 0.919 Test Loss: 0.289 Test Acc: 0.919
+Validation loss decreased (-0.843243 --> -0.918919).  Saving model ...
+Epoch: 3 cost time: 2.1193230152130127
+Epoch: 3, Steps: 17 | Train Loss: 0.120 Vali Loss: 0.200 Vali Acc: 0.943 Test Loss: 0.200 Test Acc: 0.943
+Validation loss decreased (-0.918919 --> -0.943243).  Saving model ...
+Epoch: 4 cost time: 2.1163947582244873
+Epoch: 4, Steps: 17 | Train Loss: 0.045 Vali Loss: 0.161 Vali Acc: 0.954 Test Loss: 0.145 Test Acc: 0.954
+Validation loss decreased (-0.943243 --> -0.954054).  Saving model ...
+Epoch: 5 cost time: 2.233288526535034
+Epoch: 5, Steps: 17 | Train Loss: 0.022 Vali Loss: 0.164 Vali Acc: 0.965 Test Loss: 0.140 Test Acc: 0.965
+Validation loss decreased (-0.954054 --> -0.964865).  Saving model ...
+Updating learning rate to 6.25e-05
+Epoch: 6 cost time: 2.1141796112060547
+Epoch: 6, Steps: 17 | Train Loss: 0.016 Vali Loss: 0.143 Vali Acc: 0.965 Test Loss: 0.152 Test Acc: 0.965
+Validation loss decreased (-0.964865 --> -0.964865).  Saving model ...
+Epoch: 7 cost time: 2.19734525680542
+Epoch: 7, Steps: 17 | Train Loss: 0.014 Vali Loss: 0.139 Vali Acc: 0.965 Test Loss: 0.137 Test Acc: 0.965
+Validation loss decreased (-0.964865 --> -0.964865).  Saving model ...
+Epoch: 8 cost time: 2.36918044090271
+Epoch: 8, Steps: 17 | Train Loss: 0.013 Vali Loss: 0.137 Vali Acc: 0.968 Test Loss: 0.136 Test Acc: 0.968
+Validation loss decreased (-0.964865 --> -0.967568).  Saving model ...
+Epoch: 9 cost time: 2.118464708328247
+Epoch: 9, Steps: 17 | Train Loss: 0.012 Vali Loss: 0.136 Vali Acc: 0.968 Test Loss: 0.135 Test Acc: 0.968
+Validation loss decreased (-0.967568 --> -0.967568).  Saving model ...
+Epoch: 10 cost time: 2.1652283668518066
+Epoch: 10, Steps: 17 | Train Loss: 0.012 Vali Loss: 0.138 Vali Acc: 0.965 Test Loss: 0.137 Test Acc: 0.965
+EarlyStopping counter: 1 out of 10
+Updating learning rate to 1.953125e-06
+Epoch: 11 cost time: 2.085301637649536
+Epoch: 11, Steps: 17 | Train Loss: 0.012 Vali Loss: 0.133 Vali Acc: 0.965 Test Loss: 0.134 Test Acc: 0.965
+EarlyStopping counter: 2 out of 10
+Epoch: 12 cost time: 2.2234339714050293
+Epoch: 12, Steps: 17 | Train Loss: 0.013 Vali Loss: 0.133 Vali Acc: 0.965 Test Loss: 0.141 Test Acc: 0.965
+EarlyStopping counter: 3 out of 10
+Epoch: 13 cost time: 2.0851798057556152
+Epoch: 13, Steps: 17 | Train Loss: 0.012 Vali Loss: 0.133 Vali Acc: 0.965 Test Loss: 0.134 Test Acc: 0.965
+EarlyStopping counter: 4 out of 10
+Epoch: 14 cost time: 2.4420969486236572
+Epoch: 14, Steps: 17 | Train Loss: 0.013 Vali Loss: 0.144 Vali Acc: 0.965 Test Loss: 0.134 Test Acc: 0.965
+EarlyStopping counter: 5 out of 10
+Epoch: 15 cost time: 2.2877986431121826
+Epoch: 15, Steps: 17 | Train Loss: 0.012 Vali Loss: 0.133 Vali Acc: 0.965 Test Loss: 0.164 Test Acc: 0.965
+EarlyStopping counter: 6 out of 10
+Updating learning rate to 6.103515625e-08
+Epoch: 16 cost time: 2.0275912284851074
+Epoch: 16, Steps: 17 | Train Loss: 0.013 Vali Loss: 0.144 Vali Acc: 0.965 Test Loss: 0.133 Test Acc: 0.965
+EarlyStopping counter: 7 out of 10
+Epoch: 17 cost time: 2.079073190689087
+Epoch: 17, Steps: 17 | Train Loss: 0.012 Vali Loss: 0.134 Vali Acc: 0.965 Test Loss: 0.174 Test Acc: 0.965
+EarlyStopping counter: 8 out of 10
+Epoch: 18 cost time: 2.2358999252319336
+Epoch: 18, Steps: 17 | Train Loss: 0.012 Vali Loss: 0.133 Vali Acc: 0.965 Test Loss: 0.139 Test Acc: 0.965
+EarlyStopping counter: 9 out of 10
+Epoch: 19 cost time: 2.144537925720215
+Epoch: 19, Steps: 17 | Train Loss: 0.013 Vali Loss: 0.133 Vali Acc: 0.965 Test Loss: 0.138 Test Acc: 0.965
+EarlyStopping counter: 10 out of 10
+Early stopping
+>>>>>>>testing : classification_JapaneseVowels_FEDformer_UEA_ftM_sl29_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+370
+test shape: torch.Size([370, 9]) torch.Size([370, 1])
+accuracy:0.9675675675675676
+Spend Time: 110.23149800300598

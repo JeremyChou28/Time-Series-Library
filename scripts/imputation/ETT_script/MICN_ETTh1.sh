@@ -27,8 +27,8 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --top_k 3 \
+  --num_kernels 12 16 \
   --learning_rate 0.001 > ./logs/imputation/ETT-small/${model_name}_ETTh1_mask_0.125.log 2>&1 &
-#   --conv_kernel 12 16 \
 
 nohup python -u run.py \
   --task_name imputation \
@@ -55,8 +55,8 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --top_k 3 \
+  --num_kernels 12 16 \
   --learning_rate 0.001 > ./logs/imputation/ETT-small/${model_name}_ETTh1_mask_0.25.log 2>&1 &
-#   --conv_kernel 12 16 \
 
 nohup python -u run.py \
   --task_name imputation \
@@ -83,8 +83,8 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --top_k 3 \
+  --num_kernels 12 16 \
   --learning_rate 0.001 > ./logs/imputation/ETT-small/${model_name}_ETTh1_mask_0.375.log 2>&1 &
-#   --conv_kernel 12 16 \
 
 nohup python -u run.py \
   --task_name imputation \
@@ -111,5 +111,5 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --top_k 3 \
+  --num_kernels 12 16 \
   --learning_rate 0.001 > ./logs/imputation/ETT-small/${model_name}_ETTh1_mask_0.5.log 2>&1 &
-#   --conv_kernel 12 16 \

@@ -1,0 +1,109 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           EthanolConcentrationModel:              TimesNet            
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/EthanolConcentration/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            32                  
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               32                  
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       30                  Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+261
+263
+>>>>>>>start training : classification_EthanolConcentration_TimesNet_UEA_ftM_sl1751_ll48_pl0_dm32_nh8_el3_dl1_df32_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+261
+263
+263
+Epoch: 1 cost time: 13.177617311477661
+Epoch: 1, Steps: 17 | Train Loss: 7.638 Vali Loss: 4.434 Vali Acc: 0.236 Test Loss: 4.448 Test Acc: 0.236
+Validation loss decreased (inf --> -0.235741).  Saving model ...
+Epoch: 2 cost time: 10.025159358978271
+Epoch: 2, Steps: 17 | Train Loss: 3.112 Vali Loss: 1.961 Vali Acc: 0.232 Test Loss: 1.910 Test Acc: 0.232
+EarlyStopping counter: 1 out of 10
+Epoch: 3 cost time: 10.349900245666504
+Epoch: 3, Steps: 17 | Train Loss: 2.227 Vali Loss: 2.250 Vali Acc: 0.274 Test Loss: 2.271 Test Acc: 0.274
+Validation loss decreased (-0.235741 --> -0.273764).  Saving model ...
+Epoch: 4 cost time: 9.641464948654175
+Epoch: 4, Steps: 17 | Train Loss: 2.112 Vali Loss: 4.266 Vali Acc: 0.247 Test Loss: 4.253 Test Acc: 0.247
+EarlyStopping counter: 1 out of 10
+Epoch: 5 cost time: 10.149792194366455
+Epoch: 5, Steps: 17 | Train Loss: 2.252 Vali Loss: 1.930 Vali Acc: 0.262 Test Loss: 1.978 Test Acc: 0.262
+EarlyStopping counter: 2 out of 10
+Updating learning rate to 6.25e-05
+Epoch: 6 cost time: 12.035501718521118
+Epoch: 6, Steps: 17 | Train Loss: 1.148 Vali Loss: 1.680 Vali Acc: 0.262 Test Loss: 1.711 Test Acc: 0.262
+EarlyStopping counter: 3 out of 10
+Epoch: 7 cost time: 19.48847770690918
+Epoch: 7, Steps: 17 | Train Loss: 1.039 Vali Loss: 1.726 Vali Acc: 0.259 Test Loss: 1.701 Test Acc: 0.259
+EarlyStopping counter: 4 out of 10
+Epoch: 8 cost time: 16.367746114730835
+Epoch: 8, Steps: 17 | Train Loss: 1.047 Vali Loss: 1.628 Vali Acc: 0.270 Test Loss: 1.625 Test Acc: 0.270
+EarlyStopping counter: 5 out of 10
+Epoch: 9 cost time: 10.340456247329712
+Epoch: 9, Steps: 17 | Train Loss: 1.014 Vali Loss: 1.688 Vali Acc: 0.285 Test Loss: 1.665 Test Acc: 0.285
+Validation loss decreased (-0.273764 --> -0.285171).  Saving model ...
+Epoch: 10 cost time: 7.856513261795044
+Epoch: 10, Steps: 17 | Train Loss: 0.996 Vali Loss: 1.724 Vali Acc: 0.255 Test Loss: 1.728 Test Acc: 0.255
+EarlyStopping counter: 1 out of 10
+Updating learning rate to 1.953125e-06
+Epoch: 11 cost time: 7.28465461730957
+Epoch: 11, Steps: 17 | Train Loss: 0.997 Vali Loss: 1.672 Vali Acc: 0.251 Test Loss: 1.689 Test Acc: 0.251
+EarlyStopping counter: 2 out of 10
+Epoch: 12 cost time: 10.11604380607605
+Epoch: 12, Steps: 17 | Train Loss: 0.965 Vali Loss: 1.660 Vali Acc: 0.274 Test Loss: 1.638 Test Acc: 0.274
+EarlyStopping counter: 3 out of 10
+Epoch: 13 cost time: 9.84726881980896
+Epoch: 13, Steps: 17 | Train Loss: 0.948 Vali Loss: 1.641 Vali Acc: 0.274 Test Loss: 1.644 Test Acc: 0.274
+EarlyStopping counter: 4 out of 10
+Epoch: 14 cost time: 8.118524312973022
+Epoch: 14, Steps: 17 | Train Loss: 0.952 Vali Loss: 1.632 Vali Acc: 0.262 Test Loss: 1.624 Test Acc: 0.262
+EarlyStopping counter: 5 out of 10
+Epoch: 15 cost time: 8.533453941345215
+Epoch: 15, Steps: 17 | Train Loss: 0.943 Vali Loss: 1.650 Vali Acc: 0.262 Test Loss: 1.643 Test Acc: 0.262
+EarlyStopping counter: 6 out of 10
+Updating learning rate to 6.103515625e-08
+Epoch: 16 cost time: 7.497491359710693
+Epoch: 16, Steps: 17 | Train Loss: 0.941 Vali Loss: 1.630 Vali Acc: 0.262 Test Loss: 1.644 Test Acc: 0.262
+EarlyStopping counter: 7 out of 10
+Epoch: 17 cost time: 9.89496374130249
+Epoch: 17, Steps: 17 | Train Loss: 0.941 Vali Loss: 1.646 Vali Acc: 0.262 Test Loss: 1.653 Test Acc: 0.262
+EarlyStopping counter: 8 out of 10
+Epoch: 18 cost time: 13.840511798858643
+Epoch: 18, Steps: 17 | Train Loss: 0.949 Vali Loss: 1.630 Vali Acc: 0.262 Test Loss: 1.625 Test Acc: 0.262
+EarlyStopping counter: 9 out of 10
+Epoch: 19 cost time: 12.215487480163574
+Epoch: 19, Steps: 17 | Train Loss: 0.961 Vali Loss: 1.645 Vali Acc: 0.262 Test Loss: 1.659 Test Acc: 0.262
+EarlyStopping counter: 10 out of 10
+Early stopping
+>>>>>>>testing : classification_EthanolConcentration_TimesNet_UEA_ftM_sl1751_ll48_pl0_dm32_nh8_el3_dl1_df32_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+263
+test shape: torch.Size([263, 4]) torch.Size([263, 1])
+accuracy:0.28517110266159695
+Spend Time: 409.11961245536804

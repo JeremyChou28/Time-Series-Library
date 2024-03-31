@@ -1,52 +1,58 @@
 export CUDA_VISIBLE_DEVICES=1
+###
+ # @Description: 
+ # @Author: Jianping Zhou
+ # @Email: jianpingzhou0927@gmail.com
+ # @Date: 2024-03-31 04:41:27
+### 
 
 model_name=PatchTST
 
-nohup python -u run.py \
-  --task_name long_term_forecast \
-  --is_training 1 \
-  --root_path ../iTransformer_datasets/illness/ \
-  --data_path national_illness.csv \
-  --model_id ili_36_24 \
-  --model $model_name \
-  --data custom \
-  --features M \
-  --seq_len 36 \
-  --label_len 18 \
-  --pred_len 24 \
-  --e_layers 4 \
-  --d_layers 1 \
-  --factor 3 \
-  --enc_in 7 \
-  --dec_in 7 \
-  --c_out 7 \
-  --des 'Exp' \
-  --n_heads 4 \
-  --d_model 1024\
-  --itr 1
+# nohup python -u run.py \
+#   --task_name long_term_forecast \
+#   --is_training 1 \
+#   --root_path ../iTransformer_datasets/illness/ \
+#   --data_path national_illness.csv \
+#   --model_id ili_36_24 \
+#   --model $model_name \
+#   --data custom \
+#   --features M \
+#   --seq_len 36 \
+#   --label_len 18 \
+#   --pred_len 24 \
+#   --e_layers 4 \
+#   --d_layers 1 \
+#   --factor 3 \
+#   --enc_in 7 \
+#   --dec_in 7 \
+#   --c_out 7 \
+#   --des 'Exp' \
+#   --n_heads 4 \
+#   --d_model 1024\
+#   --itr 1 > ./logs/long_term_forecast/illness/${model_name}_ili_36_24.log 2>&1 &
 
-nohup python -u run.py \
-  --task_name long_term_forecast \
-  --is_training 1 \
-  --root_path ../iTransformer_datasets/illness/ \
-  --data_path national_illness.csv \
-  --model_id ili_36_36 \
-  --model $model_name \
-  --data custom \
-  --features M \
-  --seq_len 36 \
-  --label_len 18 \
-  --pred_len 36 \
-  --e_layers 4 \
-  --d_layers 1 \
-  --factor 3 \
-  --enc_in 7 \
-  --dec_in 7 \
-  --c_out 7 \
-  --des 'Exp' \
-  --n_heads 4 \
-  --d_model 2048\
-  --itr 1
+# nohup python -u run.py \
+#   --task_name long_term_forecast \
+#   --is_training 1 \
+#   --root_path ../iTransformer_datasets/illness/ \
+#   --data_path national_illness.csv \
+#   --model_id ili_36_36 \
+#   --model $model_name \
+#   --data custom \
+#   --features M \
+#   --seq_len 36 \
+#   --label_len 18 \
+#   --pred_len 36 \
+#   --e_layers 4 \
+#   --d_layers 1 \
+#   --factor 3 \
+#   --enc_in 7 \
+#   --dec_in 7 \
+#   --c_out 7 \
+#   --des 'Exp' \
+#   --n_heads 4 \
+#   --d_model 2048\
+#   --itr 1 > ./logs/long_term_forecast/illness/${model_name}_ili_36_36.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -69,7 +75,7 @@ nohup python -u run.py \
   --des 'Exp' \
   --n_heads 4 \
   --d_model 2048\
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/illness/${model_name}_ili_36_48.log 2>&1 &
 
 
 nohup python -u run.py \
@@ -93,4 +99,4 @@ nohup python -u run.py \
   --des 'Exp' \
   --n_heads 16 \
   --d_model 2048\
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/illness/${model_name}_ili_36_60.log 2>&1 &

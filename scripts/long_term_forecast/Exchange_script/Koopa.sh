@@ -1,4 +1,10 @@
 export CUDA_VISIBLE_DEVICES=7
+###
+ # @Description: 
+ # @Author: Jianping Zhou
+ # @Email: jianpingzhou0927@gmail.com
+ # @Date: 2024-03-28 13:20:16
+### 
 
 model_name=Koopa
 
@@ -21,7 +27,7 @@ nohup python -u run.py \
   --c_out 8 \
   --des 'Exp' \
   --learning_rate 0.001 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/exchange_rate/${model_name}_Exchange_96_96.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -42,7 +48,7 @@ nohup python -u run.py \
   --c_out 8 \
   --des 'Exp' \
   --learning_rate 0.001 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/exchange_rate/${model_name}_Exchange_96_192.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -63,7 +69,7 @@ nohup python -u run.py \
   --c_out 8 \
   --des 'Exp' \
   --learning_rate 0.001 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/exchange_rate/${model_name}_Exchange_96_336.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -84,4 +90,4 @@ nohup python -u run.py \
   --c_out 8 \
   --des 'Exp' \
   --learning_rate 0.001 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/exchange_rate/${model_name}_Exchange_96_720.log 2>&1 &

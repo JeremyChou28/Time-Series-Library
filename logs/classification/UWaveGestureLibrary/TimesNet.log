@@ -1,0 +1,93 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           UWaveGestureLibrary Model:              TimesNet            
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/UWaveGestureLibrary/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            32                  
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               64                  
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       30                  Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+120
+320
+>>>>>>>start training : classification_UWaveGestureLibrary_TimesNet_UEA_ftM_sl315_ll48_pl0_dm32_nh8_el2_dl1_df64_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+120
+320
+320
+Epoch: 1 cost time: 3.8063101768493652
+Epoch: 1, Steps: 8 | Train Loss: 1.258 Vali Loss: 0.584 Vali Acc: 0.806 Test Loss: 0.584 Test Acc: 0.806
+Validation loss decreased (inf --> -0.806250).  Saving model ...
+Epoch: 2 cost time: 0.34423303604125977
+Epoch: 2, Steps: 8 | Train Loss: 0.386 Vali Loss: 0.840 Vali Acc: 0.834 Test Loss: 0.840 Test Acc: 0.834
+Validation loss decreased (-0.806250 --> -0.834375).  Saving model ...
+Epoch: 3 cost time: 0.9866745471954346
+Epoch: 3, Steps: 8 | Train Loss: 0.147 Vali Loss: 0.797 Vali Acc: 0.844 Test Loss: 0.797 Test Acc: 0.844
+Validation loss decreased (-0.834375 --> -0.843750).  Saving model ...
+Epoch: 4 cost time: 0.6764795780181885
+Epoch: 4, Steps: 8 | Train Loss: 0.034 Vali Loss: 0.747 Vali Acc: 0.856 Test Loss: 0.747 Test Acc: 0.856
+Validation loss decreased (-0.843750 --> -0.856250).  Saving model ...
+Epoch: 5 cost time: 1.4741218090057373
+Epoch: 5, Steps: 8 | Train Loss: 0.008 Vali Loss: 0.793 Vali Acc: 0.850 Test Loss: 0.793 Test Acc: 0.850
+EarlyStopping counter: 1 out of 10
+Updating learning rate to 6.25e-05
+Epoch: 6 cost time: 1.1747262477874756
+Epoch: 6, Steps: 8 | Train Loss: 0.007 Vali Loss: 0.796 Vali Acc: 0.853 Test Loss: 0.796 Test Acc: 0.853
+EarlyStopping counter: 2 out of 10
+Epoch: 7 cost time: 1.3731021881103516
+Epoch: 7, Steps: 8 | Train Loss: 0.006 Vali Loss: 0.795 Vali Acc: 0.850 Test Loss: 0.795 Test Acc: 0.850
+EarlyStopping counter: 3 out of 10
+Epoch: 8 cost time: 1.3988747596740723
+Epoch: 8, Steps: 8 | Train Loss: 0.003 Vali Loss: 0.796 Vali Acc: 0.850 Test Loss: 0.796 Test Acc: 0.850
+EarlyStopping counter: 4 out of 10
+Epoch: 9 cost time: 1.2573192119598389
+Epoch: 9, Steps: 8 | Train Loss: 0.003 Vali Loss: 0.796 Vali Acc: 0.850 Test Loss: 0.796 Test Acc: 0.850
+EarlyStopping counter: 5 out of 10
+Epoch: 10 cost time: 1.2240219116210938
+Epoch: 10, Steps: 8 | Train Loss: 0.002 Vali Loss: 0.796 Vali Acc: 0.847 Test Loss: 0.796 Test Acc: 0.847
+EarlyStopping counter: 6 out of 10
+Updating learning rate to 1.953125e-06
+Epoch: 11 cost time: 1.4325151443481445
+Epoch: 11, Steps: 8 | Train Loss: 0.002 Vali Loss: 0.796 Vali Acc: 0.847 Test Loss: 0.796 Test Acc: 0.847
+EarlyStopping counter: 7 out of 10
+Epoch: 12 cost time: 1.3718822002410889
+Epoch: 12, Steps: 8 | Train Loss: 0.002 Vali Loss: 0.796 Vali Acc: 0.847 Test Loss: 0.796 Test Acc: 0.847
+EarlyStopping counter: 8 out of 10
+Epoch: 13 cost time: 1.3374288082122803
+Epoch: 13, Steps: 8 | Train Loss: 0.002 Vali Loss: 0.796 Vali Acc: 0.847 Test Loss: 0.796 Test Acc: 0.847
+EarlyStopping counter: 9 out of 10
+Epoch: 14 cost time: 1.5369775295257568
+Epoch: 14, Steps: 8 | Train Loss: 0.002 Vali Loss: 0.796 Vali Acc: 0.847 Test Loss: 0.796 Test Acc: 0.847
+EarlyStopping counter: 10 out of 10
+Early stopping
+>>>>>>>testing : classification_UWaveGestureLibrary_TimesNet_UEA_ftM_sl315_ll48_pl0_dm32_nh8_el2_dl1_df64_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+320
+test shape: torch.Size([320, 8]) torch.Size([320, 1])
+accuracy:0.85625
+Spend Time: 85.29595875740051

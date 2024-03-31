@@ -1,0 +1,130 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           weather_96_192      Model:              PatchTST            
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          ../iTransformer_datasets/weather/
+  Data Path:          weather.csv         Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           192                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             21                  Dec In:             21                  
+  C Out:              21                  d model:            512                 
+  n heads:            16                  e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       3                   Batch Size:         32                  
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_weather_96_192_PatchTST_custom_ftM_sl96_ll48_pl192_dm512_nh16_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 36600
+val 5079
+test 10348
+	iters: 100, epoch: 1 | loss: 0.4290508
+	speed: 0.3896s/iter; left time: 1297.5010s
+	iters: 200, epoch: 1 | loss: 0.4670067
+	speed: 0.2920s/iter; left time: 943.1173s
+	iters: 300, epoch: 1 | loss: 0.4695616
+	speed: 0.2707s/iter; left time: 847.2282s
+	iters: 400, epoch: 1 | loss: 0.3457379
+	speed: 0.2513s/iter; left time: 761.4261s
+	iters: 500, epoch: 1 | loss: 0.3942175
+	speed: 0.2502s/iter; left time: 732.9454s
+	iters: 600, epoch: 1 | loss: 0.5431174
+	speed: 0.2579s/iter; left time: 729.8321s
+	iters: 700, epoch: 1 | loss: 1.1242681
+	speed: 0.2528s/iter; left time: 690.0663s
+	iters: 800, epoch: 1 | loss: 0.5099305
+	speed: 0.2521s/iter; left time: 663.1189s
+	iters: 900, epoch: 1 | loss: 0.4725334
+	speed: 0.2579s/iter; left time: 652.4312s
+	iters: 1000, epoch: 1 | loss: 0.4595492
+	speed: 0.1739s/iter; left time: 422.6048s
+	iters: 1100, epoch: 1 | loss: 0.4440833
+	speed: 0.1589s/iter; left time: 370.1269s
+Epoch: 1 cost time: 285.7520799636841
+Epoch: 1, Steps: 1143 | Train Loss: 0.5807247 Vali Loss: 0.5133849 Test Loss: 0.2274948
+Validation loss decreased (inf --> 0.513385).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.4877704
+	speed: 2.6677s/iter; left time: 5834.3489s
+	iters: 200, epoch: 2 | loss: 0.5083706
+	speed: 0.1807s/iter; left time: 377.1583s
+	iters: 300, epoch: 2 | loss: 0.5079326
+	speed: 0.1545s/iter; left time: 306.9606s
+	iters: 400, epoch: 2 | loss: 0.4419255
+	speed: 0.1489s/iter; left time: 281.0138s
+	iters: 500, epoch: 2 | loss: 0.5042735
+	speed: 0.1455s/iter; left time: 260.0375s
+	iters: 600, epoch: 2 | loss: 0.4691440
+	speed: 0.1602s/iter; left time: 270.2162s
+	iters: 700, epoch: 2 | loss: 0.4604517
+	speed: 0.1691s/iter; left time: 268.3811s
+	iters: 800, epoch: 2 | loss: 0.5114329
+	speed: 0.1671s/iter; left time: 248.5384s
+	iters: 900, epoch: 2 | loss: 0.4649883
+	speed: 0.1598s/iter; left time: 221.6640s
+	iters: 1000, epoch: 2 | loss: 0.3951746
+	speed: 0.1382s/iter; left time: 177.8237s
+	iters: 1100, epoch: 2 | loss: 0.4246156
+	speed: 0.1450s/iter; left time: 172.1056s
+Epoch: 2 cost time: 187.12155866622925
+Epoch: 2, Steps: 1143 | Train Loss: 0.5471117 Vali Loss: 0.5031981 Test Loss: 0.2226711
+Validation loss decreased (0.513385 --> 0.503198).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.4789998
+	speed: 2.5495s/iter; left time: 2661.6860s
+	iters: 200, epoch: 3 | loss: 0.5059234
+	speed: 0.1362s/iter; left time: 128.6078s
+	iters: 300, epoch: 3 | loss: 0.3947392
+	speed: 0.1383s/iter; left time: 116.7664s
+	iters: 400, epoch: 3 | loss: 0.5074057
+	speed: 0.1352s/iter; left time: 100.5953s
+	iters: 500, epoch: 3 | loss: 0.3756612
+	speed: 0.1385s/iter; left time: 89.2206s
+	iters: 600, epoch: 3 | loss: 0.5932211
+	speed: 0.1381s/iter; left time: 75.1274s
+	iters: 700, epoch: 3 | loss: 0.4206056
+	speed: 0.1358s/iter; left time: 60.2776s
+	iters: 800, epoch: 3 | loss: 0.4452164
+	speed: 0.1350s/iter; left time: 46.4562s
+	iters: 900, epoch: 3 | loss: 0.4372411
+	speed: 0.1363s/iter; left time: 33.2499s
+	iters: 1000, epoch: 3 | loss: 0.3539995
+	speed: 0.1366s/iter; left time: 19.6638s
+	iters: 1100, epoch: 3 | loss: 0.4077539
+	speed: 0.1256s/iter; left time: 5.5249s
+Epoch: 3 cost time: 153.32943844795227
+Epoch: 3, Steps: 1143 | Train Loss: 0.5315726 Vali Loss: 0.5001354 Test Loss: 0.2216896
+Validation loss decreased (0.503198 --> 0.500135).  Saving model ...
+Updating learning rate to 2.5e-05
+>>>>>>>testing : long_term_forecast_weather_96_192_PatchTST_custom_ftM_sl96_ll48_pl192_dm512_nh16_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 10348
+test shape: (10348, 1, 192, 21) (10348, 1, 192, 21)
+test shape: (10348, 192, 21) (10348, 192, 21)
+mse:0.2216896414756775, mae:0.25701144337654114
+Spend Time: 1462.5597503185272

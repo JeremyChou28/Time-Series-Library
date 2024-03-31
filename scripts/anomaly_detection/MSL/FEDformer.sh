@@ -1,9 +1,11 @@
 export CUDA_VISIBLE_DEVICES=0
 
-python -u run.py \
+model_name=FEDformer
+
+nohup python -u run.py \
   --task_name anomaly_detection \
   --is_training 1 \
-  --root_path ./dataset/MSL \
+  --root_path ../iTransformer_datasets/anomaly_detection/MSL \
   --model_id MSL \
   --model FEDformer \
   --data MSL \
@@ -17,4 +19,4 @@ python -u run.py \
   --c_out 55 \
   --anomaly_ratio 1 \
   --batch_size 128 \
-  --train_epochs 10
+  --train_epochs 10 > ./logs/anomaly_detection/MSL/${model_name}.log 2>&1 &

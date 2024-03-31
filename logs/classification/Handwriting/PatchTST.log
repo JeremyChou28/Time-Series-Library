@@ -1,0 +1,106 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           Handwriting         Model:              PatchTST            
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/Handwriting/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+150
+850
+>>>>>>>start training : classification_Handwriting_PatchTST_UEA_ftM_sl152_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+150
+850
+850
+Epoch: 1 cost time: 3.711350917816162
+Epoch: 1, Steps: 10 | Train Loss: 5.191 Vali Loss: 5.004 Vali Acc: 0.086 Test Loss: 5.087 Test Acc: 0.086
+Validation loss decreased (inf --> -0.085882).  Saving model ...
+Epoch: 2 cost time: 0.18978142738342285
+Epoch: 2, Steps: 10 | Train Loss: 2.738 Vali Loss: 4.130 Vali Acc: 0.134 Test Loss: 4.120 Test Acc: 0.134
+Validation loss decreased (-0.085882 --> -0.134118).  Saving model ...
+Epoch: 3 cost time: 0.21539926528930664
+Epoch: 3, Steps: 10 | Train Loss: 1.346 Vali Loss: 4.684 Vali Acc: 0.151 Test Loss: 4.657 Test Acc: 0.151
+Validation loss decreased (-0.134118 --> -0.150588).  Saving model ...
+Epoch: 4 cost time: 0.1862344741821289
+Epoch: 4, Steps: 10 | Train Loss: 0.872 Vali Loss: 5.080 Vali Acc: 0.162 Test Loss: 5.254 Test Acc: 0.162
+Validation loss decreased (-0.150588 --> -0.162353).  Saving model ...
+Epoch: 5 cost time: 0.19972014427185059
+Epoch: 5, Steps: 10 | Train Loss: 0.461 Vali Loss: 5.070 Vali Acc: 0.220 Test Loss: 5.125 Test Acc: 0.220
+Validation loss decreased (-0.162353 --> -0.220000).  Saving model ...
+Updating learning rate to 6.25e-05
+Epoch: 6 cost time: 0.22020196914672852
+Epoch: 6, Steps: 10 | Train Loss: 0.147 Vali Loss: 4.935 Vali Acc: 0.233 Test Loss: 4.917 Test Acc: 0.233
+Validation loss decreased (-0.220000 --> -0.232941).  Saving model ...
+Epoch: 7 cost time: 0.2844216823577881
+Epoch: 7, Steps: 10 | Train Loss: 0.080 Vali Loss: 4.914 Vali Acc: 0.244 Test Loss: 4.819 Test Acc: 0.244
+Validation loss decreased (-0.232941 --> -0.243529).  Saving model ...
+Epoch: 8 cost time: 0.21764802932739258
+Epoch: 8, Steps: 10 | Train Loss: 0.046 Vali Loss: 4.832 Vali Acc: 0.251 Test Loss: 4.789 Test Acc: 0.251
+Validation loss decreased (-0.243529 --> -0.250588).  Saving model ...
+Epoch: 9 cost time: 0.23260188102722168
+Epoch: 9, Steps: 10 | Train Loss: 0.042 Vali Loss: 4.951 Vali Acc: 0.245 Test Loss: 4.821 Test Acc: 0.245
+EarlyStopping counter: 1 out of 10
+Epoch: 10 cost time: 0.20186114311218262
+Epoch: 10, Steps: 10 | Train Loss: 0.033 Vali Loss: 4.945 Vali Acc: 0.246 Test Loss: 4.877 Test Acc: 0.246
+EarlyStopping counter: 2 out of 10
+Updating learning rate to 1.953125e-06
+Epoch: 11 cost time: 0.2040860652923584
+Epoch: 11, Steps: 10 | Train Loss: 0.032 Vali Loss: 4.947 Vali Acc: 0.246 Test Loss: 5.001 Test Acc: 0.246
+EarlyStopping counter: 3 out of 10
+Epoch: 12 cost time: 0.2345588207244873
+Epoch: 12, Steps: 10 | Train Loss: 0.030 Vali Loss: 4.897 Vali Acc: 0.246 Test Loss: 4.968 Test Acc: 0.246
+EarlyStopping counter: 4 out of 10
+Epoch: 13 cost time: 0.19984126091003418
+Epoch: 13, Steps: 10 | Train Loss: 0.025 Vali Loss: 4.867 Vali Acc: 0.247 Test Loss: 5.030 Test Acc: 0.247
+EarlyStopping counter: 5 out of 10
+Epoch: 14 cost time: 0.20505642890930176
+Epoch: 14, Steps: 10 | Train Loss: 0.033 Vali Loss: 4.863 Vali Acc: 0.247 Test Loss: 4.974 Test Acc: 0.247
+EarlyStopping counter: 6 out of 10
+Epoch: 15 cost time: 0.224517822265625
+Epoch: 15, Steps: 10 | Train Loss: 0.028 Vali Loss: 4.952 Vali Acc: 0.247 Test Loss: 4.913 Test Acc: 0.247
+EarlyStopping counter: 7 out of 10
+Updating learning rate to 6.103515625e-08
+Epoch: 16 cost time: 0.20183849334716797
+Epoch: 16, Steps: 10 | Train Loss: 0.029 Vali Loss: 4.952 Vali Acc: 0.246 Test Loss: 4.893 Test Acc: 0.246
+EarlyStopping counter: 8 out of 10
+Epoch: 17 cost time: 0.2312300205230713
+Epoch: 17, Steps: 10 | Train Loss: 0.030 Vali Loss: 4.854 Vali Acc: 0.246 Test Loss: 4.966 Test Acc: 0.246
+EarlyStopping counter: 9 out of 10
+Epoch: 18 cost time: 0.17573928833007812
+Epoch: 18, Steps: 10 | Train Loss: 0.028 Vali Loss: 4.888 Vali Acc: 0.246 Test Loss: 4.909 Test Acc: 0.246
+EarlyStopping counter: 10 out of 10
+Early stopping
+>>>>>>>testing : classification_Handwriting_PatchTST_UEA_ftM_sl152_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+850
+test shape: torch.Size([850, 26]) torch.Size([850, 1])
+accuracy:0.25058823529411767
+Spend Time: 42.05001497268677

@@ -1,10 +1,10 @@
 
 model_name=TSMixer
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/weather/ \
+  --root_path ../iTransformer_datasets/weather/ \
   --data_path weather.csv \
   --model_id weather_96_96 \
   --model $model_name \
@@ -23,12 +23,12 @@ python -u run.py \
   --d_ff 32 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/weather/${model_name}_weather_96_96.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/weather/ \
+  --root_path ../iTransformer_datasets/weather/ \
   --data_path weather.csv \
   --model_id weather_96_192 \
   --model $model_name \
@@ -47,13 +47,13 @@ python -u run.py \
   --d_ff 32 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1 \
+  --itr 1 > ./logs/long_term_forecast/weather/${model_name}_weather_96_192.log 2>&1 &
 
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/weather/ \
+  --root_path ../iTransformer_datasets/weather/ \
   --data_path weather.csv \
   --model_id weather_96_336 \
   --model $model_name \
@@ -72,12 +72,12 @@ python -u run.py \
   --d_ff 32 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/weather/${model_name}_weather_96_336.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/weather/ \
+  --root_path ../iTransformer_datasets/weather/ \
   --data_path weather.csv \
   --model_id weather_96_720 \
   --model $model_name \
@@ -96,4 +96,4 @@ python -u run.py \
   --d_ff 32 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1 \
+  --itr 1 > ./logs/long_term_forecast/weather/${model_name}_weather_96_720.log 2>&1 &

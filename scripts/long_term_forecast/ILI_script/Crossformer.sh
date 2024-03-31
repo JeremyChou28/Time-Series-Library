@@ -1,4 +1,4 @@
-export CUDA_VISIBLE_DEVICES=5
+export CUDA_VISIBLE_DEVICES=1
 
 model_name=Crossformer
 
@@ -25,7 +25,7 @@ nohup python -u run.py \
   --top_k 5 \
   --des 'Exp' \
   --dropout 0.6 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/illness/${model_name}_ili_36_24.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -50,7 +50,7 @@ nohup python -u run.py \
   --top_k 5 \
   --des 'Exp' \
   -dropout 0.6 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/illness/${model_name}_ili_36_36.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -75,7 +75,7 @@ nohup python -u run.py \
   --top_k 5 \
   --des 'Exp' \
   -dropout 0.6 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/illness/${model_name}_ili_36_48.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -100,4 +100,4 @@ nohup python -u run.py \
   --top_k 5 \
   --des 'Exp' \
   -dropout 0.6 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/illness/${model_name}_ili_36_60.log 2>&1 &

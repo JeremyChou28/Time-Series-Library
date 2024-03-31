@@ -1,9 +1,11 @@
 export CUDA_VISIBLE_DEVICES=0
 
-python -u run.py \
+model_name=TimesNet
+
+nohup python -u run.py \
   --task_name anomaly_detection \
   --is_training 1 \
-  --root_path ./dataset/SMAP \
+  --root_path ../iTransformer_datasets/anomaly_detection/SMAP \
   --model_id SMAP \
   --model TimesNet \
   --data SMAP \
@@ -18,4 +20,4 @@ python -u run.py \
   --top_k 3 \
   --anomaly_ratio 1 \
   --batch_size 128 \
-  --train_epochs 3
+  --train_epochs 3 > ./logs/anomaly_detection/SMAP/${model_name}.log 2>&1 &

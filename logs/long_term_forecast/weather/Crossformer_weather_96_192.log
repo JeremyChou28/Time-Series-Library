@@ -1,0 +1,77 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           weather_96_192      Model:              Crossformer         
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          ../iTransformer_datasets/weather/
+  Data Path:          weather.csv         Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           192                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             21                  Dec In:             21                  
+  C Out:              21                  d model:            32                  
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               32                  
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       1                   Batch Size:         32                  
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_weather_96_192_Crossformer_custom_ftM_sl96_ll48_pl192_dm32_nh8_el2_dl1_df32_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 36600
+val 5079
+test 10348
+	iters: 100, epoch: 1 | loss: 0.8794680
+	speed: 0.4477s/iter; left time: 467.4052s
+	iters: 200, epoch: 1 | loss: 0.7724780
+	speed: 0.3916s/iter; left time: 369.6367s
+	iters: 300, epoch: 1 | loss: 0.5344219
+	speed: 0.3923s/iter; left time: 331.1331s
+	iters: 400, epoch: 1 | loss: 0.6766168
+	speed: 0.3984s/iter; left time: 296.4229s
+	iters: 500, epoch: 1 | loss: 0.5236703
+	speed: 0.3977s/iter; left time: 256.1492s
+	iters: 600, epoch: 1 | loss: 0.5877666
+	speed: 0.3927s/iter; left time: 213.6166s
+	iters: 700, epoch: 1 | loss: 0.5451446
+	speed: 0.3822s/iter; left time: 169.6862s
+	iters: 800, epoch: 1 | loss: 0.5843274
+	speed: 0.3710s/iter; left time: 127.6134s
+	iters: 900, epoch: 1 | loss: 0.5389575
+	speed: 0.3664s/iter; left time: 89.4007s
+	iters: 1000, epoch: 1 | loss: 0.5713748
+	speed: 0.3788s/iter; left time: 54.5491s
+	iters: 1100, epoch: 1 | loss: 1.0177362
+	speed: 0.3914s/iter; left time: 17.2223s
+Epoch: 1 cost time: 447.64800238609314
+Epoch: 1, Steps: 1143 | Train Loss: 0.7303624 Vali Loss: 0.5791336 Test Loss: 0.2324897
+Validation loss decreased (inf --> 0.579134).  Saving model ...
+Updating learning rate to 0.0001
+>>>>>>>testing : long_term_forecast_weather_96_192_Crossformer_custom_ftM_sl96_ll48_pl192_dm32_nh8_el2_dl1_df32_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 10348
+test shape: (10348, 1, 192, 21) (10348, 1, 192, 21)
+test shape: (10348, 192, 21) (10348, 192, 21)
+mse:0.2324899137020111, mae:0.30241984128952026

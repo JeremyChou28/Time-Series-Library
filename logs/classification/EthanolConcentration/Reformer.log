@@ -1,0 +1,95 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           EthanolConcentrationModel:              Reformer            
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/EthanolConcentration/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+261
+263
+>>>>>>>start training : classification_EthanolConcentration_Reformer_UEA_ftM_sl1751_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+261
+263
+263
+Traceback (most recent call last):
+  File "run.py", line 272, in <module>
+    exp.train(setting)
+  File "/mnt/nas/home/cilab/Jianping/Research/Time-Series-Library/exp/exp_classification.py", line 110, in train
+    outputs = self.model(batch_x, padding_mask, None, None)
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/nas/home/cilab/Jianping/Research/Time-Series-Library/models/Reformer.py", line 130, in forward
+    dec_out = self.classification(x_enc, x_mark_enc)
+  File "/mnt/nas/home/cilab/Jianping/Research/Time-Series-Library/models/Reformer.py", line 103, in classification
+    enc_out, attns = self.encoder(enc_out)
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/nas/home/cilab/Jianping/Research/Time-Series-Library/layers/Transformer_EncDec.py", line 74, in forward
+    x, attn = attn_layer(x, attn_mask=attn_mask, tau=tau, delta=delta)
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/nas/home/cilab/Jianping/Research/Time-Series-Library/layers/Transformer_EncDec.py", line 40, in forward
+    new_x, attn = self.attention(
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/nas/home/cilab/Jianping/Research/Time-Series-Library/layers/SelfAttention_Family.py", line 242, in forward
+    queries = self.attn(self.fit_length(queries))[:, :N, :]
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/reformer_pytorch/reformer_pytorch.py", line 578, in forward
+    out, attn, buckets = attn_fn_in_chunks(qk, v, **masks)
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/reformer_pytorch/reformer_pytorch.py", line 41, in inner_fn
+    outputs = [fn(*c_args, **c_kwargs) for c_args, c_kwargs in all_args]
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/reformer_pytorch/reformer_pytorch.py", line 41, in <listcomp>
+    outputs = [fn(*c_args, **c_kwargs) for c_args, c_kwargs in all_args]
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/reformer_pytorch/reformer_pytorch.py", line 275, in forward
+    buckets = self.hash_vectors(n_buckets, qk, key_namespace=depth, fetch=is_reverse, set_cache=self.training)
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/reformer_pytorch/reformer_pytorch.py", line 84, in wrapper
+    val = fn(self, *args, **kwargs)
+  File "/home/cilab/miniconda3/envs/zjp/lib/python3.8/site-packages/reformer_pytorch/reformer_pytorch.py", line 244, in hash_vectors
+    rotated_vecs = torch.cat([rotated_vecs, -rotated_vecs], dim=-1)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.46 GiB. GPU 0 has a total capacity of 11.76 GiB of which 1.21 GiB is free. Process 1295198 has 806.00 MiB memory in use. Process 1295196 has 1.20 GiB memory in use. Process 1295199 has 804.00 MiB memory in use. Process 1295194 has 1.28 GiB memory in use. Process 1295201 has 2.01 GiB memory in use. Including non-PyTorch memory, this process has 4.46 GiB memory in use. Of the allocated memory 2.23 GiB is allocated by PyTorch, and 845.38 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

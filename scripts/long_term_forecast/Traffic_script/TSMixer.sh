@@ -2,10 +2,10 @@
 model_name=TSMixer
 learning_rate=0.001
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/traffic/ \
+  --root_path ../iTransformer_datasets/traffic/ \
   --data_path traffic.csv \
   --model_id traffic_96_96 \
   --model $model_name \
@@ -24,13 +24,13 @@ python -u run.py \
   --d_ff 32 \
   --des 'Exp' \
   --itr 1 \
-  --learning_rate $learning_rate \
+  --learning_rate $learning_rate > ./logs/long_term_forecast/traffic/${model_name}_traffic_96_96.log 2>&1 &
 
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/traffic/ \
+  --root_path ../iTransformer_datasets/traffic/ \
   --data_path traffic.csv \
   --model_id traffic_96_192 \
   --model $model_name \
@@ -49,12 +49,12 @@ python -u run.py \
   --d_ff 32 \
   --des 'Exp' \
   --itr 1 \
-  --learning_rate $learning_rate \
+  --learning_rate $learning_rate > ./logs/long_term_forecast/traffic/${model_name}_traffic_96_192.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/traffic/ \
+  --root_path ../iTransformer_datasets/traffic/ \
   --data_path traffic.csv \
   --model_id traffic_96_336 \
   --model $model_name \
@@ -73,13 +73,13 @@ python -u run.py \
   --d_ff 32 \
   --des 'Exp' \
   --itr 1 \
-  --learning_rate $learning_rate \
+  --learning_rate $learning_rate > ./logs/long_term_forecast/traffic/${model_name}_traffic_96_336.log 2>&1 &
 
 
-python -u run.py \
+nohup python -u run.py \
   --task_name long_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/traffic/ \
+  --root_path ../iTransformer_datasets/traffic/ \
   --data_path traffic.csv \
   --model_id traffic_96_720 \
   --model $model_name \
@@ -98,4 +98,4 @@ python -u run.py \
   --d_ff 32 \
   --des 'Exp' \
   --itr 1 \
-  --learning_rate $learning_rate \
+  --learning_rate $learning_rate > ./logs/long_term_forecast/traffic/${model_name}_traffic_96_720.log 2>&1 &

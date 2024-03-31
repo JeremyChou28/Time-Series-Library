@@ -1,0 +1,109 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           PEMS-SF             Model:              PatchTST            
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/PEMS-SF/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+267
+173
+>>>>>>>start training : classification_PEMS-SF_PatchTST_UEA_ftM_sl144_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+267
+173
+173
+Epoch: 1 cost time: 10.060375928878784
+Epoch: 1, Steps: 17 | Train Loss: 876.078 Vali Loss: 276.343 Vali Acc: 0.301 Test Loss: 277.380 Test Acc: 0.301
+Validation loss decreased (inf --> -0.300578).  Saving model ...
+Epoch: 2 cost time: 6.2670509815216064
+Epoch: 2, Steps: 17 | Train Loss: 202.053 Vali Loss: 143.880 Vali Acc: 0.532 Test Loss: 142.725 Test Acc: 0.532
+Validation loss decreased (-0.300578 --> -0.531792).  Saving model ...
+Epoch: 3 cost time: 6.217758417129517
+Epoch: 3, Steps: 17 | Train Loss: 178.790 Vali Loss: 189.351 Vali Acc: 0.486 Test Loss: 189.495 Test Acc: 0.486
+EarlyStopping counter: 1 out of 10
+Epoch: 4 cost time: 6.6330952644348145
+Epoch: 4, Steps: 17 | Train Loss: 74.729 Vali Loss: 103.394 Vali Acc: 0.653 Test Loss: 104.769 Test Acc: 0.653
+Validation loss decreased (-0.531792 --> -0.653179).  Saving model ...
+Epoch: 5 cost time: 6.47517991065979
+Epoch: 5, Steps: 17 | Train Loss: 35.408 Vali Loss: 79.434 Vali Acc: 0.676 Test Loss: 80.900 Test Acc: 0.676
+Validation loss decreased (-0.653179 --> -0.676301).  Saving model ...
+Updating learning rate to 6.25e-05
+Epoch: 6 cost time: 6.513202428817749
+Epoch: 6, Steps: 17 | Train Loss: 10.896 Vali Loss: 33.249 Vali Acc: 0.780 Test Loss: 32.197 Test Acc: 0.780
+Validation loss decreased (-0.676301 --> -0.780347).  Saving model ...
+Epoch: 7 cost time: 6.54446268081665
+Epoch: 7, Steps: 17 | Train Loss: 1.689 Vali Loss: 36.375 Vali Acc: 0.769 Test Loss: 36.623 Test Acc: 0.769
+EarlyStopping counter: 1 out of 10
+Epoch: 8 cost time: 6.722380638122559
+Epoch: 8, Steps: 17 | Train Loss: 2.388 Vali Loss: 28.884 Vali Acc: 0.786 Test Loss: 29.622 Test Acc: 0.786
+Validation loss decreased (-0.780347 --> -0.786127).  Saving model ...
+Epoch: 9 cost time: 6.866103172302246
+Epoch: 9, Steps: 17 | Train Loss: 0.536 Vali Loss: 25.372 Vali Acc: 0.815 Test Loss: 25.045 Test Acc: 0.815
+Validation loss decreased (-0.786127 --> -0.815029).  Saving model ...
+Epoch: 10 cost time: 6.746845245361328
+Epoch: 10, Steps: 17 | Train Loss: 0.000 Vali Loss: 24.510 Vali Acc: 0.792 Test Loss: 24.423 Test Acc: 0.792
+EarlyStopping counter: 1 out of 10
+Updating learning rate to 1.953125e-06
+Epoch: 11 cost time: 7.256731033325195
+Epoch: 11, Steps: 17 | Train Loss: 0.000 Vali Loss: 24.862 Vali Acc: 0.792 Test Loss: 24.814 Test Acc: 0.792
+EarlyStopping counter: 2 out of 10
+Epoch: 12 cost time: 6.926692485809326
+Epoch: 12, Steps: 17 | Train Loss: 0.000 Vali Loss: 24.631 Vali Acc: 0.792 Test Loss: 24.587 Test Acc: 0.792
+EarlyStopping counter: 3 out of 10
+Epoch: 13 cost time: 7.162278175354004
+Epoch: 13, Steps: 17 | Train Loss: 0.000 Vali Loss: 25.130 Vali Acc: 0.792 Test Loss: 24.388 Test Acc: 0.792
+EarlyStopping counter: 4 out of 10
+Epoch: 14 cost time: 7.484955549240112
+Epoch: 14, Steps: 17 | Train Loss: 0.000 Vali Loss: 24.430 Vali Acc: 0.792 Test Loss: 24.255 Test Acc: 0.792
+EarlyStopping counter: 5 out of 10
+Epoch: 15 cost time: 7.805956125259399
+Epoch: 15, Steps: 17 | Train Loss: 0.000 Vali Loss: 24.782 Vali Acc: 0.792 Test Loss: 24.528 Test Acc: 0.792
+EarlyStopping counter: 6 out of 10
+Updating learning rate to 6.103515625e-08
+Epoch: 16 cost time: 7.202938556671143
+Epoch: 16, Steps: 17 | Train Loss: 0.000 Vali Loss: 25.251 Vali Acc: 0.792 Test Loss: 24.330 Test Acc: 0.792
+EarlyStopping counter: 7 out of 10
+Epoch: 17 cost time: 8.080833673477173
+Epoch: 17, Steps: 17 | Train Loss: 0.000 Vali Loss: 25.168 Vali Acc: 0.792 Test Loss: 24.392 Test Acc: 0.792
+EarlyStopping counter: 8 out of 10
+Epoch: 18 cost time: 7.221627235412598
+Epoch: 18, Steps: 17 | Train Loss: 0.000 Vali Loss: 24.519 Vali Acc: 0.792 Test Loss: 24.324 Test Acc: 0.792
+EarlyStopping counter: 9 out of 10
+Epoch: 19 cost time: 7.719478607177734
+Epoch: 19, Steps: 17 | Train Loss: 0.000 Vali Loss: 24.311 Vali Acc: 0.792 Test Loss: 24.505 Test Acc: 0.792
+EarlyStopping counter: 10 out of 10
+Early stopping
+>>>>>>>testing : classification_PEMS-SF_PatchTST_UEA_ftM_sl144_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+173
+test shape: torch.Size([173, 7]) torch.Size([173, 1])
+accuracy:0.815028901734104
+Spend Time: 542.6462156772614

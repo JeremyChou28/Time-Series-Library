@@ -20,7 +20,7 @@ nohup python -u run.py \
   --dec_in 7 \
   --c_out 7 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTm1_96_96.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -40,7 +40,7 @@ nohup python -u run.py \
   --dec_in 7 \
   --c_out 7 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTm1_96_192.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -60,7 +60,7 @@ nohup python -u run.py \
   --dec_in 7 \
   --c_out 7 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTm1_96_336.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -80,4 +80,4 @@ nohup python -u run.py \
   --dec_in 7 \
   --c_out 7 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTm1_96_720.log 2>&1 &

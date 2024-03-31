@@ -1,0 +1,75 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           Exchange_96_192     Model:              TimesNet            
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          ../iTransformer_datasets/exchange_rate/
+  Data Path:          exchange_rate.csv   Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           192                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             8                   Dec In:             8                   
+  C Out:              8                   d model:            64                  
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               64                  
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         32                  
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_Exchange_96_192_TimesNet_custom_ftM_sl96_ll48_pl192_dm64_nh8_el2_dl1_df64_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5024
+val 569
+test 1326
+	iters: 100, epoch: 1 | loss: 0.1864179
+	speed: 0.7709s/iter; left time: 1134.0334s
+Epoch: 1 cost time: 110.46266102790833
+Epoch: 1, Steps: 157 | Train Loss: 0.2672993 Vali Loss: 0.2244164 Test Loss: 0.2147941
+Validation loss decreased (inf --> 0.224416).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.3409782
+	speed: 2.2452s/iter; left time: 2950.1873s
+Epoch: 2 cost time: 64.61833763122559
+Epoch: 2, Steps: 157 | Train Loss: 0.2084416 Vali Loss: 0.2266921 Test Loss: 0.2075693
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.1453460
+	speed: 1.6070s/iter; left time: 1859.3040s
+Epoch: 3 cost time: 41.39381647109985
+Epoch: 3, Steps: 157 | Train Loss: 0.1807440 Vali Loss: 0.2451671 Test Loss: 0.2129359
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.1675056
+	speed: 1.2329s/iter; left time: 1232.8705s
+Epoch: 4 cost time: 40.83522939682007
+Epoch: 4, Steps: 157 | Train Loss: 0.1675289 Vali Loss: 0.2497491 Test Loss: 0.2209983
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_Exchange_96_192_TimesNet_custom_ftM_sl96_ll48_pl192_dm64_nh8_el2_dl1_df64_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1326
+test shape: (1326, 1, 192, 8) (1326, 1, 192, 8)
+test shape: (1326, 192, 8) (1326, 192, 8)
+mse:0.2147941142320633, mae:0.3380863666534424

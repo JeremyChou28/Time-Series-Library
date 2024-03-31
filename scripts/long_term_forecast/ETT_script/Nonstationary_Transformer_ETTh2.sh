@@ -23,7 +23,7 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --p_hidden_dims 256 256 \
-  --p_hidden_layers 2 \
+  --p_hidden_layers 2 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh2_96_96.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -46,7 +46,7 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --p_hidden_dims 256 256 \
-  --p_hidden_layers 2 \
+  --p_hidden_layers 2 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh2_96_192.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -69,7 +69,7 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --p_hidden_dims 256 256 256 256 \
-  --p_hidden_layers 4 \
+  --p_hidden_layers 4 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh2_96_336.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -92,4 +92,4 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --p_hidden_dims 256 256 \
-  --p_hidden_layers 2 \
+  --p_hidden_layers 2 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh2_96_720.log 2>&1 &

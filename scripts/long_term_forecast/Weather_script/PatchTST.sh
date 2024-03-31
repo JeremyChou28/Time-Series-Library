@@ -23,7 +23,7 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --n_heads 4 \
-  --train_epochs 3
+  --train_epochs 3 > ./logs/long_term_forecast/weather/${model_name}_weather_96_96.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -46,7 +46,7 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --n_heads 16 \
-  --train_epochs 3
+  --train_epochs 3 > ./logs/long_term_forecast/weather/${model_name}_weather_96_192.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -70,7 +70,7 @@ nohup python -u run.py \
   --itr 1 \
   --n_heads 4 \
   --batch_size 128 \
-  --train_epochs 3
+  --train_epochs 3 > ./logs/long_term_forecast/weather/${model_name}_weather_96_336.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -94,4 +94,4 @@ nohup python -u run.py \
   --itr 1 \
   --n_heads 4 \
   --batch_size 128 \
-  --train_epochs 3
+  --train_epochs 3 > ./logs/long_term_forecast/weather/${model_name}_weather_96_720.log 2>&1 &

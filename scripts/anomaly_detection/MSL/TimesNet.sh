@@ -1,9 +1,11 @@
-export CUDA_VISIBLE_DEVICES=2
+export CUDA_VISIBLE_DEVICES=0
 
-python -u run.py \
+model_name=TimesNet
+
+nohup python -u run.py \
   --task_name anomaly_detection \
   --is_training 1 \
-  --root_path ./dataset/MSL \
+  --root_path ../iTransformer_datasets/anomaly_detection/MSL \
   --model_id MSL \
   --model TimesNet \
   --data MSL \
@@ -18,4 +20,4 @@ python -u run.py \
   --top_k 3 \
   --anomaly_ratio 1 \
   --batch_size 128 \
-  --train_epochs 1
+  --train_epochs 1 > ./logs/anomaly_detection/MSL/${model_name}.log 2>&1 &

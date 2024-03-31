@@ -1,0 +1,120 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          short_term_forecast Is Training:        1                   
+  Model ID:           m4_Daily            Model:              TimesNet            
+
+[1mData Loader[0m
+  Data:               m4                  Root Path:          ../iTransformer_datasets/m4
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           96                  Seasonal Patterns:  Daily               
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             1                   Dec In:             1                   
+  C Out:              1                   d model:            16                  
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               16                  
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         16                  
+  Patience:           3                   Learning Rate:      0.001               
+  Des:                Exp                 Loss:               SMAPE               
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : short_term_forecast_m4_Daily_TimesNet_m4_ftM_sl28_ll14_pl14_dm16_nh8_el2_dl1_df16_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 4227
+val 4227
+	iters: 100, epoch: 1 | loss: 3.3097930
+	speed: 0.2637s/iter; left time: 672.6576s
+	iters: 200, epoch: 1 | loss: 2.5118978
+	speed: 0.2528s/iter; left time: 619.5856s
+Epoch: 1 cost time: 68.49445414543152
+Epoch: 1, Steps: 265 | Train Loss: 2.8992767 Vali Loss: 3.3477447 Test Loss: 3.3477447
+Validation loss decreased (inf --> 3.347745).  Saving model ...
+Updating learning rate to 0.001
+	iters: 100, epoch: 2 | loss: 1.3145227
+	speed: 0.4598s/iter; left time: 1051.0555s
+	iters: 200, epoch: 2 | loss: 3.4930825
+	speed: 0.2825s/iter; left time: 617.5040s
+Epoch: 2 cost time: 72.35795426368713
+Epoch: 2, Steps: 265 | Train Loss: 2.6662350 Vali Loss: 3.1811124 Test Loss: 3.1811124
+Validation loss decreased (3.347745 --> 3.181112).  Saving model ...
+Updating learning rate to 0.0005
+	iters: 100, epoch: 3 | loss: 3.2076564
+	speed: 0.4435s/iter; left time: 896.3107s
+	iters: 200, epoch: 3 | loss: 2.2066021
+	speed: 0.2526s/iter; left time: 485.1871s
+Epoch: 3 cost time: 66.64916682243347
+Epoch: 3, Steps: 265 | Train Loss: 2.6038450 Vali Loss: 3.1850878 Test Loss: 3.1850878
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.00025
+	iters: 100, epoch: 4 | loss: 9.5863142
+	speed: 0.3925s/iter; left time: 689.2449s
+	iters: 200, epoch: 4 | loss: 1.5255449
+	speed: 0.2165s/iter; left time: 358.4915s
+Epoch: 4 cost time: 57.82506966590881
+Epoch: 4, Steps: 265 | Train Loss: 2.6857157 Vali Loss: 3.1605231 Test Loss: 3.1605231
+Validation loss decreased (3.181112 --> 3.160523).  Saving model ...
+Updating learning rate to 0.000125
+	iters: 100, epoch: 5 | loss: 2.0660882
+	speed: 0.3757s/iter; left time: 560.1457s
+	iters: 200, epoch: 5 | loss: 2.6530237
+	speed: 0.2200s/iter; left time: 305.9546s
+Epoch: 5 cost time: 58.04336094856262
+Epoch: 5, Steps: 265 | Train Loss: 2.5683314 Vali Loss: 3.1565153 Test Loss: 3.1565153
+Validation loss decreased (3.160523 --> 3.156515).  Saving model ...
+Updating learning rate to 6.25e-05
+	iters: 100, epoch: 6 | loss: 1.9590560
+	speed: 0.3757s/iter; left time: 460.6360s
+	iters: 200, epoch: 6 | loss: 3.2583547
+	speed: 0.2159s/iter; left time: 243.0965s
+Epoch: 6 cost time: 57.663403272628784
+Epoch: 6, Steps: 265 | Train Loss: 2.5847638 Vali Loss: 3.1812519 Test Loss: 3.1812519
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 3.125e-05
+	iters: 100, epoch: 7 | loss: 2.3457563
+	speed: 0.3698s/iter; left time: 355.3669s
+	iters: 200, epoch: 7 | loss: 4.1655970
+	speed: 0.2206s/iter; left time: 189.9217s
+Epoch: 7 cost time: 59.25412893295288
+Epoch: 7, Steps: 265 | Train Loss: 2.5746862 Vali Loss: 3.1871274 Test Loss: 3.1871274
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.5625e-05
+	iters: 100, epoch: 8 | loss: 1.8251419
+	speed: 0.3818s/iter; left time: 265.7368s
+	iters: 200, epoch: 8 | loss: 3.1176350
+	speed: 0.2185s/iter; left time: 130.2524s
+Epoch: 8 cost time: 57.07117033004761
+Epoch: 8, Steps: 265 | Train Loss: 2.5991628 Vali Loss: 3.1715330 Test Loss: 3.1715330
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : short_term_forecast_m4_Daily_TimesNet_m4_ftM_sl28_ll14_pl14_dm16_nh8_el2_dl1_df16_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+train 4227
+test 4227
+0
+1000
+2000
+3000
+4000
+test shape: (4227, 14, 1)
+TimesNet
+After all 6 tasks are finished, you can calculate the averaged index

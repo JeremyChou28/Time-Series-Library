@@ -1,0 +1,135 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          anomaly_detection   Is Training:        1                   
+  Model ID:           PSM                 Model:              Transformer         
+
+[1mData Loader[0m
+  Data:               PSM                 Root Path:          ../iTransformer_datasets/anomaly_detection/PSM
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mAnomaly Detection Task[0m
+  Anomaly Ratio:      1.0                 
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             25                  Dec In:             7                   
+  C Out:              25                  d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               128                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       3                   Batch Size:         128                 
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                test                Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : anomaly_detection_PSM_Transformer_PSM_ftM_sl100_ll48_pl0_dm128_nh8_el3_dl1_df128_fc1_ebtimeF_dtTrue_test_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+test: (87841, 25)
+train: (132481, 25)
+train 132382
+test: (87841, 25)
+train: (132481, 25)
+val 26398
+test: (87841, 25)
+train: (132481, 25)
+test 87742
+	iters: 100, epoch: 1 | loss: 0.2064150
+	speed: 0.0635s/iter; left time: 190.7548s
+	iters: 200, epoch: 1 | loss: 0.2151461
+	speed: 0.0479s/iter; left time: 139.0800s
+	iters: 300, epoch: 1 | loss: 0.1709953
+	speed: 0.0433s/iter; left time: 121.3736s
+	iters: 400, epoch: 1 | loss: 0.0752268
+	speed: 0.0424s/iter; left time: 114.8018s
+	iters: 500, epoch: 1 | loss: 0.0740694
+	speed: 0.0399s/iter; left time: 104.0290s
+	iters: 600, epoch: 1 | loss: 0.0576477
+	speed: 0.0407s/iter; left time: 102.1175s
+	iters: 700, epoch: 1 | loss: 0.0824481
+	speed: 0.0398s/iter; left time: 95.7864s
+	iters: 800, epoch: 1 | loss: 0.0583986
+	speed: 0.0418s/iter; left time: 96.3016s
+	iters: 900, epoch: 1 | loss: 0.1074390
+	speed: 0.0475s/iter; left time: 104.7937s
+	iters: 1000, epoch: 1 | loss: 0.0700271
+	speed: 0.0523s/iter; left time: 110.1087s
+Epoch: 1 cost time: 47.630232095718384
+Epoch: 1, Steps: 1035 | Train Loss: 0.1381887 Vali Loss: 0.0324458 Test Loss: 0.2235264
+Validation loss decreased (inf --> 0.032446).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.0594924
+	speed: 1.2173s/iter; left time: 2399.2618s
+	iters: 200, epoch: 2 | loss: 0.0795197
+	speed: 0.0521s/iter; left time: 97.5306s
+	iters: 300, epoch: 2 | loss: 0.0419002
+	speed: 0.0548s/iter; left time: 97.0871s
+	iters: 400, epoch: 2 | loss: 0.0517176
+	speed: 0.0496s/iter; left time: 82.8598s
+	iters: 500, epoch: 2 | loss: 0.0672613
+	speed: 0.0515s/iter; left time: 80.9631s
+	iters: 600, epoch: 2 | loss: 0.0363026
+	speed: 0.0472s/iter; left time: 69.3660s
+	iters: 700, epoch: 2 | loss: 0.0336191
+	speed: 0.0492s/iter; left time: 67.3982s
+	iters: 800, epoch: 2 | loss: 0.0344723
+	speed: 0.0481s/iter; left time: 61.0911s
+	iters: 900, epoch: 2 | loss: 0.0358116
+	speed: 0.0467s/iter; left time: 54.6770s
+	iters: 1000, epoch: 2 | loss: 0.0259091
+	speed: 0.0519s/iter; left time: 55.5953s
+Epoch: 2 cost time: 51.79151701927185
+Epoch: 2, Steps: 1035 | Train Loss: 0.0473167 Vali Loss: 0.0174732 Test Loss: 0.1797957
+Validation loss decreased (0.032446 --> 0.017473).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.0303671
+	speed: 1.8124s/iter; left time: 1696.4409s
+	iters: 200, epoch: 3 | loss: 0.0270878
+	speed: 0.0565s/iter; left time: 47.2185s
+	iters: 300, epoch: 3 | loss: 0.0312920
+	speed: 0.0539s/iter; left time: 39.6808s
+	iters: 400, epoch: 3 | loss: 0.0245628
+	speed: 0.0547s/iter; left time: 34.7705s
+	iters: 500, epoch: 3 | loss: 0.0382343
+	speed: 0.0519s/iter; left time: 27.7945s
+	iters: 600, epoch: 3 | loss: 0.0246251
+	speed: 0.0508s/iter; left time: 22.1557s
+	iters: 700, epoch: 3 | loss: 0.0486106
+	speed: 0.0609s/iter; left time: 20.4516s
+	iters: 800, epoch: 3 | loss: 0.0277648
+	speed: 0.0536s/iter; left time: 12.6577s
+	iters: 900, epoch: 3 | loss: 0.0504941
+	speed: 0.0505s/iter; left time: 6.8737s
+	iters: 1000, epoch: 3 | loss: 0.0244103
+	speed: 0.0493s/iter; left time: 1.7763s
+Epoch: 3 cost time: 55.9843053817749
+Epoch: 3, Steps: 1035 | Train Loss: 0.0329274 Vali Loss: 0.0140130 Test Loss: 0.1590628
+Validation loss decreased (0.017473 --> 0.014013).  Saving model ...
+Updating learning rate to 2.5e-05
+>>>>>>>testing : anomaly_detection_PSM_Transformer_PSM_ftM_sl100_ll48_pl0_dm128_nh8_el3_dl1_df128_fc1_ebtimeF_dtTrue_test_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test: (87841, 25)
+train: (132481, 25)
+test 87742
+test: (87841, 25)
+train: (132481, 25)
+train 132382
+Threshold : 0.8671829152107247
+pred:    (8774200,)
+gt:      (8774200,)
+pred:  (8774200,)
+gt:    (8774200,)
+Accuracy : 0.9524, Precision : 0.9962, Recall : 0.8316, F-score : 0.9065 

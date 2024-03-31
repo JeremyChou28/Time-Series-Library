@@ -1,0 +1,116 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           PEMS-SF             Model:              iTransformer        
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/PEMS-SF/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             3                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+267
+173
+>>>>>>>start training : classification_PEMS-SF_iTransformer_UEA_ftM_sl144_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+267
+173
+173
+Epoch: 1 cost time: 4.105007886886597
+Epoch: 1, Steps: 17 | Train Loss: 17.627 Vali Loss: 7.396 Vali Acc: 0.434 Test Loss: 7.265 Test Acc: 0.434
+Validation loss decreased (inf --> -0.433526).  Saving model ...
+Epoch: 2 cost time: 1.1559948921203613
+Epoch: 2, Steps: 17 | Train Loss: 7.053 Vali Loss: 4.019 Vali Acc: 0.532 Test Loss: 3.991 Test Acc: 0.532
+Validation loss decreased (-0.433526 --> -0.531792).  Saving model ...
+Epoch: 3 cost time: 1.1787896156311035
+Epoch: 3, Steps: 17 | Train Loss: 3.106 Vali Loss: 7.103 Vali Acc: 0.301 Test Loss: 7.009 Test Acc: 0.301
+EarlyStopping counter: 1 out of 10
+Epoch: 4 cost time: 1.2284867763519287
+Epoch: 4, Steps: 17 | Train Loss: 3.113 Vali Loss: 2.049 Vali Acc: 0.572 Test Loss: 2.076 Test Acc: 0.572
+Validation loss decreased (-0.531792 --> -0.572254).  Saving model ...
+Epoch: 5 cost time: 1.199547529220581
+Epoch: 5, Steps: 17 | Train Loss: 2.095 Vali Loss: 3.067 Vali Acc: 0.566 Test Loss: 3.064 Test Acc: 0.566
+EarlyStopping counter: 1 out of 10
+Updating learning rate to 6.25e-05
+Epoch: 6 cost time: 1.214712142944336
+Epoch: 6, Steps: 17 | Train Loss: 0.780 Vali Loss: 1.548 Vali Acc: 0.688 Test Loss: 1.547 Test Acc: 0.688
+Validation loss decreased (-0.572254 --> -0.687861).  Saving model ...
+Epoch: 7 cost time: 1.1849219799041748
+Epoch: 7, Steps: 17 | Train Loss: 0.155 Vali Loss: 1.076 Vali Acc: 0.780 Test Loss: 1.103 Test Acc: 0.780
+Validation loss decreased (-0.687861 --> -0.780347).  Saving model ...
+Epoch: 8 cost time: 1.174591302871704
+Epoch: 8, Steps: 17 | Train Loss: 0.046 Vali Loss: 1.041 Vali Acc: 0.798 Test Loss: 1.057 Test Acc: 0.798
+Validation loss decreased (-0.780347 --> -0.797688).  Saving model ...
+Epoch: 9 cost time: 1.2376689910888672
+Epoch: 9, Steps: 17 | Train Loss: 0.019 Vali Loss: 1.004 Vali Acc: 0.786 Test Loss: 0.994 Test Acc: 0.786
+EarlyStopping counter: 1 out of 10
+Epoch: 10 cost time: 1.2292556762695312
+Epoch: 10, Steps: 17 | Train Loss: 0.010 Vali Loss: 1.086 Vali Acc: 0.809 Test Loss: 1.043 Test Acc: 0.809
+Validation loss decreased (-0.797688 --> -0.809249).  Saving model ...
+Updating learning rate to 1.953125e-06
+Epoch: 11 cost time: 1.2272732257843018
+Epoch: 11, Steps: 17 | Train Loss: 0.007 Vali Loss: 1.038 Vali Acc: 0.815 Test Loss: 1.027 Test Acc: 0.815
+Validation loss decreased (-0.809249 --> -0.815029).  Saving model ...
+Epoch: 12 cost time: 1.210066318511963
+Epoch: 12, Steps: 17 | Train Loss: 0.006 Vali Loss: 1.040 Vali Acc: 0.803 Test Loss: 1.007 Test Acc: 0.803
+EarlyStopping counter: 1 out of 10
+Epoch: 13 cost time: 1.1870462894439697
+Epoch: 13, Steps: 17 | Train Loss: 0.004 Vali Loss: 0.985 Vali Acc: 0.809 Test Loss: 0.984 Test Acc: 0.809
+EarlyStopping counter: 2 out of 10
+Epoch: 14 cost time: 1.223649263381958
+Epoch: 14, Steps: 17 | Train Loss: 0.004 Vali Loss: 0.972 Vali Acc: 0.809 Test Loss: 0.974 Test Acc: 0.809
+EarlyStopping counter: 3 out of 10
+Epoch: 15 cost time: 1.2475512027740479
+Epoch: 15, Steps: 17 | Train Loss: 0.005 Vali Loss: 0.970 Vali Acc: 0.809 Test Loss: 0.994 Test Acc: 0.809
+EarlyStopping counter: 4 out of 10
+Updating learning rate to 6.103515625e-08
+Epoch: 16 cost time: 1.2485692501068115
+Epoch: 16, Steps: 17 | Train Loss: 0.004 Vali Loss: 0.977 Vali Acc: 0.809 Test Loss: 0.980 Test Acc: 0.809
+EarlyStopping counter: 5 out of 10
+Epoch: 17 cost time: 1.2516508102416992
+Epoch: 17, Steps: 17 | Train Loss: 0.004 Vali Loss: 0.992 Vali Acc: 0.809 Test Loss: 0.986 Test Acc: 0.809
+EarlyStopping counter: 6 out of 10
+Epoch: 18 cost time: 1.2501449584960938
+Epoch: 18, Steps: 17 | Train Loss: 0.004 Vali Loss: 0.977 Vali Acc: 0.809 Test Loss: 0.969 Test Acc: 0.809
+EarlyStopping counter: 7 out of 10
+Epoch: 19 cost time: 1.244908332824707
+Epoch: 19, Steps: 17 | Train Loss: 0.005 Vali Loss: 0.972 Vali Acc: 0.809 Test Loss: 1.007 Test Acc: 0.809
+EarlyStopping counter: 8 out of 10
+Epoch: 20 cost time: 1.2191188335418701
+Epoch: 20, Steps: 17 | Train Loss: 0.004 Vali Loss: 1.046 Vali Acc: 0.809 Test Loss: 0.977 Test Acc: 0.809
+EarlyStopping counter: 9 out of 10
+Updating learning rate to 1.9073486328125e-09
+Epoch: 21 cost time: 1.2279284000396729
+Epoch: 21, Steps: 17 | Train Loss: 0.004 Vali Loss: 0.971 Vali Acc: 0.809 Test Loss: 0.971 Test Acc: 0.809
+EarlyStopping counter: 10 out of 10
+Early stopping
+>>>>>>>testing : classification_PEMS-SF_iTransformer_UEA_ftM_sl144_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+173
+test shape: torch.Size([173, 7]) torch.Size([173, 1])
+accuracy:0.815028901734104
+Spend Time: 479.8368031978607

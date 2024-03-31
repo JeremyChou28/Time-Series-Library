@@ -1,0 +1,96 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           SelfRegulationSCP1  Model:              DLinear             
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/SelfRegulationSCP1/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+268
+293
+>>>>>>>start training : classification_SelfRegulationSCP1_DLinear_UEA_ftM_sl896_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+268
+293
+293
+Epoch: 1 cost time: 2.225081205368042
+Epoch: 1, Steps: 17 | Train Loss: 1.393 Vali Loss: 0.358 Vali Acc: 0.846 Test Loss: 0.356 Test Acc: 0.846
+Validation loss decreased (inf --> -0.846416).  Saving model ...
+Epoch: 2 cost time: 0.268662691116333
+Epoch: 2, Steps: 17 | Train Loss: 0.568 Vali Loss: 0.412 Vali Acc: 0.877 Test Loss: 0.408 Test Acc: 0.877
+Validation loss decreased (-0.846416 --> -0.877133).  Saving model ...
+Epoch: 3 cost time: 0.15835237503051758
+Epoch: 3, Steps: 17 | Train Loss: 0.227 Vali Loss: 0.395 Vali Acc: 0.877 Test Loss: 0.390 Test Acc: 0.877
+Validation loss decreased (-0.877133 --> -0.877133).  Saving model ...
+Epoch: 4 cost time: 0.15776801109313965
+Epoch: 4, Steps: 17 | Train Loss: 0.141 Vali Loss: 0.539 Vali Acc: 0.826 Test Loss: 0.600 Test Acc: 0.826
+EarlyStopping counter: 1 out of 10
+Epoch: 5 cost time: 0.20062851905822754
+Epoch: 5, Steps: 17 | Train Loss: 0.085 Vali Loss: 0.504 Vali Acc: 0.881 Test Loss: 0.476 Test Acc: 0.881
+Validation loss decreased (-0.877133 --> -0.880546).  Saving model ...
+Updating learning rate to 6.25e-05
+Epoch: 6 cost time: 0.14141488075256348
+Epoch: 6, Steps: 17 | Train Loss: 0.046 Vali Loss: 0.597 Vali Acc: 0.853 Test Loss: 0.551 Test Acc: 0.853
+EarlyStopping counter: 1 out of 10
+Epoch: 7 cost time: 0.1317765712738037
+Epoch: 7, Steps: 17 | Train Loss: 0.030 Vali Loss: 0.714 Vali Acc: 0.850 Test Loss: 0.613 Test Acc: 0.850
+EarlyStopping counter: 2 out of 10
+Epoch: 8 cost time: 0.13505959510803223
+Epoch: 8, Steps: 17 | Train Loss: 0.023 Vali Loss: 0.628 Vali Acc: 0.853 Test Loss: 0.592 Test Acc: 0.853
+EarlyStopping counter: 3 out of 10
+Epoch: 9 cost time: 0.11350202560424805
+Epoch: 9, Steps: 17 | Train Loss: 0.022 Vali Loss: 0.591 Vali Acc: 0.853 Test Loss: 0.592 Test Acc: 0.853
+EarlyStopping counter: 4 out of 10
+Epoch: 10 cost time: 0.12363290786743164
+Epoch: 10, Steps: 17 | Train Loss: 0.021 Vali Loss: 0.654 Vali Acc: 0.853 Test Loss: 0.593 Test Acc: 0.853
+EarlyStopping counter: 5 out of 10
+Updating learning rate to 1.953125e-06
+Epoch: 11 cost time: 0.1321392059326172
+Epoch: 11, Steps: 17 | Train Loss: 0.019 Vali Loss: 0.594 Vali Acc: 0.853 Test Loss: 0.596 Test Acc: 0.853
+EarlyStopping counter: 6 out of 10
+Epoch: 12 cost time: 0.1505141258239746
+Epoch: 12, Steps: 17 | Train Loss: 0.019 Vali Loss: 0.592 Vali Acc: 0.853 Test Loss: 0.628 Test Acc: 0.853
+EarlyStopping counter: 7 out of 10
+Epoch: 13 cost time: 0.18247008323669434
+Epoch: 13, Steps: 17 | Train Loss: 0.019 Vali Loss: 0.629 Vali Acc: 0.853 Test Loss: 0.622 Test Acc: 0.853
+EarlyStopping counter: 8 out of 10
+Epoch: 14 cost time: 0.1982097625732422
+Epoch: 14, Steps: 17 | Train Loss: 0.019 Vali Loss: 0.707 Vali Acc: 0.853 Test Loss: 0.633 Test Acc: 0.853
+EarlyStopping counter: 9 out of 10
+Epoch: 15 cost time: 0.18174242973327637
+Epoch: 15, Steps: 17 | Train Loss: 0.019 Vali Loss: 0.596 Vali Acc: 0.853 Test Loss: 0.610 Test Acc: 0.853
+EarlyStopping counter: 10 out of 10
+Early stopping
+>>>>>>>testing : classification_SelfRegulationSCP1_DLinear_UEA_ftM_sl896_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+293
+test shape: torch.Size([293, 2]) torch.Size([293, 1])
+accuracy:0.8805460750853242
+Spend Time: 26.31551194190979

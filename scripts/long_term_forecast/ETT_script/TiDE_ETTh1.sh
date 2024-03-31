@@ -25,7 +25,7 @@ nohup python -u run.py \
   --batch_size 512 \
   --learning_rate 0.1 \
   --patience 5 \
-  --train_epochs 10 \
+  --train_epochs 10 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_96_96.log 2>&1 &
 
 
 
@@ -52,7 +52,7 @@ nohup python -u run.py \
   --batch_size 512 \
   --learning_rate 0.1 \
   --patience 5 \
-  --train_epochs 10 \
+  --train_epochs 10 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_96_192.log 2>&1 &
 
  
 
@@ -80,7 +80,7 @@ nohup python -u run.py \
   --batch_size 512 \
   --learning_rate 0.1 \
   --patience 5 \
-  --train_epochs 10 \
+  --train_epochs 10 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_96_336.log 2>&1 &
 
 
 
@@ -108,5 +108,5 @@ nohup python -u run.py \
   --batch_size 512 \
   --learning_rate 0.1 \
   --patience 5 \
-  --train_epochs 10 \
+  --train_epochs 10 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_96_720.log 2>&1 &
 

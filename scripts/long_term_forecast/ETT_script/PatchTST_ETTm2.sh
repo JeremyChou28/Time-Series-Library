@@ -23,7 +23,7 @@ nohup python -u run.py \
   --des 'Exp' \
   --n_heads 16 \
   --batch_size 32 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTm2_96_96.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -46,7 +46,7 @@ nohup python -u run.py \
   --des 'Exp' \
   --n_heads 2 \
   --batch_size 128 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTm2_96_192.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -69,7 +69,7 @@ nohup python -u run.py \
   --des 'Exp' \
   --n_heads 4 \
   --batch_size 32 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTm2_96_336.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -92,4 +92,4 @@ nohup python -u run.py \
   --des 'Exp' \
   --n_heads 4 \
   --batch_size 128 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTm2_96_720.log 2>&1 &

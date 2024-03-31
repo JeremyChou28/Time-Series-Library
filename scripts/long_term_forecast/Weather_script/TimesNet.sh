@@ -1,4 +1,4 @@
-export CUDA_VISIBLE_DEVICES=5
+export CUDA_VISIBLE_DEVICES=1
 
 model_name=TimesNet
 
@@ -24,7 +24,7 @@ nohup python -u run.py \
   --d_ff 32 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/weather/${model_name}_weather_96_96.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -49,7 +49,7 @@ nohup python -u run.py \
   --top_k 5 \
   --des 'Exp' \
   --itr 1 \
-  --train_epochs 1
+  --train_epochs 1 > ./logs/long_term_forecast/weather/${model_name}_weather_96_192.log 2>&1 &
 
 
 nohup python -u run.py \
@@ -74,7 +74,7 @@ nohup python -u run.py \
   --d_ff 32 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/weather/${model_name}_weather_96_336.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -99,4 +99,4 @@ nohup python -u run.py \
   --top_k 5 \
   --des 'Exp' \
   --itr 1 \
-  --train_epochs 1
+  --train_epochs 1 > ./logs/long_term_forecast/weather/${model_name}_weather_96_720.log 2>&1 &

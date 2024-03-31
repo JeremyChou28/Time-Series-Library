@@ -24,7 +24,7 @@ nohup python -u run.py \
   --itr 1 \
   --train_epochs 3 \
   --p_hidden_dims 256 256 \
-  --p_hidden_layers 2
+  --p_hidden_layers 2 > ./logs/long_term_forecast/weather/${model_name}_weather_96_96.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -47,7 +47,7 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --p_hidden_dims 128 128 \
-  --p_hidden_layers 2
+  --p_hidden_layers 2 > ./logs/long_term_forecast/weather/${model_name}_weather_96_192.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -70,7 +70,7 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --p_hidden_dims 128 128 \
-  --p_hidden_layers 2
+  --p_hidden_layers 2 > ./logs/long_term_forecast/weather/${model_name}_weather_96_336.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -93,4 +93,4 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --p_hidden_dims 128 128 \
-  --p_hidden_layers 2
+  --p_hidden_layers 2 > ./logs/long_term_forecast/weather/${model_name}_weather_96_720.log 2>&1 &

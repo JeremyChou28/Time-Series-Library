@@ -385,3 +385,12 @@ mse:0.12706643342971802, mae:0.25700557231903076
 imputation_ETTm2_mask_0.375_TimesNet_ETTm2_ftM_sl96_ll0_pl0_dm64_nh8_el2_dl1_df64_fc3_ebtimeF_dtTrue_Exp_0  
 mse:0.022800182923674583, mae:0.09198351949453354
 
+imputation_ECL_mask_0.375_Pyraformer_custom_ftM_sl96_ll0_pl0_dm128_nh8_el2_dl1_df128_fc3_ebtimeF_dtTrue_Exp_0  
+mse:0.19743123650550842, mae:0.30704692006111145
+
+imputation_ECL_mask_0.125_Pyraformer_custom_ftM_sl96_ll0_pl0_dm128_nh8_el2_dl1_df128_fc3_ebtimeF_dtTrue_Exp_0  
+mse:0.18557800352573395, mae:0.30193620920181274
+
+imputation_ECL_mask_0.5_Pyraformer_custom_ftM_sl96_ll0_pl0_dm128_nh8_el2_dl1_df128_fc3_ebtimeF_dtTrue_Exp_0  
+mse:0.20331664383411407, mae:0.30960044264793396
+

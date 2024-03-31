@@ -24,7 +24,7 @@ nohup python -u run.py \
   --d_ff 768 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/illness/${model_name}_ili_36_24.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -48,7 +48,7 @@ nohup python -u run.py \
   --d_ff 768 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/illness/${model_name}_ili_36_36.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -72,7 +72,7 @@ nohup python -u run.py \
   --d_ff 768 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/illness/${model_name}_ili_36_48.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -96,4 +96,4 @@ nohup python -u run.py \
   --d_ff 768 \
   --top_k 5 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/illness/${model_name}_ili_36_60.log 2>&1 &

@@ -23,7 +23,7 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --p_hidden_dims 32 32 \
-  --p_hidden_layers 2
+  --p_hidden_layers 2 > ./logs/long_term_forecast/illness/${model_name}_ili_36_24.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -46,7 +46,7 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --p_hidden_dims 32 32 \
-  --p_hidden_layers 2
+  --p_hidden_layers 2 > ./logs/long_term_forecast/illness/${model_name}_ili_36_36.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -69,7 +69,7 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --p_hidden_dims 16 16 \
-  --p_hidden_layers 2
+  --p_hidden_layers 2 > ./logs/long_term_forecast/illness/${model_name}_ili_36_48.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -92,4 +92,4 @@ nohup python -u run.py \
   --des 'Exp' \
   --itr 1 \
   --p_hidden_dims 8 8 \
-  --p_hidden_layers 2
+  --p_hidden_layers 2 > ./logs/long_term_forecast/illness/${model_name}_ili_36_60.log 2>&1 &

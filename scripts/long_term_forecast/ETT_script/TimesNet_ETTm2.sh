@@ -24,7 +24,7 @@ nohup python -u run.py \
   --d_model 32 \
   --d_ff 32 \
   --top_k 5 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTm2_96_96.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -49,7 +49,7 @@ nohup python -u run.py \
   --d_ff 32 \
   --top_k 5 \
   --itr 1 \
-  --train_epochs 1
+  --train_epochs 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTm2_96_192.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -73,7 +73,7 @@ nohup python -u run.py \
   --d_model 32 \
   --d_ff 32 \
   --top_k 5 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTm2_96_336.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -98,4 +98,4 @@ nohup python -u run.py \
   --d_ff 32 \
   --top_k 5 \
   --itr 1 \
-  --train_epochs 1
+  --train_epochs 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTm2_96_720.log 2>&1 &

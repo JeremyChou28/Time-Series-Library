@@ -1,0 +1,164 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           Handwriting         Model:              Reformer            
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/Handwriting/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+150
+850
+>>>>>>>start training : classification_Handwriting_Reformer_UEA_ftM_sl152_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+150
+850
+850
+Epoch: 1 cost time: 3.383600950241089
+Epoch: 1, Steps: 10 | Train Loss: 5.971 Vali Loss: 4.984 Vali Acc: 0.095 Test Loss: 4.910 Test Acc: 0.092
+Validation loss decreased (inf --> -0.095294).  Saving model ...
+Epoch: 2 cost time: 0.2708146572113037
+Epoch: 2, Steps: 10 | Train Loss: 1.736 Vali Loss: 4.701 Vali Acc: 0.214 Test Loss: 4.752 Test Acc: 0.211
+Validation loss decreased (-0.095294 --> -0.214118).  Saving model ...
+Epoch: 3 cost time: 0.2736241817474365
+Epoch: 3, Steps: 10 | Train Loss: 0.515 Vali Loss: 5.177 Vali Acc: 0.220 Test Loss: 5.143 Test Acc: 0.220
+Validation loss decreased (-0.214118 --> -0.220000).  Saving model ...
+Epoch: 4 cost time: 0.4041435718536377
+Epoch: 4, Steps: 10 | Train Loss: 0.170 Vali Loss: 5.909 Vali Acc: 0.214 Test Loss: 5.779 Test Acc: 0.220
+EarlyStopping counter: 1 out of 10
+Epoch: 5 cost time: 0.36655569076538086
+Epoch: 5, Steps: 10 | Train Loss: 0.146 Vali Loss: 6.028 Vali Acc: 0.256 Test Loss: 5.933 Test Acc: 0.251
+Validation loss decreased (-0.220000 --> -0.256471).  Saving model ...
+Updating learning rate to 6.25e-05
+Epoch: 6 cost time: 0.32718515396118164
+Epoch: 6, Steps: 10 | Train Loss: 0.057 Vali Loss: 5.935 Vali Acc: 0.262 Test Loss: 5.993 Test Acc: 0.260
+Validation loss decreased (-0.256471 --> -0.262353).  Saving model ...
+Epoch: 7 cost time: 0.41072559356689453
+Epoch: 7, Steps: 10 | Train Loss: 0.013 Vali Loss: 5.625 Vali Acc: 0.274 Test Loss: 5.645 Test Acc: 0.274
+Validation loss decreased (-0.262353 --> -0.274118).  Saving model ...
+Epoch: 8 cost time: 0.39830970764160156
+Epoch: 8, Steps: 10 | Train Loss: 0.005 Vali Loss: 5.614 Vali Acc: 0.274 Test Loss: 5.588 Test Acc: 0.278
+Validation loss decreased (-0.274118 --> -0.274118).  Saving model ...
+Epoch: 9 cost time: 0.3945932388305664
+Epoch: 9, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.609 Vali Acc: 0.274 Test Loss: 5.618 Test Acc: 0.272
+Validation loss decreased (-0.274118 --> -0.274118).  Saving model ...
+Epoch: 10 cost time: 0.37325024604797363
+Epoch: 10, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.566 Vali Acc: 0.279 Test Loss: 5.486 Test Acc: 0.284
+Validation loss decreased (-0.274118 --> -0.278824).  Saving model ...
+Updating learning rate to 1.953125e-06
+Epoch: 11 cost time: 0.346923828125
+Epoch: 11, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.594 Vali Acc: 0.281 Test Loss: 5.652 Test Acc: 0.278
+Validation loss decreased (-0.278824 --> -0.281176).  Saving model ...
+Epoch: 12 cost time: 0.4152398109436035
+Epoch: 12, Steps: 10 | Train Loss: 0.002 Vali Loss: 5.655 Vali Acc: 0.275 Test Loss: 5.474 Test Acc: 0.278
+EarlyStopping counter: 1 out of 10
+Epoch: 13 cost time: 0.35662293434143066
+Epoch: 13, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.613 Vali Acc: 0.276 Test Loss: 5.502 Test Acc: 0.284
+EarlyStopping counter: 2 out of 10
+Epoch: 14 cost time: 0.5516066551208496
+Epoch: 14, Steps: 10 | Train Loss: 0.002 Vali Loss: 5.626 Vali Acc: 0.276 Test Loss: 5.476 Test Acc: 0.276
+EarlyStopping counter: 3 out of 10
+Epoch: 15 cost time: 0.3390963077545166
+Epoch: 15, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.525 Vali Acc: 0.276 Test Loss: 5.532 Test Acc: 0.275
+EarlyStopping counter: 4 out of 10
+Updating learning rate to 6.103515625e-08
+Epoch: 16 cost time: 0.3241753578186035
+Epoch: 16, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.562 Vali Acc: 0.280 Test Loss: 5.557 Test Acc: 0.274
+EarlyStopping counter: 5 out of 10
+Epoch: 17 cost time: 0.3857583999633789
+Epoch: 17, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.549 Vali Acc: 0.281 Test Loss: 5.526 Test Acc: 0.284
+Validation loss decreased (-0.281176 --> -0.281176).  Saving model ...
+Epoch: 18 cost time: 0.31421327590942383
+Epoch: 18, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.621 Vali Acc: 0.281 Test Loss: 5.698 Test Acc: 0.281
+Validation loss decreased (-0.281176 --> -0.281176).  Saving model ...
+Epoch: 19 cost time: 0.3671729564666748
+Epoch: 19, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.623 Vali Acc: 0.275 Test Loss: 5.641 Test Acc: 0.278
+EarlyStopping counter: 1 out of 10
+Epoch: 20 cost time: 0.3218393325805664
+Epoch: 20, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.494 Vali Acc: 0.273 Test Loss: 5.505 Test Acc: 0.281
+EarlyStopping counter: 2 out of 10
+Updating learning rate to 1.9073486328125e-09
+Epoch: 21 cost time: 0.24948859214782715
+Epoch: 21, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.556 Vali Acc: 0.275 Test Loss: 5.633 Test Acc: 0.281
+EarlyStopping counter: 3 out of 10
+Epoch: 22 cost time: 0.27233338356018066
+Epoch: 22, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.537 Vali Acc: 0.278 Test Loss: 5.575 Test Acc: 0.274
+EarlyStopping counter: 4 out of 10
+Epoch: 23 cost time: 0.195465087890625
+Epoch: 23, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.661 Vali Acc: 0.281 Test Loss: 5.671 Test Acc: 0.272
+Validation loss decreased (-0.281176 --> -0.281176).  Saving model ...
+Epoch: 24 cost time: 0.21236228942871094
+Epoch: 24, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.550 Vali Acc: 0.274 Test Loss: 5.547 Test Acc: 0.276
+EarlyStopping counter: 1 out of 10
+Epoch: 25 cost time: 0.19963765144348145
+Epoch: 25, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.584 Vali Acc: 0.280 Test Loss: 5.535 Test Acc: 0.279
+EarlyStopping counter: 2 out of 10
+Updating learning rate to 5.960464477539063e-11
+Epoch: 26 cost time: 0.21641921997070312
+Epoch: 26, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.702 Vali Acc: 0.286 Test Loss: 5.629 Test Acc: 0.276
+Validation loss decreased (-0.281176 --> -0.285882).  Saving model ...
+Epoch: 27 cost time: 0.19765114784240723
+Epoch: 27, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.478 Vali Acc: 0.281 Test Loss: 5.653 Test Acc: 0.279
+EarlyStopping counter: 1 out of 10
+Epoch: 28 cost time: 0.24031877517700195
+Epoch: 28, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.640 Vali Acc: 0.276 Test Loss: 5.488 Test Acc: 0.279
+EarlyStopping counter: 2 out of 10
+Epoch: 29 cost time: 0.28203558921813965
+Epoch: 29, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.708 Vali Acc: 0.281 Test Loss: 5.589 Test Acc: 0.278
+EarlyStopping counter: 3 out of 10
+Epoch: 30 cost time: 0.29582881927490234
+Epoch: 30, Steps: 10 | Train Loss: 0.002 Vali Loss: 5.623 Vali Acc: 0.276 Test Loss: 5.541 Test Acc: 0.282
+EarlyStopping counter: 4 out of 10
+Updating learning rate to 1.862645149230957e-12
+Epoch: 31 cost time: 0.27982306480407715
+Epoch: 31, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.610 Vali Acc: 0.275 Test Loss: 5.572 Test Acc: 0.278
+EarlyStopping counter: 5 out of 10
+Epoch: 32 cost time: 0.28517913818359375
+Epoch: 32, Steps: 10 | Train Loss: 0.002 Vali Loss: 5.491 Vali Acc: 0.275 Test Loss: 5.492 Test Acc: 0.274
+EarlyStopping counter: 6 out of 10
+Epoch: 33 cost time: 0.27241039276123047
+Epoch: 33, Steps: 10 | Train Loss: 0.002 Vali Loss: 5.653 Vali Acc: 0.275 Test Loss: 5.643 Test Acc: 0.276
+EarlyStopping counter: 7 out of 10
+Epoch: 34 cost time: 0.2722611427307129
+Epoch: 34, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.529 Vali Acc: 0.278 Test Loss: 5.536 Test Acc: 0.279
+EarlyStopping counter: 8 out of 10
+Epoch: 35 cost time: 0.2751452922821045
+Epoch: 35, Steps: 10 | Train Loss: 0.002 Vali Loss: 5.508 Vali Acc: 0.276 Test Loss: 5.507 Test Acc: 0.279
+EarlyStopping counter: 9 out of 10
+Updating learning rate to 5.820766091346741e-14
+Epoch: 36 cost time: 0.26816391944885254
+Epoch: 36, Steps: 10 | Train Loss: 0.003 Vali Loss: 5.490 Vali Acc: 0.276 Test Loss: 5.674 Test Acc: 0.278
+EarlyStopping counter: 10 out of 10
+Early stopping
+>>>>>>>testing : classification_Handwriting_Reformer_UEA_ftM_sl152_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+850
+test shape: torch.Size([850, 26]) torch.Size([850, 1])
+accuracy:0.28352941176470586
+Spend Time: 104.59787011146545

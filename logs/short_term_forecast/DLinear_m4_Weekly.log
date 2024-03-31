@@ -1,0 +1,80 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          short_term_forecast Is Training:        1                   
+  Model ID:           m4_Weekly           Model:              DLinear             
+
+[1mData Loader[0m
+  Data:               m4                  Root Path:          ../iTransformer_datasets/m4
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           96                  Seasonal Patterns:  Weekly              
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             1                   Dec In:             1                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         16                  
+  Patience:           3                   Learning Rate:      0.001               
+  Des:                Exp                 Loss:               SMAPE               
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : short_term_forecast_m4_Weekly_DLinear_m4_ftM_sl26_ll13_pl13_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 359
+val 359
+Epoch: 1 cost time: 1.312150001525879
+Epoch: 1, Steps: 23 | Train Loss: 12.7407964 Vali Loss: 12.2353572 Test Loss: 12.2353572
+Validation loss decreased (inf --> 12.235357).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 0.17116332054138184
+Epoch: 2, Steps: 23 | Train Loss: 11.2095402 Vali Loss: 11.8295355 Test Loss: 11.8295355
+Validation loss decreased (12.235357 --> 11.829535).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 3 cost time: 0.1832878589630127
+Epoch: 3, Steps: 23 | Train Loss: 11.3122643 Vali Loss: 11.9581878 Test Loss: 11.9581878
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.00025
+Epoch: 4 cost time: 0.18401408195495605
+Epoch: 4, Steps: 23 | Train Loss: 11.4514169 Vali Loss: 11.7054143 Test Loss: 11.7054143
+Validation loss decreased (11.829535 --> 11.705414).  Saving model ...
+Updating learning rate to 0.000125
+Epoch: 5 cost time: 0.18675637245178223
+Epoch: 5, Steps: 23 | Train Loss: 12.0009220 Vali Loss: 11.7867661 Test Loss: 11.7867661
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 6.25e-05
+Epoch: 6 cost time: 0.18967652320861816
+Epoch: 6, Steps: 23 | Train Loss: 11.5312252 Vali Loss: 11.8982450 Test Loss: 11.8982450
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 3.125e-05
+Epoch: 7 cost time: 0.19678711891174316
+Epoch: 7, Steps: 23 | Train Loss: 10.3302805 Vali Loss: 11.9037566 Test Loss: 11.9037566
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : short_term_forecast_m4_Weekly_DLinear_m4_ftM_sl26_ll13_pl13_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+train 359
+test 359
+0
+test shape: (359, 13, 1)
+DLinear
+After all 6 tasks are finished, you can calculate the averaged index

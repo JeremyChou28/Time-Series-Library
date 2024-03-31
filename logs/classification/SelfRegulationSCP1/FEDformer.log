@@ -1,0 +1,60 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           SelfRegulationSCP1  Model:              FEDformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/SelfRegulationSCP1/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+268
+293
+fourier enhanced block used!
+modes=32, index=[13, 34, 46, 64, 66, 111, 115, 118, 124, 134, 138, 139, 142, 182, 211, 215, 216, 252, 274, 277, 290, 301, 302, 312, 320, 335, 337, 347, 354, 375, 434, 439]
+fourier enhanced block used!
+modes=32, index=[3, 6, 9, 18, 20, 28, 34, 40, 44, 45, 47, 54, 59, 79, 81, 84, 92, 101, 103, 107, 125, 137, 161, 163, 180, 194, 205, 214, 217, 218, 219, 221]
+ fourier enhanced cross attention used!
+modes_q=32, index_q=[19, 20, 35, 38, 59, 61, 62, 65, 67, 70, 71, 72, 74, 85, 86, 102, 110, 111, 121, 122, 140, 146, 148, 149, 167, 191, 193, 197, 202, 206, 207, 209]
+modes_kv=32, index_kv=[15, 27, 31, 32, 49, 59, 62, 89, 95, 105, 111, 114, 135, 144, 148, 189, 206, 215, 232, 242, 254, 269, 277, 297, 343, 349, 368, 370, 420, 437, 445, 446]
+>>>>>>>start training : classification_SelfRegulationSCP1_FEDformer_UEA_ftM_sl896_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+268
+293
+293
+Traceback (most recent call last):
+  File "run.py", line 272, in <module>
+    exp.train(setting)
+  File "/Jianping/Research/Time-Series-Library/exp/exp_classification.py", line 122, in train
+    loss.backward()
+  File "/opt/conda/envs/zjp/lib/python3.8/site-packages/torch/_tensor.py", line 522, in backward
+    torch.autograd.backward(
+  File "/opt/conda/envs/zjp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 266, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: GET was unable to find an engine to execute this computation

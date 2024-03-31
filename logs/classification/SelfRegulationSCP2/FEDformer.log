@@ -1,0 +1,84 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           SelfRegulationSCP2  Model:              FEDformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/SelfRegulationSCP2/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+200
+180
+fourier enhanced block used!
+modes=32, index=[1, 28, 32, 52, 90, 98, 106, 125, 141, 165, 167, 199, 200, 201, 258, 296, 297, 303, 320, 334, 360, 362, 376, 389, 408, 428, 450, 486, 487, 498, 552, 553]
+fourier enhanced block used!
+modes=32, index=[16, 18, 19, 38, 61, 62, 63, 65, 94, 110, 111, 113, 127, 128, 130, 142, 152, 154, 175, 176, 178, 187, 190, 201, 204, 214, 215, 235, 259, 270, 279, 281]
+ fourier enhanced cross attention used!
+modes_q=32, index_q=[7, 10, 13, 27, 35, 44, 47, 52, 56, 88, 92, 105, 106, 114, 116, 119, 125, 140, 148, 151, 152, 173, 184, 200, 209, 211, 213, 217, 220, 259, 268, 277]
+modes_kv=32, index_kv=[31, 40, 71, 79, 121, 127, 147, 148, 162, 169, 187, 199, 235, 237, 244, 250, 256, 264, 344, 352, 373, 387, 396, 404, 472, 482, 501, 542, 556, 561, 566, 571]
+>>>>>>>start training : classification_SelfRegulationSCP2_FEDformer_UEA_ftM_sl1152_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+200
+180
+180
+Traceback (most recent call last):
+  File "run.py", line 272, in <module>
+    exp.train(setting)
+  File "/Jianping/Research/Time-Series-Library/exp/exp_classification.py", line 110, in train
+    outputs = self.model(batch_x, padding_mask, None, None)
+  File "/opt/conda/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/conda/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Jianping/Research/Time-Series-Library/models/FEDformer.py", line 174, in forward
+    dec_out = self.classification(x_enc, x_mark_enc)
+  File "/Jianping/Research/Time-Series-Library/models/FEDformer.py", line 152, in classification
+    enc_out = self.enc_embedding(x_enc, None)
+  File "/opt/conda/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/conda/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Jianping/Research/Time-Series-Library/layers/Embed.py", line 122, in forward
+    x = self.value_embedding(x) + self.position_embedding(x)
+  File "/opt/conda/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/conda/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Jianping/Research/Time-Series-Library/layers/Embed.py", line 41, in forward
+    x = self.tokenConv(x.permute(0, 2, 1)).transpose(1, 2)
+  File "/opt/conda/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/conda/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/conda/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 310, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/opt/conda/envs/zjp/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 303, in _conv_forward
+    return F.conv1d(F.pad(input, self._reversed_padding_repeated_twice, mode=self.padding_mode),
+RuntimeError: cuDNN error: CUDNN_STATUS_NOT_INITIALIZED

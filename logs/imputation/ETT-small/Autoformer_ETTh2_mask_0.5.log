@@ -1,0 +1,174 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          imputation          Is Training:        1                   
+  Model ID:           ETTh2_mask_0.5      Model:              Autoformer          
+
+[1mData Loader[0m
+  Data:               ETTh2               Root Path:          ../iTransformer_datasets/ETT-small/
+  Data Path:          ETTh2.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mImputation Task[0m
+  Mask Rate:          0.5                 
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               128                 
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         16                  
+  Patience:           3                   Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : imputation_ETTh2_mask_0.5_Autoformer_ETTh2_ftM_sl96_ll0_pl0_dm128_nh8_el2_dl1_df128_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8545
+val 2881
+test 2881
+	iters: 100, epoch: 1 | loss: 0.4927442
+	speed: 0.1310s/iter; left time: 686.5199s
+	iters: 200, epoch: 1 | loss: 0.2739531
+	speed: 0.1226s/iter; left time: 630.3353s
+	iters: 300, epoch: 1 | loss: 0.2760149
+	speed: 0.1121s/iter; left time: 565.1164s
+	iters: 400, epoch: 1 | loss: 0.2226286
+	speed: 0.1133s/iter; left time: 559.7993s
+	iters: 500, epoch: 1 | loss: 0.1701779
+	speed: 0.1132s/iter; left time: 548.1237s
+Epoch: 1 cost time: 63.02003240585327
+Epoch: 1, Steps: 534 | Train Loss: 0.2796293 Vali Loss: 0.2338270 Test Loss: 0.4584072
+Validation loss decreased (inf --> 0.233827).  Saving model ...
+Updating learning rate to 0.001
+	iters: 100, epoch: 2 | loss: 0.1749848
+	speed: 1.1119s/iter; left time: 5233.7672s
+	iters: 200, epoch: 2 | loss: 0.2361898
+	speed: 0.1075s/iter; left time: 495.4800s
+	iters: 300, epoch: 2 | loss: 0.1396703
+	speed: 0.1096s/iter; left time: 494.0236s
+	iters: 400, epoch: 2 | loss: 0.1401621
+	speed: 0.1043s/iter; left time: 459.5645s
+	iters: 500, epoch: 2 | loss: 0.3082699
+	speed: 0.1040s/iter; left time: 447.9323s
+Epoch: 2 cost time: 56.99468398094177
+Epoch: 2, Steps: 534 | Train Loss: 0.2062502 Vali Loss: 0.2206230 Test Loss: 0.4122002
+Validation loss decreased (0.233827 --> 0.220623).  Saving model ...
+Updating learning rate to 0.0005
+	iters: 100, epoch: 3 | loss: 0.1510662
+	speed: 1.0441s/iter; left time: 4356.8719s
+	iters: 200, epoch: 3 | loss: 0.1916945
+	speed: 0.1153s/iter; left time: 469.5716s
+	iters: 300, epoch: 3 | loss: 0.2287244
+	speed: 0.1074s/iter; left time: 426.8520s
+	iters: 400, epoch: 3 | loss: 0.1364152
+	speed: 0.0992s/iter; left time: 384.3073s
+	iters: 500, epoch: 3 | loss: 0.1317896
+	speed: 0.0980s/iter; left time: 369.9320s
+Epoch: 3 cost time: 56.796987771987915
+Epoch: 3, Steps: 534 | Train Loss: 0.1825421 Vali Loss: 0.2104862 Test Loss: 0.3861347
+Validation loss decreased (0.220623 --> 0.210486).  Saving model ...
+Updating learning rate to 0.00025
+	iters: 100, epoch: 4 | loss: 0.1685647
+	speed: 0.9606s/iter; left time: 3495.7521s
+	iters: 200, epoch: 4 | loss: 0.2604527
+	speed: 0.0896s/iter; left time: 316.9384s
+	iters: 300, epoch: 4 | loss: 0.2582713
+	speed: 0.0934s/iter; left time: 321.1046s
+	iters: 400, epoch: 4 | loss: 0.1727485
+	speed: 0.0913s/iter; left time: 304.9751s
+	iters: 500, epoch: 4 | loss: 0.1447774
+	speed: 0.0934s/iter; left time: 302.5905s
+Epoch: 4 cost time: 49.33820700645447
+Epoch: 4, Steps: 534 | Train Loss: 0.1692844 Vali Loss: 0.2132414 Test Loss: 0.3887089
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.000125
+	iters: 100, epoch: 5 | loss: 0.1581400
+	speed: 0.9430s/iter; left time: 2928.1317s
+	iters: 200, epoch: 5 | loss: 0.1054123
+	speed: 0.0935s/iter; left time: 280.8552s
+	iters: 300, epoch: 5 | loss: 0.1220474
+	speed: 0.0924s/iter; left time: 268.3999s
+	iters: 400, epoch: 5 | loss: 0.1593393
+	speed: 0.0930s/iter; left time: 260.8737s
+	iters: 500, epoch: 5 | loss: 0.1496289
+	speed: 0.0928s/iter; left time: 250.9586s
+Epoch: 5 cost time: 49.622135639190674
+Epoch: 5, Steps: 534 | Train Loss: 0.1657427 Vali Loss: 0.2048248 Test Loss: 0.3649717
+Validation loss decreased (0.210486 --> 0.204825).  Saving model ...
+Updating learning rate to 6.25e-05
+	iters: 100, epoch: 6 | loss: 0.2404397
+	speed: 0.8765s/iter; left time: 2253.4352s
+	iters: 200, epoch: 6 | loss: 0.1983621
+	speed: 0.0923s/iter; left time: 228.0713s
+	iters: 300, epoch: 6 | loss: 0.1418665
+	speed: 0.0970s/iter; left time: 229.9183s
+	iters: 400, epoch: 6 | loss: 0.1602125
+	speed: 0.0897s/iter; left time: 203.6884s
+	iters: 500, epoch: 6 | loss: 0.2212099
+	speed: 0.0845s/iter; left time: 183.4378s
+Epoch: 6 cost time: 47.70250654220581
+Epoch: 6, Steps: 534 | Train Loss: 0.1627320 Vali Loss: 0.2015136 Test Loss: 0.3652275
+Validation loss decreased (0.204825 --> 0.201514).  Saving model ...
+Updating learning rate to 3.125e-05
+	iters: 100, epoch: 7 | loss: 0.1437099
+	speed: 0.8187s/iter; left time: 1667.7031s
+	iters: 200, epoch: 7 | loss: 0.1139047
+	speed: 0.0871s/iter; left time: 168.7452s
+	iters: 300, epoch: 7 | loss: 0.1720037
+	speed: 0.0836s/iter; left time: 153.5211s
+	iters: 400, epoch: 7 | loss: 0.1763261
+	speed: 0.0847s/iter; left time: 147.1880s
+	iters: 500, epoch: 7 | loss: 0.1253152
+	speed: 0.0863s/iter; left time: 141.2008s
+Epoch: 7 cost time: 45.74098587036133
+Epoch: 7, Steps: 534 | Train Loss: 0.1615241 Vali Loss: 0.2053603 Test Loss: 0.3736383
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.5625e-05
+	iters: 100, epoch: 8 | loss: 0.2337372
+	speed: 0.8916s/iter; left time: 1340.1009s
+	iters: 200, epoch: 8 | loss: 0.1673452
+	speed: 0.0819s/iter; left time: 114.8518s
+	iters: 300, epoch: 8 | loss: 0.1808603
+	speed: 0.0890s/iter; left time: 116.0085s
+	iters: 400, epoch: 8 | loss: 0.1449888
+	speed: 0.0850s/iter; left time: 102.2415s
+	iters: 500, epoch: 8 | loss: 0.1903685
+	speed: 0.0834s/iter; left time: 91.9899s
+Epoch: 8 cost time: 44.99439477920532
+Epoch: 8, Steps: 534 | Train Loss: 0.1619723 Vali Loss: 0.2050627 Test Loss: 0.3713809
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 7.8125e-06
+	iters: 100, epoch: 9 | loss: 0.1511334
+	speed: 0.8466s/iter; left time: 820.3976s
+	iters: 200, epoch: 9 | loss: 0.1313333
+	speed: 0.0774s/iter; left time: 67.2198s
+	iters: 300, epoch: 9 | loss: 0.3271126
+	speed: 0.0786s/iter; left time: 60.4654s
+	iters: 400, epoch: 9 | loss: 0.1677886
+	speed: 0.0771s/iter; left time: 51.5752s
+	iters: 500, epoch: 9 | loss: 0.1317054
+	speed: 0.0762s/iter; left time: 43.3336s
+Epoch: 9 cost time: 40.78461003303528
+Epoch: 9, Steps: 534 | Train Loss: 0.1614497 Vali Loss: 0.2057458 Test Loss: 0.3733336
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : imputation_ETTh2_mask_0.5_Autoformer_ETTh2_ftM_sl96_ll0_pl0_dm128_nh8_el2_dl1_df128_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2881
+test shape: (2881, 96, 7) (2881, 96, 7)
+mse:0.370686411857605, mae:0.4177965819835663

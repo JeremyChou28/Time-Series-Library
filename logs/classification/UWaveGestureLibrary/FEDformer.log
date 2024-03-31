@@ -1,0 +1,113 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           UWaveGestureLibrary Model:              FEDformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/UWaveGestureLibrary/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+120
+320
+fourier enhanced block used!
+modes=32, index=[0, 2, 6, 8, 13, 14, 22, 23, 28, 30, 34, 35, 42, 64, 65, 66, 69, 73, 79, 80, 81, 87, 88, 97, 98, 103, 112, 121, 125, 130, 132, 150]
+fourier enhanced block used!
+modes=32, index=[0, 1, 5, 8, 9, 11, 12, 13, 14, 15, 17, 20, 24, 28, 30, 31, 32, 36, 37, 38, 41, 47, 48, 49, 50, 61, 65, 67, 70, 73, 74, 76]
+ fourier enhanced cross attention used!
+modes_q=32, index_q=[0, 2, 5, 6, 9, 11, 23, 25, 27, 28, 29, 35, 36, 38, 40, 41, 42, 44, 45, 51, 54, 56, 59, 60, 65, 66, 67, 69, 70, 71, 72, 75]
+modes_kv=32, index_kv=[2, 3, 17, 20, 21, 24, 26, 27, 30, 34, 37, 45, 51, 54, 64, 68, 82, 85, 93, 99, 100, 106, 118, 120, 131, 132, 133, 136, 138, 147, 152, 154]
+>>>>>>>start training : classification_UWaveGestureLibrary_FEDformer_UEA_ftM_sl315_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+120
+320
+320
+Epoch: 1 cost time: 7.1034276485443115
+Epoch: 1, Steps: 8 | Train Loss: 3.732 Vali Loss: 2.690 Vali Acc: 0.325 Test Loss: 2.690 Test Acc: 0.325
+Validation loss decreased (inf --> -0.325000).  Saving model ...
+Epoch: 2 cost time: 2.5951650142669678
+Epoch: 2, Steps: 8 | Train Loss: 1.658 Vali Loss: 3.406 Vali Acc: 0.372 Test Loss: 3.406 Test Acc: 0.372
+Validation loss decreased (-0.325000 --> -0.371875).  Saving model ...
+Epoch: 3 cost time: 2.745551347732544
+Epoch: 3, Steps: 8 | Train Loss: 0.776 Vali Loss: 3.091 Vali Acc: 0.388 Test Loss: 3.091 Test Acc: 0.388
+Validation loss decreased (-0.371875 --> -0.387500).  Saving model ...
+Epoch: 4 cost time: 2.092493772506714
+Epoch: 4, Steps: 8 | Train Loss: 0.435 Vali Loss: 3.727 Vali Acc: 0.447 Test Loss: 3.727 Test Acc: 0.447
+Validation loss decreased (-0.387500 --> -0.446875).  Saving model ...
+Epoch: 5 cost time: 2.275885581970215
+Epoch: 5, Steps: 8 | Train Loss: 0.454 Vali Loss: 4.024 Vali Acc: 0.412 Test Loss: 4.024 Test Acc: 0.412
+EarlyStopping counter: 1 out of 10
+Updating learning rate to 6.25e-05
+Epoch: 6 cost time: 2.276447057723999
+Epoch: 6, Steps: 8 | Train Loss: 0.202 Vali Loss: 3.369 Vali Acc: 0.434 Test Loss: 3.369 Test Acc: 0.434
+EarlyStopping counter: 2 out of 10
+Epoch: 7 cost time: 2.24505615234375
+Epoch: 7, Steps: 8 | Train Loss: 0.125 Vali Loss: 2.828 Vali Acc: 0.478 Test Loss: 2.828 Test Acc: 0.478
+Validation loss decreased (-0.446875 --> -0.478125).  Saving model ...
+Epoch: 8 cost time: 2.3029236793518066
+Epoch: 8, Steps: 8 | Train Loss: 0.065 Vali Loss: 2.669 Vali Acc: 0.484 Test Loss: 2.669 Test Acc: 0.484
+Validation loss decreased (-0.478125 --> -0.484375).  Saving model ...
+Epoch: 9 cost time: 2.4602646827697754
+Epoch: 9, Steps: 8 | Train Loss: 0.026 Vali Loss: 2.704 Vali Acc: 0.478 Test Loss: 2.704 Test Acc: 0.478
+EarlyStopping counter: 1 out of 10
+Epoch: 10 cost time: 2.1296205520629883
+Epoch: 10, Steps: 8 | Train Loss: 0.047 Vali Loss: 2.738 Vali Acc: 0.453 Test Loss: 2.738 Test Acc: 0.453
+EarlyStopping counter: 2 out of 10
+Updating learning rate to 1.953125e-06
+Epoch: 11 cost time: 2.4403469562530518
+Epoch: 11, Steps: 8 | Train Loss: 0.043 Vali Loss: 2.735 Vali Acc: 0.453 Test Loss: 2.735 Test Acc: 0.453
+EarlyStopping counter: 3 out of 10
+Epoch: 12 cost time: 2.6375961303710938
+Epoch: 12, Steps: 8 | Train Loss: 0.027 Vali Loss: 2.732 Vali Acc: 0.453 Test Loss: 2.732 Test Acc: 0.453
+EarlyStopping counter: 4 out of 10
+Epoch: 13 cost time: 2.490649700164795
+Epoch: 13, Steps: 8 | Train Loss: 0.016 Vali Loss: 2.733 Vali Acc: 0.453 Test Loss: 2.733 Test Acc: 0.453
+EarlyStopping counter: 5 out of 10
+Epoch: 14 cost time: 2.546522855758667
+Epoch: 14, Steps: 8 | Train Loss: 0.045 Vali Loss: 2.729 Vali Acc: 0.453 Test Loss: 2.729 Test Acc: 0.453
+EarlyStopping counter: 6 out of 10
+Epoch: 15 cost time: 2.412773370742798
+Epoch: 15, Steps: 8 | Train Loss: 0.062 Vali Loss: 2.725 Vali Acc: 0.453 Test Loss: 2.725 Test Acc: 0.453
+EarlyStopping counter: 7 out of 10
+Updating learning rate to 6.103515625e-08
+Epoch: 16 cost time: 2.3551442623138428
+Epoch: 16, Steps: 8 | Train Loss: 0.019 Vali Loss: 2.725 Vali Acc: 0.453 Test Loss: 2.725 Test Acc: 0.453
+EarlyStopping counter: 8 out of 10
+Epoch: 17 cost time: 2.22248911857605
+Epoch: 17, Steps: 8 | Train Loss: 0.026 Vali Loss: 2.725 Vali Acc: 0.453 Test Loss: 2.725 Test Acc: 0.453
+EarlyStopping counter: 9 out of 10
+Epoch: 18 cost time: 2.8479106426239014
+Epoch: 18, Steps: 8 | Train Loss: 0.038 Vali Loss: 2.725 Vali Acc: 0.453 Test Loss: 2.725 Test Acc: 0.453
+EarlyStopping counter: 10 out of 10
+Early stopping
+>>>>>>>testing : classification_UWaveGestureLibrary_FEDformer_UEA_ftM_sl315_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+320
+test shape: torch.Size([320, 8]) torch.Size([320, 1])
+accuracy:0.484375
+Spend Time: 121.93434762954712

@@ -11,10 +11,10 @@ d_ff=32
 batch_size=16
 
 
-python -u run.py \
+nohup python -u run.py \
   --task_name short_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/m4 \
+  --root_path ../iTransformer_datasets/m4 \
   --seasonal_patterns 'Monthly' \
   --model_id m4_Monthly \
   --model $model_name \
@@ -37,12 +37,12 @@ python -u run.py \
   --down_sampling_layers $down_sampling_layers \
   --down_sampling_method avg \
   --down_sampling_window $down_sampling_window \
-  --loss 'SMAPE'
+  --loss 'SMAPE' > ./logs/short_term_forecast/${model_name}_m4_Monthly.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name short_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/m4 \
+  --root_path ../iTransformer_datasets/m4 \
   --seasonal_patterns 'Yearly' \
   --model_id m4_Yearly \
   --model $model_name \
@@ -65,12 +65,12 @@ python -u run.py \
   --down_sampling_layers $down_sampling_layers \
   --down_sampling_method avg \
   --down_sampling_window $down_sampling_window \
-  --loss 'SMAPE'
+  --loss 'SMAPE' > ./logs/short_term_forecast/${model_name}_m4_Yearly.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name short_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/m4 \
+  --root_path ../iTransformer_datasets/m4 \
   --seasonal_patterns 'Quarterly' \
   --model_id m4_Quarterly \
   --model $model_name \
@@ -93,12 +93,12 @@ python -u run.py \
   --down_sampling_layers $down_sampling_layers \
   --down_sampling_method avg \
   --down_sampling_window $down_sampling_window \
-  --loss 'SMAPE'
+  --loss 'SMAPE' > ./logs/short_term_forecast/${model_name}_m4_Quarterly.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name short_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/m4 \
+  --root_path ../iTransformer_datasets/m4 \
   --seasonal_patterns 'Daily' \
   --model_id m4_Daily \
   --model $model_name \
@@ -121,12 +121,12 @@ python -u run.py \
   --down_sampling_layers $down_sampling_layers \
   --down_sampling_method avg \
   --down_sampling_window $down_sampling_window \
-  --loss 'SMAPE'
+  --loss 'SMAPE' > ./logs/short_term_forecast/${model_name}_m4_Daily.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name short_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/m4 \
+  --root_path ../iTransformer_datasets/m4 \
   --seasonal_patterns 'Weekly' \
   --model_id m4_Weekly \
   --model $model_name \
@@ -149,12 +149,12 @@ python -u run.py \
   --down_sampling_layers $down_sampling_layers \
   --down_sampling_method avg \
   --down_sampling_window $down_sampling_window \
-  --loss 'SMAPE'
+  --loss 'SMAPE' > ./logs/short_term_forecast/${model_name}_m4_weekly.log 2>&1 &
 
-python -u run.py \
+nohup python -u run.py \
   --task_name short_term_forecast \
   --is_training 1 \
-  --root_path ./dataset/m4 \
+  --root_path ../iTransformer_datasets/m4 \
   --seasonal_patterns 'Hourly' \
   --model_id m4_Hourly \
   --model $model_name \
@@ -177,4 +177,4 @@ python -u run.py \
   --down_sampling_layers $down_sampling_layers \
   --down_sampling_method avg \
   --down_sampling_window $down_sampling_window \
-  --loss 'SMAPE'
+  --loss 'SMAPE' > ./logs/short_term_forecast/${model_name}_m4_Hourly.log 2>&1 &

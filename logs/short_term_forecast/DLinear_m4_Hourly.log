@@ -1,0 +1,92 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          short_term_forecast Is Training:        1                   
+  Model ID:           m4_Hourly           Model:              DLinear             
+
+[1mData Loader[0m
+  Data:               m4                  Root Path:          ../iTransformer_datasets/m4
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           96                  Seasonal Patterns:  Hourly              
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             1                   Dec In:             1                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         16                  
+  Patience:           3                   Learning Rate:      0.001               
+  Des:                Exp                 Loss:               SMAPE               
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : short_term_forecast_m4_Hourly_DLinear_m4_ftM_sl96_ll48_pl48_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 414
+val 414
+Epoch: 1 cost time: 1.1991772651672363
+Epoch: 1, Steps: 26 | Train Loss: 23.9029309 Vali Loss: 19.9838336 Test Loss: 19.9838336
+Validation loss decreased (inf --> 19.983834).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 0.11553001403808594
+Epoch: 2, Steps: 26 | Train Loss: 20.8957236 Vali Loss: 19.3868840 Test Loss: 19.3868840
+Validation loss decreased (19.983834 --> 19.386884).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 3 cost time: 0.13676071166992188
+Epoch: 3, Steps: 26 | Train Loss: 18.5328460 Vali Loss: 18.7360570 Test Loss: 18.7360570
+Validation loss decreased (19.386884 --> 18.736057).  Saving model ...
+Updating learning rate to 0.00025
+Epoch: 4 cost time: 0.18279814720153809
+Epoch: 4, Steps: 26 | Train Loss: 18.4884057 Vali Loss: 18.0737434 Test Loss: 18.0737434
+Validation loss decreased (18.736057 --> 18.073743).  Saving model ...
+Updating learning rate to 0.000125
+Epoch: 5 cost time: 0.20537352561950684
+Epoch: 5, Steps: 26 | Train Loss: 17.6744090 Vali Loss: 17.5657079 Test Loss: 17.5657079
+Validation loss decreased (18.073743 --> 17.565708).  Saving model ...
+Updating learning rate to 6.25e-05
+Epoch: 6 cost time: 0.2111043930053711
+Epoch: 6, Steps: 26 | Train Loss: 17.8097408 Vali Loss: 17.4745764 Test Loss: 17.4745764
+Validation loss decreased (17.565708 --> 17.474576).  Saving model ...
+Updating learning rate to 3.125e-05
+Epoch: 7 cost time: 0.21480178833007812
+Epoch: 7, Steps: 26 | Train Loss: 17.2041427 Vali Loss: 17.3568696 Test Loss: 17.3568696
+Validation loss decreased (17.474576 --> 17.356870).  Saving model ...
+Updating learning rate to 1.5625e-05
+Epoch: 8 cost time: 0.21285152435302734
+Epoch: 8, Steps: 26 | Train Loss: 17.5551874 Vali Loss: 17.3051453 Test Loss: 17.3051453
+Validation loss decreased (17.356870 --> 17.305145).  Saving model ...
+Updating learning rate to 7.8125e-06
+Epoch: 9 cost time: 0.2080225944519043
+Epoch: 9, Steps: 26 | Train Loss: 17.1717723 Vali Loss: 17.2883091 Test Loss: 17.2883091
+Validation loss decreased (17.305145 --> 17.288309).  Saving model ...
+Updating learning rate to 3.90625e-06
+Epoch: 10 cost time: 0.18111038208007812
+Epoch: 10, Steps: 26 | Train Loss: 17.3664866 Vali Loss: 17.2628438 Test Loss: 17.2628438
+Validation loss decreased (17.288309 --> 17.262844).  Saving model ...
+Updating learning rate to 1.953125e-06
+>>>>>>>testing : short_term_forecast_m4_Hourly_DLinear_m4_ftM_sl96_ll48_pl48_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+train 414
+test 414
+0
+test shape: (414, 48, 1)
+DLinear
+After all 6 tasks are finished, you can calculate the averaged index

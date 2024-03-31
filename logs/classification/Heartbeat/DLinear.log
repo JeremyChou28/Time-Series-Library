@@ -1,0 +1,93 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           Heartbeat           Model:              DLinear             
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/Heartbeat/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+204
+205
+>>>>>>>start training : classification_Heartbeat_DLinear_UEA_ftM_sl405_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+204
+205
+205
+Epoch: 1 cost time: 1.6584205627441406
+Epoch: 1, Steps: 13 | Train Loss: 0.981 Vali Loss: 0.841 Vali Acc: 0.688 Test Loss: 0.874 Test Acc: 0.688
+Validation loss decreased (inf --> -0.687805).  Saving model ...
+Epoch: 2 cost time: 0.13274478912353516
+Epoch: 2, Steps: 13 | Train Loss: 1.021 Vali Loss: 0.826 Vali Acc: 0.688 Test Loss: 0.805 Test Acc: 0.688
+Validation loss decreased (-0.687805 --> -0.687805).  Saving model ...
+Epoch: 3 cost time: 0.12689638137817383
+Epoch: 3, Steps: 13 | Train Loss: 0.298 Vali Loss: 0.843 Vali Acc: 0.702 Test Loss: 0.839 Test Acc: 0.702
+Validation loss decreased (-0.687805 --> -0.702439).  Saving model ...
+Epoch: 4 cost time: 0.11530017852783203
+Epoch: 4, Steps: 13 | Train Loss: 0.217 Vali Loss: 1.351 Vali Acc: 0.707 Test Loss: 1.344 Test Acc: 0.707
+Validation loss decreased (-0.702439 --> -0.707317).  Saving model ...
+Epoch: 5 cost time: 0.11359000205993652
+Epoch: 5, Steps: 13 | Train Loss: 0.118 Vali Loss: 1.513 Vali Acc: 0.644 Test Loss: 1.515 Test Acc: 0.644
+EarlyStopping counter: 1 out of 10
+Updating learning rate to 6.25e-05
+Epoch: 6 cost time: 0.10826873779296875
+Epoch: 6, Steps: 13 | Train Loss: 0.085 Vali Loss: 1.570 Vali Acc: 0.663 Test Loss: 1.578 Test Acc: 0.663
+EarlyStopping counter: 2 out of 10
+Epoch: 7 cost time: 0.1123356819152832
+Epoch: 7, Steps: 13 | Train Loss: 0.080 Vali Loss: 1.605 Vali Acc: 0.668 Test Loss: 1.612 Test Acc: 0.668
+EarlyStopping counter: 3 out of 10
+Epoch: 8 cost time: 0.10959482192993164
+Epoch: 8, Steps: 13 | Train Loss: 0.071 Vali Loss: 1.578 Vali Acc: 0.663 Test Loss: 1.609 Test Acc: 0.663
+EarlyStopping counter: 4 out of 10
+Epoch: 9 cost time: 0.11771869659423828
+Epoch: 9, Steps: 13 | Train Loss: 0.066 Vali Loss: 1.557 Vali Acc: 0.683 Test Loss: 1.562 Test Acc: 0.683
+EarlyStopping counter: 5 out of 10
+Epoch: 10 cost time: 0.10565710067749023
+Epoch: 10, Steps: 13 | Train Loss: 0.062 Vali Loss: 1.572 Vali Acc: 0.688 Test Loss: 1.592 Test Acc: 0.688
+EarlyStopping counter: 6 out of 10
+Updating learning rate to 1.953125e-06
+Epoch: 11 cost time: 0.10557723045349121
+Epoch: 11, Steps: 13 | Train Loss: 0.059 Vali Loss: 1.640 Vali Acc: 0.688 Test Loss: 1.588 Test Acc: 0.688
+EarlyStopping counter: 7 out of 10
+Epoch: 12 cost time: 0.11547660827636719
+Epoch: 12, Steps: 13 | Train Loss: 0.057 Vali Loss: 1.583 Vali Acc: 0.688 Test Loss: 1.582 Test Acc: 0.688
+EarlyStopping counter: 8 out of 10
+Epoch: 13 cost time: 0.10841631889343262
+Epoch: 13, Steps: 13 | Train Loss: 0.057 Vali Loss: 1.584 Vali Acc: 0.688 Test Loss: 1.635 Test Acc: 0.688
+EarlyStopping counter: 9 out of 10
+Epoch: 14 cost time: 0.1331312656402588
+Epoch: 14, Steps: 13 | Train Loss: 0.059 Vali Loss: 1.597 Vali Acc: 0.688 Test Loss: 1.584 Test Acc: 0.688
+EarlyStopping counter: 10 out of 10
+Early stopping
+>>>>>>>testing : classification_Heartbeat_DLinear_UEA_ftM_sl405_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+205
+test shape: torch.Size([205, 2]) torch.Size([205, 1])
+accuracy:0.7073170731707317
+Spend Time: 53.63088870048523

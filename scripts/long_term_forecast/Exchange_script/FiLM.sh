@@ -21,7 +21,7 @@ nohup python -u run.py \
   --dec_in 8 \
   --c_out 8 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/exchange_rate/${model_name}_Exchange_96_96.log 2>&1 &
 
 
 
@@ -44,7 +44,7 @@ nohup python -u run.py \
   --dec_in 8 \
   --c_out 8 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/exchange_rate/${model_name}_Exchange_96_192.log 2>&1 &
 
   
 nohup python -u run.py \
@@ -66,7 +66,7 @@ nohup python -u run.py \
   --dec_in 8 \
   --c_out 8 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/exchange_rate/${model_name}_Exchange_96_336.log 2>&1 &
 
 
 
@@ -89,4 +89,4 @@ nohup python -u run.py \
   --dec_in 8 \
   --c_out 8 \
   --des 'Exp' \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/exchange_rate/${model_name}_Exchange_96_720.log 2>&1 &

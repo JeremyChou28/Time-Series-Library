@@ -1,0 +1,168 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           FaceDetection       Model:              DLinear             
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          ../iTransformer_datasets/classification/FaceDetection/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+5890
+3524
+>>>>>>>start training : classification_FaceDetection_DLinear_UEA_ftM_sl62_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+5890
+3524
+3524
+	iters: 100, epoch: 1 | loss: 0.5728623
+	speed: 0.0195s/iter; left time: 715.8220s
+	iters: 200, epoch: 1 | loss: 0.7595382
+	speed: 0.0065s/iter; left time: 237.6308s
+	iters: 300, epoch: 1 | loss: 0.3140834
+	speed: 0.0061s/iter; left time: 224.5245s
+Epoch: 1 cost time: 3.6361117362976074
+Epoch: 1, Steps: 369 | Train Loss: 0.633 Vali Loss: 0.725 Vali Acc: 0.656 Test Loss: 0.725 Test Acc: 0.656
+Validation loss decreased (inf --> -0.655789).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.3337749
+	speed: 0.0302s/iter; left time: 1099.4269s
+	iters: 200, epoch: 2 | loss: 0.4042170
+	speed: 0.0068s/iter; left time: 246.0081s
+	iters: 300, epoch: 2 | loss: 1.0152494
+	speed: 0.0068s/iter; left time: 246.8241s
+Epoch: 2 cost time: 2.4368886947631836
+Epoch: 2, Steps: 369 | Train Loss: 0.523 Vali Loss: 0.833 Vali Acc: 0.635 Test Loss: 0.830 Test Acc: 0.635
+EarlyStopping counter: 1 out of 10
+	iters: 100, epoch: 3 | loss: 0.6365677
+	speed: 0.0310s/iter; left time: 1119.4982s
+	iters: 200, epoch: 3 | loss: 0.3868985
+	speed: 0.0063s/iter; left time: 226.7465s
+	iters: 300, epoch: 3 | loss: 0.6395231
+	speed: 0.0057s/iter; left time: 205.1053s
+Epoch: 3 cost time: 2.2195286750793457
+Epoch: 3, Steps: 369 | Train Loss: 0.473 Vali Loss: 0.832 Vali Acc: 0.673 Test Loss: 0.836 Test Acc: 0.673
+Validation loss decreased (-0.655789 --> -0.672531).  Saving model ...
+	iters: 100, epoch: 4 | loss: 1.1506370
+	speed: 0.0288s/iter; left time: 1027.2395s
+	iters: 200, epoch: 4 | loss: 0.2800421
+	speed: 0.0059s/iter; left time: 211.6925s
+	iters: 300, epoch: 4 | loss: 0.3642554
+	speed: 0.0065s/iter; left time: 231.0258s
+Epoch: 4 cost time: 2.351196765899658
+Epoch: 4, Steps: 369 | Train Loss: 0.432 Vali Loss: 0.978 Vali Acc: 0.647 Test Loss: 0.978 Test Acc: 0.647
+EarlyStopping counter: 1 out of 10
+	iters: 100, epoch: 5 | loss: 0.2820493
+	speed: 0.0373s/iter; left time: 1316.2839s
+	iters: 200, epoch: 5 | loss: 0.1090394
+	speed: 0.0077s/iter; left time: 269.7811s
+	iters: 300, epoch: 5 | loss: 0.4824525
+	speed: 0.0074s/iter; left time: 260.4605s
+Epoch: 5 cost time: 2.826594829559326
+Epoch: 5, Steps: 369 | Train Loss: 0.379 Vali Loss: 1.034 Vali Acc: 0.650 Test Loss: 1.034 Test Acc: 0.650
+EarlyStopping counter: 2 out of 10
+Updating learning rate to 6.25e-05
+	iters: 100, epoch: 6 | loss: 0.5266771
+	speed: 0.0342s/iter; left time: 1193.9603s
+	iters: 200, epoch: 6 | loss: 0.0682584
+	speed: 0.0061s/iter; left time: 212.7284s
+	iters: 300, epoch: 6 | loss: 0.3496439
+	speed: 0.0060s/iter; left time: 208.1705s
+Epoch: 6 cost time: 2.167597770690918
+Epoch: 6, Steps: 369 | Train Loss: 0.250 Vali Loss: 0.971 Vali Acc: 0.661 Test Loss: 0.970 Test Acc: 0.661
+EarlyStopping counter: 3 out of 10
+	iters: 100, epoch: 7 | loss: 0.0806005
+	speed: 0.0279s/iter; left time: 966.0161s
+	iters: 200, epoch: 7 | loss: 0.1719728
+	speed: 0.0057s/iter; left time: 194.9969s
+	iters: 300, epoch: 7 | loss: 0.4089019
+	speed: 0.0058s/iter; left time: 200.0750s
+Epoch: 7 cost time: 2.120168447494507
+Epoch: 7, Steps: 369 | Train Loss: 0.206 Vali Loss: 0.965 Vali Acc: 0.662 Test Loss: 0.966 Test Acc: 0.662
+EarlyStopping counter: 4 out of 10
+	iters: 100, epoch: 8 | loss: 0.2505582
+	speed: 0.0277s/iter; left time: 948.6865s
+	iters: 200, epoch: 8 | loss: 0.1291058
+	speed: 0.0053s/iter; left time: 181.1121s
+	iters: 300, epoch: 8 | loss: 0.2971169
+	speed: 0.0055s/iter; left time: 186.1596s
+Epoch: 8 cost time: 1.9877893924713135
+Epoch: 8, Steps: 369 | Train Loss: 0.188 Vali Loss: 0.971 Vali Acc: 0.658 Test Loss: 0.977 Test Acc: 0.658
+EarlyStopping counter: 5 out of 10
+	iters: 100, epoch: 9 | loss: 0.1172864
+	speed: 0.0258s/iter; left time: 873.6912s
+	iters: 200, epoch: 9 | loss: 0.6167440
+	speed: 0.0056s/iter; left time: 190.2763s
+	iters: 300, epoch: 9 | loss: 0.3491426
+	speed: 0.0059s/iter; left time: 198.3160s
+Epoch: 9 cost time: 2.1466174125671387
+Epoch: 9, Steps: 369 | Train Loss: 0.176 Vali Loss: 0.984 Vali Acc: 0.660 Test Loss: 0.986 Test Acc: 0.660
+EarlyStopping counter: 6 out of 10
+	iters: 100, epoch: 10 | loss: 0.2507699
+	speed: 0.0268s/iter; left time: 898.1302s
+	iters: 200, epoch: 10 | loss: 0.1454907
+	speed: 0.0056s/iter; left time: 185.3228s
+	iters: 300, epoch: 10 | loss: 0.0984957
+	speed: 0.0056s/iter; left time: 185.7262s
+Epoch: 10 cost time: 2.094754219055176
+Epoch: 10, Steps: 369 | Train Loss: 0.170 Vali Loss: 0.995 Vali Acc: 0.657 Test Loss: 0.998 Test Acc: 0.657
+EarlyStopping counter: 7 out of 10
+Updating learning rate to 1.953125e-06
+	iters: 100, epoch: 11 | loss: 0.1256938
+	speed: 0.0301s/iter; left time: 997.6032s
+	iters: 200, epoch: 11 | loss: 0.2030876
+	speed: 0.0075s/iter; left time: 247.2557s
+	iters: 300, epoch: 11 | loss: 0.1230782
+	speed: 0.0088s/iter; left time: 290.7788s
+Epoch: 11 cost time: 2.9026637077331543
+Epoch: 11, Steps: 369 | Train Loss: 0.154 Vali Loss: 0.997 Vali Acc: 0.657 Test Loss: 0.998 Test Acc: 0.657
+EarlyStopping counter: 8 out of 10
+	iters: 100, epoch: 12 | loss: 0.1462255
+	speed: 0.0312s/iter; left time: 1021.5981s
+	iters: 200, epoch: 12 | loss: 0.1042049
+	speed: 0.0092s/iter; left time: 299.7626s
+	iters: 300, epoch: 12 | loss: 0.0988716
+	speed: 0.0083s/iter; left time: 270.5165s
+Epoch: 12 cost time: 2.898925542831421
+Epoch: 12, Steps: 369 | Train Loss: 0.154 Vali Loss: 0.998 Vali Acc: 0.657 Test Loss: 0.999 Test Acc: 0.657
+EarlyStopping counter: 9 out of 10
+	iters: 100, epoch: 13 | loss: 0.2228740
+	speed: 0.0277s/iter; left time: 896.5497s
+	iters: 200, epoch: 13 | loss: 0.0819677
+	speed: 0.0055s/iter; left time: 176.6759s
+	iters: 300, epoch: 13 | loss: 0.3720435
+	speed: 0.0056s/iter; left time: 179.3940s
+Epoch: 13 cost time: 2.009188175201416
+Epoch: 13, Steps: 369 | Train Loss: 0.153 Vali Loss: 0.995 Vali Acc: 0.657 Test Loss: 0.994 Test Acc: 0.657
+EarlyStopping counter: 10 out of 10
+Early stopping
+>>>>>>>testing : classification_FaceDetection_DLinear_UEA_ftM_sl62_ll48_pl0_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+3524
+test shape: torch.Size([3524, 2]) torch.Size([3524, 1])
+accuracy:0.6725312145289444
+Spend Time: 1026.950691461563

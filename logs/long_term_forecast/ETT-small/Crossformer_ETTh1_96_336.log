@@ -1,0 +1,83 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           ETTh1_96_336        Model:              Crossformer         
+
+[1mData Loader[0m
+  Data:               ETTh1               Root Path:          ../iTransformer_datasets/ETT-small/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           336                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         32                  
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_ETTh1_96_336_Crossformer_ETTh1_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8209
+val 2545
+test 2545
+	iters: 100, epoch: 1 | loss: 0.4352715
+	speed: 0.5144s/iter; left time: 1265.9080s
+	iters: 200, epoch: 1 | loss: 0.4567119
+	speed: 0.3981s/iter; left time: 940.0162s
+Epoch: 1 cost time: 112.04617357254028
+Epoch: 1, Steps: 256 | Train Loss: 0.5099792 Vali Loss: 1.1336635 Test Loss: 0.7225356
+Validation loss decreased (inf --> 1.133664).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.3786067
+	speed: 2.5767s/iter; left time: 5681.5444s
+	iters: 200, epoch: 2 | loss: 0.3540092
+	speed: 0.4008s/iter; left time: 843.7114s
+Epoch: 2 cost time: 98.68636417388916
+Epoch: 2, Steps: 256 | Train Loss: 0.3815383 Vali Loss: 1.1764410 Test Loss: 0.8225647
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.3519300
+	speed: 2.6347s/iter; left time: 5135.0316s
+	iters: 200, epoch: 3 | loss: 0.3426002
+	speed: 0.3585s/iter; left time: 662.8673s
+Epoch: 3 cost time: 95.2066068649292
+Epoch: 3, Steps: 256 | Train Loss: 0.3427202 Vali Loss: 1.1393559 Test Loss: 0.6467230
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.3022864
+	speed: 2.3556s/iter; left time: 3988.1055s
+	iters: 200, epoch: 4 | loss: 0.3584884
+	speed: 0.3829s/iter; left time: 609.9331s
+Epoch: 4 cost time: 95.43202567100525
+Epoch: 4, Steps: 256 | Train Loss: 0.3242748 Vali Loss: 1.1743556 Test Loss: 0.6456774
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_ETTh1_96_336_Crossformer_ETTh1_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2545
+test shape: (2545, 1, 336, 7) (2545, 1, 336, 7)
+test shape: (2545, 336, 7) (2545, 336, 7)
+mse:0.722536027431488, mae:0.6484074592590332

@@ -1,0 +1,82 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           traffic_96_336      Model:              Nonstationary_Transformer
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          ../iTransformer_datasets/traffic/
+  Data Path:          traffic.csv         Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           336                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             862                 Dec In:             862                 
+  C Out:              862                 d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       3                   Batch Size:         32                  
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      16, 16              P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_traffic_96_336_Nonstationary_Transformer_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 11849
+val 1421
+test 3173
+	iters: 100, epoch: 1 | loss: 0.5298190
+	speed: 2.9406s/iter; left time: 2972.9588s
+	iters: 200, epoch: 1 | loss: 0.4133655
+	speed: 3.4677s/iter; left time: 3159.0614s
+	iters: 300, epoch: 1 | loss: 0.3559773
+	speed: 3.3029s/iter; left time: 2678.6373s
+Epoch: 1 cost time: 1235.9368689060211
+Epoch: 1, Steps: 370 | Train Loss: 0.5053316 Vali Loss: 0.4881059 Test Loss: 0.6802778
+Validation loss decreased (inf --> 0.488106).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.3561187
+	speed: 25.0354s/iter; left time: 16047.6988s
+	iters: 200, epoch: 2 | loss: 0.3109943
+	speed: 3.5944s/iter; left time: 1944.5795s
+	iters: 300, epoch: 2 | loss: 0.3135776
+	speed: 3.2869s/iter; left time: 1449.5168s
+Epoch: 2 cost time: 1174.5524835586548
+Epoch: 2, Steps: 370 | Train Loss: 0.3250555 Vali Loss: 0.4798255 Test Loss: 0.6595511
+Validation loss decreased (0.488106 --> 0.479826).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.2941083
+	speed: 23.2289s/iter; left time: 6295.0214s
+	iters: 200, epoch: 3 | loss: 0.2925087
+	speed: 3.1921s/iter; left time: 545.8566s
+	iters: 300, epoch: 3 | loss: 0.2933564
+	speed: 3.2463s/iter; left time: 230.4897s
+Epoch: 3 cost time: 1181.1725389957428
+Epoch: 3, Steps: 370 | Train Loss: 0.2981052 Vali Loss: 0.4643056 Test Loss: 0.6428333
+Validation loss decreased (0.479826 --> 0.464306).  Saving model ...
+Updating learning rate to 2.5e-05
+>>>>>>>testing : long_term_forecast_traffic_96_336_Nonstationary_Transformer_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 3173
+test shape: (3173, 1, 336, 862) (3173, 1, 336, 862)
+test shape: (3173, 336, 862) (3173, 336, 862)
+mse:0.6428335905075073, mae:0.35256505012512207
+Spend Time: 14778.963551044464

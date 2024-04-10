@@ -1,4 +1,10 @@
-export CUDA_VISIBLE_DEVICES=0
+export CUDA_VISIBLE_DEVICES=1
+###
+ # @Description: 
+ # @Author: Jianping Zhou
+ # @Email: jianpingzhou0927@gmail.com
+ # @Date: 2024-04-10 15:40:36
+### 
 
 model_name=FiLM
 

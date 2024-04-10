@@ -178,7 +178,7 @@ class PastDecomposableMixing(nn.Module):
                                                       length_list):
             out = out_season + out_trend
             if self.channel_independence:
-                out = ori + self.out_cross_layer(out)
+                out = ori + self.out_cross_layer(out)   # B,T,D
             out_list.append(out[:, :length, :])
         return out_list
 
@@ -202,7 +202,7 @@ class Model(nn.Module):
 
         if self.channel_independence == 1:
             self.enc_embedding = DataEmbedding_wo_pos(1, configs.d_model, configs.embed, configs.freq,
-                                                      configs.dropout)
+                                                      configs.dropout)  # 没有用transformer，无需position embedding
         else:
             self.enc_embedding = DataEmbedding_wo_pos(configs.enc_in, configs.d_model, configs.embed, configs.freq,
                                                       configs.dropout)
@@ -272,11 +272,11 @@ class Model(nn.Module):
             return (out1_list, out2_list)
 
     def __multi_scale_process_inputs(self, x_enc, x_mark_enc):
-        if self.configs.down_sampling_method == 'max':
+        if self.configs.down_sampling_method == 'max':  # max pooling
             down_pool = torch.nn.MaxPool1d(self.configs.down_sampling_window, return_indices=False)
-        elif self.configs.down_sampling_method == 'avg':
+        elif self.configs.down_sampling_method == 'avg':    # avg pooling
             down_pool = torch.nn.AvgPool1d(self.configs.down_sampling_window)
-        elif self.configs.down_sampling_method == 'conv':
+        elif self.configs.down_sampling_method == 'conv':   # conv1d
             padding = 1 if torch.__version__ >= '1.5.0' else 2
             down_pool = nn.Conv1d(in_channels=self.configs.enc_in, out_channels=self.configs.enc_in,
                                   kernel_size=3, padding=padding,
@@ -312,8 +312,8 @@ class Model(nn.Module):
         return x_enc, x_mark_enc
 
     def forecast(self, x_enc, x_mark_enc, x_dec, x_mark_dec):
-
-        x_enc, x_mark_enc = self.__multi_scale_process_inputs(x_enc, x_mark_enc)
+        # multi-scale process inputs
+        x_enc, x_mark_enc = self.__multi_scale_process_inputs(x_enc, x_mark_enc)    # list (B,T,C;B,T/2,C;B,T/4,C;B,T/8,C;) len: down_sampling_layers+1
 
         x_list = []
         x_mark_list = []
@@ -353,7 +353,7 @@ class Model(nn.Module):
         # Future Multipredictor Mixing as decoder for future
         dec_out_list = self.future_multi_mixing(B, enc_out_list, x_list)
 
-        dec_out = torch.stack(dec_out_list, dim=-1).sum(-1)
+        dec_out = torch.stack(dec_out_list, dim=-1).sum(-1) # B,T,C
         dec_out = self.normalize_layers[0](dec_out, 'denorm')
         return dec_out
 
@@ -377,7 +377,7 @@ class Model(nn.Module):
 
         return dec_out_list
 
-    def forward(self, x_enc, x_mark_enc, x_dec, x_mark_dec, mask=None):
+    def forward(self, x_enc, x_mark_enc, x_dec, x_mark_dec, mask=None): # x_enc: B, T, C; x_mark_enc: B,T,4
         if self.task_name == 'long_term_forecast' or self.task_name == 'short_term_forecast':
             dec_out_list = self.forecast(x_enc, x_mark_enc, x_dec, x_mark_dec)
             return dec_out_list

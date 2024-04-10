@@ -1,0 +1,80 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           ETTh1_96_720        Model:              MICN                
+
+[1mData Loader[0m
+  Data:               ETTh1               Root Path:          ../iTransformer_datasets/ETT-small/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          96                  
+  Pred Len:           720                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         32                  
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_ETTh1_96_720_MICN_ETTh1_ftM_sl96_ll96_pl720_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 7825
+val 2161
+test 2161
+	iters: 100, epoch: 1 | loss: 0.5028931
+	speed: 1.0298s/iter; left time: 2410.8588s
+	iters: 200, epoch: 1 | loss: 0.4524791
+	speed: 0.5101s/iter; left time: 1143.1819s
+Epoch: 1 cost time: 168.77045130729675
+Epoch: 1, Steps: 244 | Train Loss: 0.5502919 Vali Loss: 1.2446582 Test Loss: 0.5884554
+Validation loss decreased (inf --> 1.244658).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.4715785
+	speed: 1.3571s/iter; left time: 2845.9127s
+	iters: 200, epoch: 2 | loss: 0.4039253
+	speed: 0.3927s/iter; left time: 784.1681s
+Epoch: 2 cost time: 113.14410161972046
+Epoch: 2, Steps: 244 | Train Loss: 0.4468259 Vali Loss: 1.1672020 Test Loss: 0.7144603
+Validation loss decreased (1.244658 --> 1.167202).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.4066758
+	speed: 1.6327s/iter; left time: 3025.3621s
+	iters: 200, epoch: 3 | loss: 0.3456793
+	speed: 0.4670s/iter; left time: 818.5758s
+Epoch: 3 cost time: 112.12241291999817
+Epoch: 3, Steps: 244 | Train Loss: 0.3724944 Vali Loss: 1.1908469 Test Loss: 0.8097979
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.3326413
+	speed: 1.4936s/iter; left time: 2403.2741s
+	iters: 200, epoch: 4 | loss: 0.3395567
+	speed: 0.3619s/iter; left time: 546.1144s
+Epoch: 4 cost time: 106.7100043296814
+Epoch: 4, Steps: 244 | Train Loss: 0.3210891 Vali Loss: 1.2140546 Test Loss: 0.8402001
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.2992010
+	speed: 1.2021s/iter; left time: 1640.8974s

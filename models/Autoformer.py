@@ -29,7 +29,7 @@ class Model(nn.Module):
 
         # Embedding
         self.enc_embedding = DataEmbedding_wo_pos(configs.enc_in, configs.d_model, configs.embed, configs.freq,
-                                                  configs.dropout)
+                                                  configs.dropout)  # 不添加position embedding
         # Encoder
         self.encoder = Encoder(
             [
@@ -89,7 +89,7 @@ class Model(nn.Module):
     def forecast(self, x_enc, x_mark_enc, x_dec, x_mark_dec):
         # decomp init
         mean = torch.mean(x_enc, dim=1).unsqueeze(
-            1).repeat(1, self.pred_len, 1)
+            1).repeat(1, self.pred_len, 1)  # 计算temporal这一维的均值
         zeros = torch.zeros([x_dec.shape[0], self.pred_len,
                              x_dec.shape[2]], device=x_enc.device)
         seasonal_init, trend_init = self.decomp(x_enc)

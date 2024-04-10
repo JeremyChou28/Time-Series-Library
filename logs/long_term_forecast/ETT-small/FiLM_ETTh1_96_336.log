@@ -1,0 +1,62 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           ETTh1_96_336        Model:              FiLM                
+
+[1mData Loader[0m
+  Data:               ETTh1               Root Path:          ../iTransformer_datasets/ETT-small/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            336                 Label Len:          48                  
+  Pred Len:           336                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         32                  
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_ETTh1_96_336_FiLM_ETTh1_ftM_sl336_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 7969
+val 2545
+test 2545
+	iters: 100, epoch: 1 | loss: 0.5989790
+	speed: 0.4527s/iter; left time: 1082.4257s
+	iters: 200, epoch: 1 | loss: 0.5874086
+	speed: 0.4677s/iter; left time: 1071.4719s
+Epoch: 1 cost time: 111.76263046264648
+Epoch: 1, Steps: 249 | Train Loss: 0.5798768 Vali Loss: 1.3595454 Test Loss: 0.5845076
+Validation loss decreased (inf --> 1.359545).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.6013357
+	speed: 2.5877s/iter; left time: 5542.8392s
+	iters: 200, epoch: 2 | loss: 0.6179677
+	speed: 0.4538s/iter; left time: 926.6047s
+Epoch: 2 cost time: 109.0276939868927
+Epoch: 2, Steps: 249 | Train Loss: 0.5316589 Vali Loss: 1.2985409 Test Loss: 0.5417548
+Validation loss decreased (1.359545 --> 1.298541).  Saving model ...
+Updating learning rate to 5e-05

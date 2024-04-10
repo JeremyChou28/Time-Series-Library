@@ -1,0 +1,122 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           traffic_96_336      Model:              TimesNet            
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          ../iTransformer_datasets/traffic/
+  Data Path:          traffic.csv         Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           336                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             862                 Dec In:             862                 
+  C Out:              862                 d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               512                 
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         32                  
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_traffic_96_336_TimesNet_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 11849
+val 1421
+test 3173
+	iters: 100, epoch: 1 | loss: 0.4375528
+	speed: 8.7721s/iter; left time: 31588.2000s
+	iters: 200, epoch: 1 | loss: 0.3493906
+	speed: 8.6671s/iter; left time: 30343.6917s
+	iters: 300, epoch: 1 | loss: 0.2891223
+	speed: 8.7202s/iter; left time: 29657.5453s
+Epoch: 1 cost time: 3230.4105718135834
+Epoch: 1, Steps: 370 | Train Loss: 0.4114341 Vali Loss: 0.4793958 Test Loss: 0.6619894
+Validation loss decreased (inf --> 0.479396).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.2824604
+	speed: 28.1179s/iter; left time: 90849.0856s
+	iters: 200, epoch: 2 | loss: 0.2692015
+	speed: 5.9436s/iter; left time: 18609.4293s
+	iters: 300, epoch: 2 | loss: 0.2533129
+	speed: 4.2321s/iter; left time: 12827.4916s
+Epoch: 2 cost time: 2072.3657200336456
+Epoch: 2, Steps: 370 | Train Loss: 0.2703524 Vali Loss: 0.4732871 Test Loss: 0.6492763
+Validation loss decreased (0.479396 --> 0.473287).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.2475805
+	speed: 28.6316s/iter; left time: 81914.9992s
+	iters: 200, epoch: 3 | loss: 0.2401285
+	speed: 8.9914s/iter; left time: 24825.1957s
+	iters: 300, epoch: 3 | loss: 0.2574334
+	speed: 9.0378s/iter; left time: 24049.6390s
+Epoch: 3 cost time: 3142.0137238502502
+Epoch: 3, Steps: 370 | Train Loss: 0.2497640 Vali Loss: 0.4684039 Test Loss: 0.6436989
+Validation loss decreased (0.473287 --> 0.468404).  Saving model ...
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.2356393
+	speed: 27.4074s/iter; left time: 68271.7913s
+	iters: 200, epoch: 4 | loss: 0.2358524
+	speed: 8.9618s/iter; left time: 21427.5998s
+	iters: 300, epoch: 4 | loss: 0.2390787
+	speed: 9.0295s/iter; left time: 20686.5198s
+Epoch: 4 cost time: 2969.259035587311
+Epoch: 4, Steps: 370 | Train Loss: 0.2423957 Vali Loss: 0.4669367 Test Loss: 0.6342343
+Validation loss decreased (0.468404 --> 0.466937).  Saving model ...
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.2482238
+	speed: 28.5638s/iter; left time: 60583.8615s
+	iters: 200, epoch: 5 | loss: 0.2431276
+	speed: 6.1595s/iter; left time: 12448.4441s
+	iters: 300, epoch: 5 | loss: 0.2410871
+	speed: 6.0479s/iter; left time: 11618.0444s
+Epoch: 5 cost time: 2423.6770248413086
+Epoch: 5, Steps: 370 | Train Loss: 0.2390400 Vali Loss: 0.4726852 Test Loss: 0.6429413
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.2363426
+	speed: 25.6009s/iter; left time: 44827.1053s
+	iters: 200, epoch: 6 | loss: 0.2409416
+	speed: 9.1121s/iter; left time: 15044.0933s
+	iters: 300, epoch: 6 | loss: 0.2267403
+	speed: 9.1142s/iter; left time: 14136.0528s
+Epoch: 6 cost time: 3363.2041187286377
+Epoch: 6, Steps: 370 | Train Loss: 0.2372001 Vali Loss: 0.4684827 Test Loss: 0.6369398
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 3.125e-06
+	iters: 100, epoch: 7 | loss: 0.2393343
+	speed: 27.4046s/iter; left time: 37845.6847s
+	iters: 200, epoch: 7 | loss: 0.2422321
+	speed: 9.1855s/iter; left time: 11766.6281s
+	iters: 300, epoch: 7 | loss: 0.2324869
+	speed: 9.1802s/iter; left time: 10841.8471s
+Epoch: 7 cost time: 3180.29562664032
+Epoch: 7, Steps: 370 | Train Loss: 0.2362157 Vali Loss: 0.4689667 Test Loss: 0.6376944
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_traffic_96_336_TimesNet_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df512_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 3173
+test shape: (3173, 1, 336, 862) (3173, 1, 336, 862)
+test shape: (3173, 336, 862) (3173, 336, 862)
+mse:0.6342353224754333, mae:0.339767724275589
+Spend Time: 32131.751334905624

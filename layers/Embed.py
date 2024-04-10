@@ -179,12 +179,12 @@ class PatchEmbedding(nn.Module):
         # Residual dropout
         self.dropout = nn.Dropout(dropout)
 
-    def forward(self, x):
+    def forward(self, x):   # x:(B,C,T)
         # do patching
         n_vars = x.shape[1]
         x = self.padding_patch_layer(x)
-        x = x.unfold(dimension=-1, size=self.patch_len, step=self.stride)
-        x = torch.reshape(x, (x.shape[0] * x.shape[1], x.shape[2], x.shape[3]))
+        x = x.unfold(dimension=-1, size=self.patch_len, step=self.stride)   # (B,C,patch_nums,patch_len)
+        x = torch.reshape(x, (x.shape[0] * x.shape[1], x.shape[2], x.shape[3])) # (B*C,patch_nums,patch_len)
         # Input encoding
-        x = self.value_embedding(x) + self.position_embedding(x)
+        x = self.value_embedding(x) + self.position_embedding(x)    # (B*C,patch_nums,d_model)
         return self.dropout(x), n_vars

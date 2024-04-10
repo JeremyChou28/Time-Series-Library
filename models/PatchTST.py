@@ -80,13 +80,13 @@ class Model(nn.Module):
         x_enc /= stdev
 
         # do patching and embedding
-        x_enc = x_enc.permute(0, 2, 1)
+        x_enc = x_enc.permute(0, 2, 1)  # B,C,T
         # u: [bs * nvars x patch_num x d_model]
         enc_out, n_vars = self.patch_embedding(x_enc)
 
         # Encoder
         # z: [bs * nvars x patch_num x d_model]
-        enc_out, attns = self.encoder(enc_out)
+        enc_out, attns = self.encoder(enc_out)      # vanilla transformer
         # z: [bs x nvars x patch_num x d_model]
         enc_out = torch.reshape(
             enc_out, (-1, n_vars, enc_out.shape[-2], enc_out.shape[-1]))

@@ -1,0 +1,72 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           solar_96_96         Model:              TimeMixer           
+
+[1mData Loader[0m
+  Data:               Solar               Root Path:          ../iTransformer_datasets/Solar/
+  Data Path:          solar_AL.txt        Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          0                   
+  Pred Len:           96                  Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             137                 Dec In:             137                 
+  C Out:              137                 d model:            512                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         32                  
+  Patience:           3                   Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_solar_96_96_TimeMixer_Solar_ftM_sl96_ll0_pl96_dm512_nh8_el3_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 36601
+val 5161
+test 10417
+Traceback (most recent call last):
+  File "run.py", line 272, in <module>
+    exp.train(setting)
+  File "/Jianping/Research/Time-Series-Library/exp/exp_long_term_forecasting.py", line 135, in train
+    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+  File "/opt/conda/envs/torch1.8/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/Jianping/Research/Time-Series-Library/models/TimeMixer.py", line 382, in forward
+    dec_out_list = self.forecast(x_enc, x_mark_enc, x_dec, x_mark_dec)
+  File "/Jianping/Research/Time-Series-Library/models/TimeMixer.py", line 342, in forecast
+    enc_out = self.enc_embedding(x, x_mark)  # [B,T,C]
+  File "/opt/conda/envs/torch1.8/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/Jianping/Research/Time-Series-Library/layers/Embed.py", line 161, in forward
+    x = self.value_embedding(x) + self.temporal_embedding(x_mark)
+  File "/opt/conda/envs/torch1.8/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/Jianping/Research/Time-Series-Library/layers/Embed.py", line 106, in forward
+    return self.embed(x)
+  File "/opt/conda/envs/torch1.8/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/opt/conda/envs/torch1.8/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 94, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/opt/conda/envs/torch1.8/lib/python3.8/site-packages/torch/nn/functional.py", line 1753, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 dim 1 must match mat2 dim 0

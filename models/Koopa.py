@@ -13,9 +13,9 @@ class FourierFilter(nn.Module):
         super(FourierFilter, self).__init__()
         self.mask_spectrum = mask_spectrum
         
-    def forward(self, x):
-        xf = torch.fft.rfft(x, dim=1)
-        mask = torch.ones_like(xf)
+    def forward(self, x):   # B,T,C
+        xf = torch.fft.rfft(x, dim=1)   # B,T//2+1,C
+        mask = torch.ones_like(xf) 
         mask[:, self.mask_spectrum, :] = 0
         x_var = torch.fft.irfft(xf*mask, dim=1)
         x_inv = x - x_var
@@ -307,7 +307,7 @@ class Model(nn.Module):
         mask_spectrum = amps.topk(int(amps.shape[0]*self.alpha)).indices
         return mask_spectrum # as the spectrums of time-invariant component
     
-    def forecast(self, x_enc):
+    def forecast(self, x_enc):  # x_enc: B,T,C
         # Series Stationarization adopted from NSformer
         mean_enc = x_enc.mean(1, keepdim=True).detach() # B x 1 x E
         x_enc = x_enc - mean_enc
@@ -318,7 +318,7 @@ class Model(nn.Module):
         residual, forecast = x_enc, None
         for i in range(self.num_blocks):
             time_var_input, time_inv_input = self.disentanglement(residual)
-            time_inv_output = self.time_inv_kps[i](time_inv_input)
+            time_inv_output = self.time_inv_kps[i](time_inv_input)  # B, S, C
             time_var_backcast, time_var_output = self.time_var_kps[i](time_var_input)
             residual = residual - time_var_backcast
             if forecast is None:

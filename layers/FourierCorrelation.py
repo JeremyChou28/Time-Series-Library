@@ -64,7 +64,7 @@ class FourierBlock(nn.Module):
         B, L, H, E = q.shape
         x = q.permute(0, 2, 3, 1)
         # Compute Fourier coefficients
-        x_ft = torch.fft.rfft(x, dim=-1)
+        x_ft = torch.fft.rfft(x, dim=-1)    # B,H,E,L/2+1
         # Perform Fourier neural operations
         out_ft = torch.zeros(B, H, E, L // 2 + 1, device=x.device, dtype=torch.cfloat)
         for wi, i in enumerate(self.index):

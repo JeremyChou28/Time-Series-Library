@@ -1,4 +1,10 @@
-export CUDA_VISIBLE_DEVICES=2
+export CUDA_VISIBLE_DEVICES=0
+###
+ # @Description: 
+ # @Author: Jianping Zhou
+ # @Email: jianpingzhou0927@gmail.com
+ # @Date: 2024-04-12 02:23:52
+### 
 
 model_name=Koopa
 
@@ -21,7 +27,7 @@ nohup python -u run.py \
   --c_out 7 \
   --des 'Exp' \
   --learning_rate 0.001 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_96_48.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -42,7 +48,7 @@ nohup python -u run.py \
   --c_out 7 \
   --des 'Exp' \
   --learning_rate 0.001 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_192_96.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -63,7 +69,7 @@ nohup python -u run.py \
   --c_out 7 \
   --des 'Exp' \
   --learning_rate 0.001 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_288_144.log 2>&1 &
 
 nohup python -u run.py \
   --task_name long_term_forecast \
@@ -84,4 +90,4 @@ nohup python -u run.py \
   --c_out 7 \
   --des 'Exp' \
   --learning_rate 0.001 \
-  --itr 1
+  --itr 1 > ./logs/long_term_forecast/ETT-small/${model_name}_ETTh1_384_192.log 2>&1 &

@@ -1,0 +1,85 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           ETTh1_384_192       Model:              Koopa               
+
+[1mData Loader[0m
+  Data:               ETTh1               Root Path:          ../iTransformer_datasets/ETT-small/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            384                 Label Len:          48                  
+  Pred Len:           192                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         32                  
+  Patience:           3                   Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+train 8065
+>>>>>>>start training : long_term_forecast_ETTh1_384_192_Koopa_ETTh1_ftM_sl384_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8065
+val 2689
+test 2689
+	iters: 100, epoch: 1 | loss: 0.4083477
+	speed: 0.5695s/iter; left time: 1378.7482s
+	iters: 200, epoch: 1 | loss: 0.3849635
+	speed: 0.5695s/iter; left time: 1321.8321s
+Epoch: 1 cost time: 142.45960426330566
+Epoch: 1, Steps: 252 | Train Loss: 0.4468911 Vali Loss: 0.9706330 Test Loss: 0.4259079
+Validation loss decreased (inf --> 0.970633).  Saving model ...
+Updating learning rate to 0.001
+	iters: 100, epoch: 2 | loss: 0.3935101
+	speed: 2.0629s/iter; left time: 4474.5148s
+	iters: 200, epoch: 2 | loss: 0.3624560
+	speed: 0.5735s/iter; left time: 1186.4762s
+Epoch: 2 cost time: 144.2155933380127
+Epoch: 2, Steps: 252 | Train Loss: 0.3906790 Vali Loss: 1.0012004 Test Loss: 0.4304064
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.0005
+	iters: 100, epoch: 3 | loss: 0.3822609
+	speed: 2.0525s/iter; left time: 3934.6792s
+	iters: 200, epoch: 3 | loss: 0.3863986
+	speed: 0.5551s/iter; left time: 1008.5561s
+Epoch: 3 cost time: 138.67111921310425
+Epoch: 3, Steps: 252 | Train Loss: 0.3636205 Vali Loss: 0.9939415 Test Loss: 0.4298214
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 0.00025
+	iters: 100, epoch: 4 | loss: 0.3461388
+	speed: 2.0466s/iter; left time: 3407.6227s
+	iters: 200, epoch: 4 | loss: 0.3399479
+	speed: 0.5721s/iter; left time: 895.3475s
+Epoch: 4 cost time: 143.11890721321106
+Epoch: 4, Steps: 252 | Train Loss: 0.3482450 Vali Loss: 1.0224764 Test Loss: 0.4375899
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_ETTh1_384_192_Koopa_ETTh1_ftM_sl384_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2689
+test shape: (2689, 1, 192, 7) (2689, 1, 192, 7)
+test shape: (2689, 192, 7) (2689, 192, 7)
+mse:0.4259082078933716, mae:0.43655258417129517
+Spend Time: 1227.2615852355957

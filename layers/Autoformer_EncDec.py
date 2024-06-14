@@ -50,7 +50,7 @@ class series_decomp(nn.Module):
     def forward(self, x):
         moving_mean = self.moving_avg(x)
         res = x - moving_mean
-        return res, moving_mean
+        return res, moving_mean  # seasonal, trend
 
 
 class series_decomp_multi(nn.Module):
@@ -63,7 +63,7 @@ class series_decomp_multi(nn.Module):
         self.kernel_size = kernel_size
         self.series_decomp = [series_decomp(kernel) for kernel in kernel_size]
 
-    def forward(self, x):
+    def forward(self, x):  # x:B,T,C
         moving_mean = []
         res = []
         for func in self.series_decomp:
@@ -71,8 +71,8 @@ class series_decomp_multi(nn.Module):
             moving_mean.append(moving_avg)
             res.append(sea)
 
-        sea = sum(res) / len(res)
-        moving_mean = sum(moving_mean) / len(moving_mean)
+        sea = sum(res) / len(res)  # B,T,C
+        moving_mean = sum(moving_mean) / len(moving_mean)  # B,T,C
         return sea, moving_mean
 
 
@@ -221,12 +221,14 @@ class Decoder(nn.Module):
 
     def forward(self, x, cross, x_mask=None, cross_mask=None, trend=None):
         for layer in self.layers:
-            x, residual_trend = layer(x, cross, x_mask=x_mask, cross_mask=cross_mask)
-            trend = trend + residual_trend
+            x, residual_trend = layer(
+                x, cross, x_mask=x_mask, cross_mask=cross_mask
+            )  # B,T+T/2,D
+            trend = trend + residual_trend  # B,T+T/2,C
 
         if self.norm is not None:
             x = self.norm(x)
 
         if self.projection is not None:
             x = self.projection(x)
-        return x, trend
+        return x, trend  # B,T+T/2,C

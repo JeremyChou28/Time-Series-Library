@@ -1,0 +1,109 @@
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           ETTh1_96_48         Model:              Koopa               
+
+[1mData Loader[0m
+  Data:               ETTh1               Root Path:          ../iTransformer_datasets/ETT-small/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           48                  Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+  Output Attention:   0                   
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         32                  
+  Patience:           3                   Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+train 8497
+>>>>>>>start training : long_term_forecast_ETTh1_96_48_Koopa_ETTh1_ftM_sl96_ll48_pl48_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8497
+val 2833
+test 2833
+	iters: 100, epoch: 1 | loss: 0.3115847
+	speed: 0.4450s/iter; left time: 1135.2381s
+	iters: 200, epoch: 1 | loss: 0.3392397
+	speed: 0.4901s/iter; left time: 1201.1453s
+Epoch: 1 cost time: 123.3665201663971
+Epoch: 1, Steps: 265 | Train Loss: 0.3456740 Vali Loss: 0.5375602 Test Loss: 0.3589348
+Validation loss decreased (inf --> 0.537560).  Saving model ...
+Updating learning rate to 0.001
+	iters: 100, epoch: 2 | loss: 0.2834697
+	speed: 1.9257s/iter; left time: 4402.2516s
+	iters: 200, epoch: 2 | loss: 0.3233391
+	speed: 0.4768s/iter; left time: 1042.3565s
+Epoch: 2 cost time: 128.9096348285675
+Epoch: 2, Steps: 265 | Train Loss: 0.3081203 Vali Loss: 0.5381578 Test Loss: 0.3531288
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.0005
+	iters: 100, epoch: 3 | loss: 0.2745048
+	speed: 1.9204s/iter; left time: 3881.1752s
+	iters: 200, epoch: 3 | loss: 0.2790349
+	speed: 0.4995s/iter; left time: 959.5182s
+Epoch: 3 cost time: 131.06371665000916
+Epoch: 3, Steps: 265 | Train Loss: 0.2925155 Vali Loss: 0.5306306 Test Loss: 0.3478056
+Validation loss decreased (0.537560 --> 0.530631).  Saving model ...
+Updating learning rate to 0.00025
+	iters: 100, epoch: 4 | loss: 0.3119626
+	speed: 1.9314s/iter; left time: 3391.5754s
+	iters: 200, epoch: 4 | loss: 0.2883258
+	speed: 0.4979s/iter; left time: 824.5199s
+Epoch: 4 cost time: 132.08782935142517
+Epoch: 4, Steps: 265 | Train Loss: 0.2834952 Vali Loss: 0.5269149 Test Loss: 0.3473361
+Validation loss decreased (0.530631 --> 0.526915).  Saving model ...
+Updating learning rate to 0.000125
+	iters: 100, epoch: 5 | loss: 0.3219860
+	speed: 1.9095s/iter; left time: 2847.0155s
+	iters: 200, epoch: 5 | loss: 0.2657065
+	speed: 0.5078s/iter; left time: 706.3151s
+Epoch: 5 cost time: 133.50984978675842
+Epoch: 5, Steps: 265 | Train Loss: 0.2786064 Vali Loss: 0.5285208 Test Loss: 0.3491118
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 6.25e-05
+	iters: 100, epoch: 6 | loss: 0.2851716
+	speed: 1.8563s/iter; left time: 2275.7942s
+	iters: 200, epoch: 6 | loss: 0.2382050
+	speed: 0.3536s/iter; left time: 398.1870s
+Epoch: 6 cost time: 80.90233659744263
+Epoch: 6, Steps: 265 | Train Loss: 0.2762836 Vali Loss: 0.5293939 Test Loss: 0.3494431
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 3.125e-05
+	iters: 100, epoch: 7 | loss: 0.2547704
+	speed: 0.3483s/iter; left time: 334.6852s
+	iters: 200, epoch: 7 | loss: 0.2936296
+	speed: 0.0421s/iter; left time: 36.2716s
+Epoch: 7 cost time: 11.750768423080444
+Epoch: 7, Steps: 265 | Train Loss: 0.2749707 Vali Loss: 0.5306454 Test Loss: 0.3492174
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_ETTh1_96_48_Koopa_ETTh1_ftM_sl96_ll48_pl48_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2833
+test shape: (2833, 1, 48, 7) (2833, 1, 48, 7)
+test shape: (2833, 48, 7) (2833, 48, 7)
+mse:0.3473360240459442, mae:0.38414129614830017
+Spend Time: 1401.9007415771484

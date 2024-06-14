@@ -78,3 +78,15 @@ EarlyStopping counter: 2 out of 3
 Updating learning rate to 1.25e-05
 	iters: 100, epoch: 5 | loss: 0.2992010
 	speed: 1.2021s/iter; left time: 1640.8974s
+	iters: 200, epoch: 5 | loss: 0.2763068
+	speed: 0.4035s/iter; left time: 510.4043s
+Epoch: 5 cost time: 88.74860739707947
+Epoch: 5, Steps: 244 | Train Loss: 0.2929356 Vali Loss: 1.2051917 Test Loss: 0.8623809
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_ETTh1_96_720_MICN_ETTh1_ftM_sl96_ll96_pl720_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2161
+test shape: (2161, 1, 720, 7) (2161, 1, 720, 7)
+test shape: (2161, 720, 7) (2161, 720, 7)
+mse:0.7144595384597778, mae:0.632221519947052
+Spend Time: 1044.4740335941315

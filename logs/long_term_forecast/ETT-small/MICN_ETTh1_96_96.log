@@ -94,3 +94,7 @@ EarlyStopping counter: 3 out of 3
 Early stopping
 >>>>>>>testing : long_term_forecast_ETTh1_96_96_MICN_ETTh1_ftM_sl96_ll96_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 test 2785
+test shape: (2785, 1, 96, 7) (2785, 1, 96, 7)
+test shape: (2785, 96, 7) (2785, 96, 7)
+mse:0.41534772515296936, mae:0.4293508231639862
+Spend Time: 949.1638824939728

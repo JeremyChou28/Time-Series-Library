@@ -81,3 +81,20 @@ Updating learning rate to 1.25e-05
 	iters: 200, epoch: 5 | loss: 0.2979151
 	speed: 0.2539s/iter; left time: 339.4624s
 Epoch: 5 cost time: 72.2326889038086
+Epoch: 5, Steps: 256 | Train Loss: 0.2958029 Vali Loss: 1.0798745 Test Loss: 0.6419948
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.2741035
+	speed: 0.9423s/iter; left time: 1112.8058s
+	iters: 200, epoch: 6 | loss: 0.2981685
+	speed: 0.2699s/iter; left time: 291.7455s
+Epoch: 6 cost time: 66.99808883666992
+Epoch: 6, Steps: 256 | Train Loss: 0.2818031 Vali Loss: 1.1039757 Test Loss: 0.6554853
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_ETTh1_96_336_MICN_ETTh1_ftM_sl96_ll96_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2545
+test shape: (2545, 1, 336, 7) (2545, 1, 336, 7)
+test shape: (2545, 336, 7) (2545, 336, 7)
+mse:0.5982202291488647, mae:0.5545303821563721
+Spend Time: 1044.2577278614044

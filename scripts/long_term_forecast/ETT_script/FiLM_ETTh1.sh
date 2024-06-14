@@ -17,7 +17,7 @@ nohup python -u run.py \
   --model $model_name \
   --data ETTh1 \
   --features M \
-  --seq_len 336 \
+  --seq_len 96 \
   --label_len 48 \
   --pred_len 96 \
   --e_layers 2 \
@@ -38,7 +38,7 @@ nohup python -u run.py \
   --model $model_name \
   --data ETTh1 \
   --features M \
-  --seq_len 336 \
+  --seq_len 96 \
   --label_len 48 \
   --pred_len 192 \
   --e_layers 2 \
@@ -59,7 +59,7 @@ nohup python -u run.py \
   --model $model_name \
   --data ETTh1 \
   --features M \
-  --seq_len 336 \
+  --seq_len 96 \
   --label_len 48 \
   --pred_len 336 \
   --e_layers 2 \
@@ -80,7 +80,7 @@ nohup python -u run.py \
   --model $model_name \
   --data ETTh1 \
   --features M \
-  --seq_len 336 \
+  --seq_len 96 \
   --label_len 48 \
   --pred_len 720 \
   --e_layers 2 \
